@@ -7,7 +7,7 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_FILE_EXPIRE = 200
 AWS_PRELOAD_METADATA = True
 AWS_QUERYSTRING_AUTH = True
-
+AWS_S3_SIGNATURE_VERSION = 'v4'
 
 DEFAULT_FILE_STORAGE = 'barreauproject.aws.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'barreauproject.aws.utils.StaticRootS3BotoStorage'
