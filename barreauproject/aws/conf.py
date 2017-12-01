@@ -28,4 +28,3 @@ AWS_HEADERS = {
     'Cache-Control': 'max-age=%d' % (int(two_months.total_seconds()), ),
 }
 
-AWS_S3_SIGNATURE_VERSION=True
