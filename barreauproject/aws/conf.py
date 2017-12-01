@@ -8,8 +8,6 @@ AWS_FILE_EXPIRE = 200
 AWS_PRELOAD_METADATA = True
 AWS_QUERYSTRING_AUTH = True
 
-use-sigv4 = True
-
 
 DEFAULT_FILE_STORAGE = 'barreauproject.aws.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'barreauproject.aws.utils.StaticRootS3BotoStorage'
