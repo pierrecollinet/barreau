@@ -132,6 +132,3 @@ SECURE_FRAME_DENY               = True
 
 from barreauproject.aws.conf import *
 
-
-https://barreau-project.s3.amazonaws.com/static/css/main.css?AWSAccessKeyId=AKIAJL6R5KGKC5NW6NGA&amp;Signature=H4hvXKimbUy5lmwzmnn6qkvBcY4%3D&amp;Expires=1512148207
-https://barreau-project.s3.amazonaws.com/static/css/main.css?AWSAccessKeyId=AKIAJL6R5KGKC5NW6NGA&Signature=H4hvXKimbUy5lmwzmnn6qkvBcY4%3D&Expires=1512148207
