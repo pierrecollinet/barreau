@@ -109,7 +109,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 # SSL/TLS settings
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"
