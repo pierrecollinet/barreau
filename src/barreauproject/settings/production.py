@@ -22,12 +22,12 @@ BASE_DIR     = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0i637#we#_eymthcia$l*kj19rr7%3f9yrse*2%!bfp)h-2=s-'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['barreau-project.herokuapp.com', '.yourdomain.com']
 
 
 # Application definition
@@ -83,6 +83,11 @@ DATABASES = {
     }
 }
 
+# add this
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE'] = 500
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
