@@ -7,12 +7,11 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_FILE_EXPIRE = 200
 AWS_PRELOAD_METADATA = True
 AWS_QUERYSTRING_AUTH = True
-AWS_S3_SIGNATURE_VERSION = 'v4'
 
 DEFAULT_FILE_STORAGE = 'barreauproject.aws.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'barreauproject.aws.utils.StaticRootS3BotoStorage'
-AWS_STORAGE_BUCKET_NAME = 'barreau-project'
-S3DIRECT_REGION = 'us-west-2'
+AWS_STORAGE_BUCKET_NAME = 'barreauprojectbucket'
+S3DIRECT_REGION = 'eu-west-2'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_ROOT = MEDIA_URL
