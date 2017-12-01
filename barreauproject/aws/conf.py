@@ -27,3 +27,13 @@ AWS_HEADERS = {
     'Expires': expires,
     'Cache-Control': 'max-age=%d' % (int(two_months.total_seconds()), ),
 }
+
+from botocore.client import Config
+
+
+s3 = boto3.resource(
+    's3',
+    aws_access_key_id=AWS_ACCESS_KEY_ID,
+    aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+    config=Config(signature_version='s3v4')
+)
