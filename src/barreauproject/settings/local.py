@@ -11,22 +11,18 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+print('JE SUIS EN LOCAL')
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+BASE_DIR     = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
 
-STATIC_ROOT = os.path.join(os.getcwd(), "staticfiles")
-STATIC_URL = '/static/'
-
-# Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '0i637#we#_eymthcia$l*kj19rr7%3f9yrse*2%!bfp)h-2=s-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,7 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages',
 )
 
 MIDDLEWARE_CLASSES = (
