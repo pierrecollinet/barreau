@@ -73,9 +73,12 @@ INSTALLED_APPS = (
     'djangocms_snippet',
     'djangocms_style',
     'djangocms_column',
+
+    'crispy_forms',
 )
 
 SITE_ID = 1
+CRISPY_TEMPLATE_PACK = "bootstrap3"
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

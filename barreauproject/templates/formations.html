@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}
 Bienvenue
@@ -17,8 +18,8 @@ Bienvenue
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="page-tagline">Temaplate Shortcode</h2>
-          <h1 class="page-title">Alerts</h1>
+          <h2 class="page-tagline">Découvrez</h2>
+          <h1 class="page-title">Toutes nos formations</h1>
         </div>
       </div>
     </div>
@@ -50,7 +51,7 @@ Bienvenue
                     </div>
                     <!-- Title -->
                     <a href="blog-single.html">
-                      <h2 class="subtitle">MUSIC for refreshment</h2>
+                      <h2 class="subtitle">Formations</h2>
                     </a>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perferendis assumenda ipsum maiores dolorum similique obcaecati perspiciatis.</p>
                   </div>
@@ -323,7 +324,7 @@ Bienvenue
 
             <!-- pagination -->
             <div class="col-md-12 text-center mt-3 blog-pagination wow animated fadeInUp" data-wow-delay=".4s">
-              <a href="javascript:void(0)" class="btn btn-common"><i class="material-icons mdi mdi mdi-autorenew"></i> Load More Stories<div class="ripple-container"></div></a>
+              <a href="javascript:void(0)" class="btn btn-common"><i class="material-icons mdi mdi mdi-autorenew"></i> Chargez plus de formations<div class="ripple-container"></div></a>
             </div>
             <!-- pagination End -->
           </div>
@@ -356,7 +357,7 @@ Bienvenue
           <!-- Single Sidebar -->
           <aside class="col-md-12 single-sidebar-widget subscribe-widget no-padding  wow animated fadeInUp" data-wow-delay=".3s">
             <div class="sidebar-widget-title">
-              <h2>Follow & Subscribe</h2>
+              <h2>Restez informé</h2>
             </div>
             <div class="social-profiles clearfix">
               <div class="footer-contact-widget">
@@ -380,53 +381,19 @@ Bienvenue
               </div>
             </div>
             <div class="subscribe-box">
-              <p>Sign up for new Shelver content, updates,<br>surveys & offers.</p>
+              <p>Restez informés de toutes nos formations, conférences et workshop en vous inscrivant à notre newsletter ! </p>
               <div class="input-group">
-                <input type="email" class="form-control" placeholder="type your email">
-                <span class="input-group-btn">
-                  <button class="btn btn-round btn-fab" type="button"><i class="material-icons mdi mdi-arrow-right"></i></button>
-                </span>
+                <form class="." id="signup_form" method="post" action="/formations">
+                  {% csrf_token %}
+                  {% crispy form %}
+                </form>
+
               </div>
+
               <!-- /input-group -->
             </div>
           </aside>
 
-          <!-- Single Sidebar -->
-          <aside class="col-md-12 single-sidebar-widget instagram-widget no-padding wow animated fadeInUp" data-wow-delay=".3s">
-            <div class="sidebar-widget-title">
-              <h2>Instagram Feed</h2>
-            </div>
-            <div class="instagram-feed clearfix">
-              <ul>
-                <li><a href="#"><img src="{% static 'assets/images/Instagram/insta1.jpg' %}" alt=""></a></li>
-                <li><a href="#"><img src="{% static 'assets/images/Instagram/insta2.jpg' %}" alt=""></a></li>
-                <li><a href="#"><img src="{% static 'assets/images/Instagram/insta3.jpg' %}" alt=""></a></li>
-                <li><a href="#"><img src="{% static 'assets/images/Instagram/insta4.jpg' %}" alt=""></a></li>
-                <li><a href="#"><img src="{% static 'assets/images/Instagram/insta5.jpg' %}" alt=""></a></li>
-                <li><a href="#"><img src="{% static 'assets/images/Instagram/insta6.jpg' %}" alt=""></a></li>
-              </ul>
-            </div>
-          </aside>
-
-          <!-- Single Sidebar -->
-          <aside class="col-md-12 single-sidebar-widget flickr-widget no-padding wow animated fadeInUp" data-wow-delay=".4s">
-            <div class="sidebar-widget-title">
-              <h2>Flickr Slider</h2>
-            </div>
-            <div class="flickr-feed clearfix">
-              <div id="flickr-carousel" class="owl-carousel owl-theme">
-                <div class="item active">
-                  <img src="{% static 'assets/images/Instagram/flickr.jpg' %}" alt="">
-                </div>
-                <div class="item">
-                  <img src="{% static 'assets/images/Instagram/flickr.jpg' %}" alt="">
-                </div>
-                <div class="item">
-                  <img src="{% static 'assets/images/Instagram/flickr.jpg' %}" alt="">
-                </div>
-              </div>
-            </div>
-          </aside>
         </div>
         <!--Blog Sidebar End -->
       </div>

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% load cms_tags staticfiles sekizai_tags %}
 {% load cms_tags menu_tags sekizai_tags %}
@@ -37,7 +38,6 @@ Bienvenue
         <div class="carousel-caption d-md-block">
           <h1 class="animated wow fadeInLeft hero-heading" data-wow-delay=".7s">Institut de Droit Européen des Barreaux</h1>
           <h5 class="animated wow fadeInRight hero-sub-heading" data-wow-delay=".9s">Extensively Customizable Tons of UI Elements</h5>
-          <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-common" data-wow-delay=".6s"><i class="material-icons mdi mdi-cart-outline"></i> Purchase</a>
           <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-border" data-wow-delay=".8s"><i class="material-icons mdi mdi-lightbulb-outline"></i>Découvrez nos formations<div class="ripple-container"></div></a>
         </div>
       </div>
@@ -61,49 +61,8 @@ Bienvenue
   </div>
   <!-- Main Carousel Section End -->
 
-  <!-- About Section -->
-  <section class="matrl-about-section section-padding">
-    <div class="container">
-      <div class="row">
-        <!-- Single About -->
-        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".2s">
-          <div class="about-single">
-            <i class="material-icons mdi mdi-flask-outline"></i>
-            <h2 class="subtitle">Bootstrap 4</h2>
-            <p>Excepteur sint occaecat cupidatat non proidt, sunt in culpa qui.</p>
-          </div>
-        </div>
-        <!-- Single About -->
-        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".3s">
-          <div class="about-single">
-            <i class="material-icons mdi mdi-lightbulb-on-outline"></i>
-            <h2 class="subtitle">Material Design</h2>
-            <p>Excepteur sint occaecat cupidatat non proidt, sunt in culpa qui.</p>
-          </div>
-        </div>
-        <!-- Single About -->
-        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".4s">
-          <div class="about-single">
-            <i class="material-icons mdi mdi-trending-up"></i>
-            <h2 class="subtitle">Fast and Clean</h2>
-            <p>Excepteur sint occaecat cupidatat non proidt, sunt in culpa qui.</p>
-          </div>
-        </div>
-        <!-- Single About -->
-        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".5s">
-          <div class="about-single">
-            <i class="material-icons mdi mdi-cellphone-link"></i>
-            <h2 class="subtitle">Fully Responsive</h2>
-            <p>Excepteur sint occaecat cupidatat non proidt, sunt in culpa qui.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- About Section End -->
-
   <!-- Welcome Section Start -->
-  <section class="welcome-section section-padding section-dark">
+  <section class="welcome-section section-padding">
     <div class="container">
       <div class="row">
         <div class="text-intro col-xs-10 col-xs-offset-1">
@@ -114,12 +73,11 @@ Bienvenue
           <div class="welcome-content">
             <div class="text">
               <h1>Des partenaires essentiels</h1>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-              <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently. Excepteur sint occaecat cupi datat non proidt, sunt in culpa qui offi cia deserunt</p>
+              <p>En partenariat avec la Cour de Justice de l'Union européenne, l'Université libre de Bruxelles, les Facultés Saint Louis de Bruxelles et l'Ecole Régionale des Avocats du Grand Est, son objectif est de <b>soutenir la connaissance du droit européen</b> et de la jurisprudence de la Cour européenne des droits de l'Homme dans les différents barreaux européens de langue française afin que les avocats <b>favorisent le réflexe européen</b> dans leur pratique quotidienne</p>
             </div>
             <div class="button">
-              <a href="" class="btn btn-common">
-                  Know More
+              <a href="{% url 'a-propos' %}" class="btn btn-common">
+                  En savoir plus sur l'IDEB
                   <div class="ripple-container"></div>
                 </a>
             </div>
@@ -141,384 +99,6 @@ Bienvenue
     </div>
   </section>
   <!-- Welcome Section End -->
-
-  <!-- Services Section -->
-  <section class="matrl-service-section section-padding">
-    <div class="container">
-      <div class="row">
-        <!-- Section Titile -->
-        <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Services</h1>
-        </div>
-      </div>
-      <!-- Services Widget Section -->
-      <div class="row">
-        <!-- Service Widgets -->
-        <div class="col-md-6 col-lg-4 col-xl-4 single-service-widget wow animated fadeInUp" data-wow-delay=".3s">
-          <div class="media">
-            <div class="media-left">
-              <i class="material-icons pulse-shrink mdi mdi-chart-line-variant"></i>
-            </div>
-            <div class="media-body">
-              <h2 class="subtitle"><a href="#">Discovery & Strategy</a></h2>
-              <p>Excepteur sint occaecat cupi datat non proidt, sunt in culpa qui offi cia deserunt</p>
-            </div>
-          </div>
-        </div>
-        <!-- Service Widgets -->
-        <div class="col-md-6 col-lg-4 col-xl-4 single-service-widget wow animated fadeInUp" data-wow-delay=".4s">
-          <div class="media">
-            <div class="media-left">
-              <i class="material-icons pulse-shrink mdi mdi-format-line-style"></i>
-            </div>
-            <div class="media-body">
-              <h2 class="subtitle"><a href="#">Interface Design</a></h2>
-              <p>Excepteur sint occaecat cupi datat non proidt, sunt in culpa qui offi cia deserunt</p>
-            </div>
-          </div>
-        </div>
-        <!-- Service Widgets -->
-        <div class="col-md-6 col-lg-4 col-xl-4 single-service-widget wow animated fadeInUp" data-wow-delay=".5s">
-          <div class="media">
-            <div class="media-left">
-              <i class="material-icons pulse-shrink mdi mdi-fingerprint"></i>
-            </div>
-            <div class="media-body">
-              <h2 class="subtitle"><a href="#">Branding</a></h2>
-              <p>Excepteur sint occaecat cupi datat non proidt, sunt in culpa qui offi cia deserunt</p>
-            </div>
-          </div>
-        </div>
-        <!-- Service Widgets -->
-        <div class="col-md-6 col-lg-4 col-xl-4 single-service-widget wow animated fadeInUp" data-wow-delay=".6s">
-          <div class="media">
-            <div class="media-left">
-              <i class="material-icons pulse-shrink mdi mdi-comment-outline"></i>
-            </div>
-            <div class="media-body">
-              <h2 class="subtitle"><a href="#">Communication</a></h2>
-              <p>Excepteur sint occaecat cupi datat non proidt, sunt in culpa qui offi cia deserunt</p>
-            </div>
-          </div>
-        </div>
-        <!-- Service Widgets -->
-        <div class="col-md-6 col-lg-4 col-xl-4 single-service-widget wow animated fadeInUp" data-wow-delay=".7s">
-          <div class="media">
-            <div class="media-left">
-              <i class="material-icons pulse-shrink mdi mdi-monitor-multiple"></i>
-            </div>
-            <div class="media-body">
-              <h2 class="subtitle"><a href="#">Multimedia Production</a></h2>
-              <p>Excepteur sint occaecat cupi datat non proidt, sunt in culpa qui offi cia deserunt</p>
-            </div>
-          </div>
-        </div>
-        <!-- Service Widgets -->
-        <div class="col-md-6 col-lg-4 col-xl-4 single-service-widget wow animated fadeInUp" data-wow-delay=".8s">
-          <div class="media">
-            <div class="media-left">
-              <i class="material-icons pulse-shrink mdi mdi-code-tags"></i>
-            </div>
-            <div class="media-body">
-              <h2 class="subtitle"><a href="#">Development solutions</a></h2>
-              <p>Excepteur sint occaecat cupi datat non proidt, sunt in culpa qui offi cia deserunt</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Services Section End -->
-
-  <!-- Portfolio Section -->
-  <section class="matrl-portfolio-section section-padding section-dark">
-    <div class="container">
-      <div class="row">
-        <!-- Section Titile -->
-        <div class="col-md-4 col-lg-4 col-xl-6  matrl-title-section wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Portfolio</h1>
-        </div>
-        <!-- Section Quote -->
-        <div class="col-md-8 col-lg-8 col-xl-6  portfolio-nav mt-3 mb-3 wow animated fadeInRight" data-wow-delay=".2s">
-          <ul class="nav nav-pills">
-            <li><a class="filter active" data-filter="all">All</a></li>
-            <li><a class="filter" data-filter=".business">Business</a></li>
-            <li><a class="filter" data-filter=".creative">Creative</a></li>
-            <li><a class="filter" data-filter=".education">Education</a></li>
-            <li><a class="filter" data-filter=".blog">Blog</a></li>
-            <li><a class="filter" data-filter=".free">Free</a></li>
-            <li><a class="filter" data-filter=".more">More</a></li>
-          </ul>
-        </div>
-        <div class="portfolio-item-wrapper clearfix wow animated fadeInUp" data-wow-delay=".5s" id="matrl-portfolio">
-          <!-- Single Portfolio Image -->
-          <div class="col-md-6 col-lg-4 col-xl-4 pb-4 mix business blog">
-            <figure class="single-portfolio">
-              <img class="img-fluid" src="{% static 'assets/images/portfolio/work1.jpg' %}" alt="">
-              <figcaption class="hover-content">
-                <a class="btn btn-round btn-fab btn-xs" href="portfolio-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-                <a href="portfolio-single.html">
-                  <h2 class="subtitle">A boat of hope</h2>
-                </a>
-                <p>Istambul, Turkey</p>
-              </figcaption>
-            </figure>
-          </div>
-          <!-- Single Portfolio Image -->
-          <div class="col-md-6 col-lg-4 col-xl-4 mix education more">
-            <figure class="single-portfolio">
-              <img class="img-fluid" src="{% static 'assets/images/portfolio/work2.jpg' %}" alt="">
-              <figcaption class="hover-content">
-                <a class="btn btn-round btn-fab btn-xs" href="portfolio-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-                <a href="portfolio-single.html">
-                  <h2 class="subtitle">Visit to moon</h2>
-                </a>
-                <p>Nasa, USA</p>
-              </figcaption>
-            </figure>
-          </div>
-          <!-- Single Portfolio Image -->
-          <div class="col-md-6 col-lg-4 col-xl-4 mix free education blog">
-            <figure class="single-portfolio">
-              <img class="img-fluid" src="{% static 'assets/images/portfolio/work3.jpg' %}" alt="">
-              <figcaption class="hover-content">
-                <a class="btn btn-round btn-fab btn-xs" href="portfolio-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-                <a href="portfolio-single.html">
-                  <h2 class="subtitle">Lighthouse of Cox</h2>
-                </a>
-                <p>Chittagong, Bangladesh</p>
-              </figcaption>
-            </figure>
-          </div>
-          <!-- Single Portfolio Image -->
-          <div class="col-md-6 col-lg-4 col-xl-4 mix creative more business">
-            <figure class="single-portfolio">
-              <img class="img-fluid" src="{% static 'assets/images/portfolio/work4.jpg' %}" alt="">
-              <figcaption class="hover-content">
-                <a class="btn btn-round btn-fab btn-xs" href="portfolio-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-                <a href="portfolio-single.html">
-                  <h2 class="subtitle">Bug of the day</h2>
-                </a>
-                <p>Delhi, India</p>
-              </figcaption>
-            </figure>
-          </div>
-          <!-- Single Portfolio Image -->
-          <div class="col-md-6 col-lg-4 col-xl-4 mix more free creative">
-            <figure class="single-portfolio">
-              <img class="img-fluid" src="{% static 'assets/images/portfolio/work5.jpg' %}" alt="">
-              <figcaption class="hover-content">
-                <a class="btn btn-round btn-fab btn-xs" href="portfolio-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-                <a href="portfolio-single.html">
-                  <h2 class="subtitle">Loard of the ring</h2>
-                </a>
-                <p>Novel, USA</p>
-              </figcaption>
-            </figure>
-          </div>
-          <!-- Single Portfolio Image -->
-          <div class="col-md-6 col-lg-4 col-xl-4 mix blog business">
-            <figure class="single-portfolio">
-              <img class="img-fluid" src="{% static 'assets/images/portfolio/work6.jpg' %}" alt="">
-              <figcaption class="hover-content">
-                <a class="btn btn-round btn-fab btn-xs" href="portfolio-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-                <a href="portfolio-single.html">
-                  <h2 class="subtitle">Wings of paper</h2>
-                </a>
-                <p>Venis, Italy</p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4 wow animated fadeInUp" data-wow-delay=".3s">
-        <div class="col-md-12 text-center">
-          <a href="javascript:void(0)" class="animated4 btn btn-common" data-ripple-color="#000"><i class="material-icons mdi mdi-lightbulb-outline"></i> Explore more work<div class="ripple-container"></div></a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Portfolio Section End -->
-
-  <!-- work-counter area -->
-  <section class="work-counter-section section-padding">
-    <div class="container">
-      <div class="row">
-        <!-- Single Counter -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center wow animated fadeInUp" data-wow-delay=".2s">
-          <div class="counter">
-            <div class="icon"><i class="material-icons mdi mdi-check-all"></i></div>
-            <div class="timer">768</div>
-            <p>Project Delivered</p>
-          </div>
-        </div>
-        <!-- Single Counter -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center wow animated fadeInUp" data-wow-delay=".3s">
-          <div class="counter">
-            <div class="icon"><i class="material-icons mdi mdi-clock"></i></div>
-            <div class="timer">900</div>
-            <p>Working Hours</p>
-          </div>
-        </div>
-        <!-- Single Counter -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center wow animated fadeInUp" data-wow-delay=".4s">
-          <div class="counter">
-            <div class="icon"><i class="material-icons mdi mdi-cellphone-link"></i></div>
-            <div class="timer">215</div>
-            <p>Work Station</p>
-          </div>
-        </div>
-        <!-- Single Counter -->
-        <div class="col-md-3 col-sm-6 work-counter-widget text-center wow animated fadeInUp" data-wow-delay=".5s">
-          <div class="counter">
-            <div class="icon"><i class="material-icons mdi mdi-cisco-webex"></i></div>
-            <div class="timer">553</div>
-            <p>International Clients</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- work-counter area end -->
-
-  <!-- Our Team Section -->
-  <section class="team section-padding section-dark">
-    <div class="container">
-      <div class="row">
-        <!-- Section Titile -->
-        <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Our Team</h1>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Single Team Widget -->
-        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".3s">
-          <div class="single-team-widget">
-            <img src="{% static 'assets/images/team/team1.jpg' %}" class="img-fluid" alt="">
-            <div class="team-member-info">
-              <div class="know-more">
-                <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-              </div>
-              <h2 class="subtitle">Rob Percy</h2>
-              <p>Co-Founder</p>
-              <div class="social-profiles">
-                <a href="#"><i class="mdi mdi-twitter"></i></a>
-                <a href="#"><i class="mdi mdi-facebook"></i></a>
-                <a href="#"><i class="mdi mdi-dribbble"></i></a>
-                <a href="#"><i class="mdi mdi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Single Team Widget -->
-        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".4s">
-          <div class="single-team-widget">
-            <img src="{% static 'assets/images/team/team2.jpg' %}" class="img-fluid" alt="">
-            <div class="team-member-info">
-              <div class="know-more">
-                <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-              </div>
-              <h2 class="subtitle">Jennifer L.</h2>
-              <p>Graphic Designer</p>
-              <div class="social-profiles">
-                <a href="#"><i class="mdi mdi-twitter"></i></a>
-                <a href="#"><i class="mdi mdi-facebook"></i></a>
-                <a href="#"><i class="mdi mdi-dribbble"></i></a>
-                <a href="#"><i class="mdi mdi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Single Team Widget -->
-        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".5s">
-          <div class="single-team-widget">
-            <img src="{% static 'assets/images/team/team3.jpg' %}" class="img-fluid" alt="">
-            <div class="team-member-info">
-              <div class="know-more">
-                <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-              </div>
-              <h2 class="subtitle">Tom Hanks.</h2>
-              <p>SEO Speacialist</p>
-              <div class="social-profiles">
-                <a href="#"><i class="mdi mdi-twitter"></i></a>
-                <a href="#"><i class="mdi mdi-facebook"></i></a>
-                <a href="#"><i class="mdi mdi-dribbble"></i></a>
-                <a href="#"><i class="mdi mdi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Single Team Widget -->
-        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".6s">
-          <div class="single-team-widget">
-            <img src="{% static 'assets/images/team/team4.jpg' %}" class="img-fluid" alt="">
-            <div class="team-member-info">
-              <div class="know-more">
-                <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-              </div>
-              <h2 class="subtitle">Emma Watson</h2>
-              <p>Head Of Ideas</p>
-              <div class="social-profiles">
-                <a href="#"><i class="mdi mdi-twitter"></i></a>
-                <a href="#"><i class="mdi mdi-facebook"></i></a>
-                <a href="#"><i class="mdi mdi-dribbble"></i></a>
-                <a href="#"><i class="mdi mdi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Our Team Section End -->
-
-  <!-- Start Testimonial Section  -->
-  <div class="testimonial section-padding">
-    <div class="container">
-      <div class="row">
-        <!-- Testimonial section  -->
-        <div class="testimonials-carousel owl-carousel">
-          <div class="item">
-            <div class="testimonial-item">
-              <div class="img">
-                <a href="#"><img class="img-fluid" src="{% static 'assets/images/testimonial/author1.jpg' %}"  alt=""></a>
-              </div>
-              <div class="datils">
-                <h5>Adam Schwartz</h5>
-                <span>Software Articulate, Google</span>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <br> standard dummy text ever since the 1500s Lorem Ipsum.</p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="testimonial-item">
-              <div class="img">
-                <a href="#"><img class="img-fluid"  src="{% static 'assets/images/testimonial/author2.jpg' %}"  alt=""></a>
-              </div>
-              <div class="datils">
-                <h5>Clark Brown</h5>
-                <span>Brand Managerr</span>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <br> standard dummy text ever since the 1500s Lorem Ipsum.</p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="testimonial-item">
-              <div class="img">
-                <a href="#"><img class="img-fluid"  src="{% static 'assets/images/testimonial/author3.jpg' %}"  alt=""></a>
-              </div>
-              <div class="datils">
-                <h5>Ana Blunt</h5>
-                <span>Creative Director</span>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <br> standard dummy text ever since the 1500s Lorem Ipsum.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Testimonial Section  -->
 
   <!-- Start Client Section -->
   <div class="client section-padding section-dark">
@@ -577,7 +157,7 @@ Bienvenue
       <div class="row">
         <!-- Section Titile -->
         <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Our Stories</h1>
+          <h1 class="section-title">Découvrez nos formations</h1>
         </div>
       </div>
 
@@ -595,12 +175,12 @@ Bienvenue
             <div class="post-meta">
               <!-- Title -->
               <a href="blog-single.html">
-                <h2 class="subtitle">MUSIC for refreshment</h2>
+                <h2 class="subtitle">Eviter d'aller en prison en 3 étapes</h2>
               </a>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perferendis assumenda ipsum maiores dolorum similique obcaecati perspiciatis.</p>
             </div>
             <div class="meta-tags">
-              <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i> 24 Comments</a></span>
+              <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i></a></span>
               <!-- Read More -->
               <a class="btn btn-round btn-fab" href="blog-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
             </div>
@@ -619,12 +199,12 @@ Bienvenue
             <div class="post-meta">
               <!-- Title -->
               <a href="blog-single.html">
-                <h2 class="subtitle">We support your custom</h2>
+                <h2 class="subtitle">Rouler bourré en toute impunité</h2>
               </a>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perferendis assumenda ipsum maiores dolorum similique obcaecati perspiciatis.</p>
             </div>
             <div class="meta-tags">
-              <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i> 24 Comments</a></span>
+              <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i></a></span>
               <!-- Read More -->
               <a class="btn btn-round btn-fab" href="blog-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
             </div>
@@ -643,12 +223,12 @@ Bienvenue
             <div class="post-meta">
               <!-- Title -->
               <a href="blog-single.html">
-                <h2 class="subtitle">We love photography</h2>
+                <h2 class="subtitle">Apprenez à facturer sans compter</h2>
               </a>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perferendis assumenda ipsum maiores dolorum similique obcaecati perspiciatis.</p>
             </div>
             <div class="meta-tags">
-              <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i> 24 Comments</a></span>
+              <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i></a></span>
               <!-- Read More -->
               <a class="btn btn-round btn-fab" href="blog-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
             </div>
@@ -658,7 +238,7 @@ Bienvenue
       <div class="row mt-5 wow animated fadeInUp" data-wow-delay=".6s">
         <!-- Button -->
         <div class="col-md-12 text-center">
-          <a href="blog.html" class="animated4 btn btn-common" data-ripple-color="#000"><i class="material-icons mdi mdi-lightbulb-outline"></i> Explore More Stories<div class="ripple-container"></div></a>
+          <a href="blog.html" class="animated4 btn btn-common" data-ripple-color="#000"><i class="material-icons mdi mdi-lightbulb-outline"></i> Toutes nos formations<div class="ripple-container"></div></a>
         </div>
       </div>
     </div>
@@ -671,13 +251,17 @@ Bienvenue
       <div class="row">
         <!-- Section Titile -->
         <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Contact Us</h1>
+          <h1 class="section-title">Vous souhaitez plus d'informations ?</h1>
+             <form class="." id="signup_form" method="post" action="">
+              {% csrf_token %}
+              {% crispy form %}
+            </form>
         </div>
       </div>
       <div class="row">
         <!-- Section Titile -->
         <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
-          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content.</p>
+          <p>N'hésitez pas à nous contacter directement pour obtenir plus d'informations et pour vous renseigner sur l'affiliation de votre Barreau.</p>
           <div class="find-widget">
             <a href="#"><i class="material-icons mdi mdi-map-marker"></i>4435 Berkshire Circle Knoxville</a>
           </div>
@@ -693,34 +277,11 @@ Bienvenue
         </div>
         <!-- contact form -->
         <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
-          <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
-            <!-- Name -->
-            <div class="form-group label-floating">
-              <label class="control-label" for="name">Name</label>
-              <input class="form-control" id="name" type="text" name="name" required data-error="Please enter your name">
-              <div class="help-block with-errors"></div>
-            </div>
-            <!-- email -->
-            <div class="form-group label-floating">
-              <label class="control-label" for="email">Email</label>
-              <input class="form-control" id="email" type="email" name="email" required data-error="Please enter your Email">
-              <div class="help-block with-errors"></div>
-            </div>
-            <!-- Subject -->
-            <div class="form-group label-floating">
-              <label class="control-label">Subject</label>
-              <input class="form-control" id="msg_subject" type="text" name="subject" required data-error="Please enter your message subject">
-              <div class="help-block with-errors"></div>
-            </div>
-            <!-- Message -->
-            <div class="form-group label-floating">
-              <label for="message" class="control-label">Message</label>
-              <textarea class="form-control" rows="3" id="message" name="message" required data-error="Write your message"></textarea>
-              <div class="help-block with-errors"></div>
-            </div>
+          <form action="/welcome" class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
+              {% csrf_token %}
+              {% crispy form %}
             <!-- Form Submit -->
             <div class="form-submit mt-5">
-              <button class="btn btn-common" type="submit" id="form-submit"><i class="material-icons mdi mdi-message-outline"></i> Send Message</button>
               <div id="msgSubmit" class="h3 text-center hidden"></div>
               <div class="clearfix"></div>
             </div>
