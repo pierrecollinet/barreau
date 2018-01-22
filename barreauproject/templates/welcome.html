@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% load cms_tags staticfiles sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags %}
+
+
 {% block title %}
 Bienvenue
 {% endblock %}
@@ -22,7 +27,7 @@ Bienvenue
       <div class="carousel-item active">
         <img class="d-block w-100" src="{% static 'assets/images/slider/slider-bg1.jpg' %}" alt="First slide">
         <div class="carousel-caption d-md-block">
-          <h1 class="animated wow fadeInDown hero-heading" data-wow-delay=".4s">Institut de Droit Européen des Barreaux</h1>
+          <h1 class="animated wow fadeInDown hero-heading" data-wow-delay=".4s">{% placeholder "title" %}Institut de Droit Européen des Barreaux</h1>
           <h5 class="animated fadeInUp wow hero-sub-heading" data-wow-delay=".6s">Material Design Meets With The Power of Bootstrap 4</h5>
           <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-common" data-wow-delay=".8s"><i class="material-icons mdi mdi-lightbulb-outline"></i>Découvrez nos formations<div class="ripple-container"></div></a>
         </div>
@@ -101,10 +106,14 @@ Bienvenue
   <section class="welcome-section section-padding section-dark">
     <div class="container">
       <div class="row">
+        <div class="text-intro col-xs-10 col-xs-offset-1">
+          {% placeholder "content_first" %}
+          <p>Les barreaux des trois capitales de l'Union européenne, Luxembourg, Strasbourg et Bruxelles, ont décidé d'unir leurs forces en créant l'<b>Institut de Droit Européen des Barreaux</b> (I.D.E.B). Les trois bâtonniers en ont signé les statuts le 8 juin 2017, sous la forme d'une A.I.S.B.L. (association internationale sans but lucratif) de droit belge dont le siège est situé à Bruxelles.</p>
+        </div>
         <div class="col-md-7 col-lg-7 col-xs-12">
           <div class="welcome-content">
             <div class="text">
-              <h1>Create Stunning Websites in Easier and Effecient Way!</h1>
+              <h1>Des partenaires essentiels</h1>
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
               <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently. Excepteur sint occaecat cupi datat non proidt, sunt in culpa qui offi cia deserunt</p>
             </div>

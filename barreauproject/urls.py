@@ -12,8 +12,10 @@ urlpatterns = [
     url('^formations$', formations, name="formations"),
     url('^partenaires$', partenaires, name="partenaires"),
 
-
+    # CMS
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^', include('cms.urls')),
+    url(r'^admin/', admin.site.urls),
 
 ]
 
