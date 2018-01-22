@@ -1,0 +1,335 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Bienvenue
+{% endblock %}
+
+{% block base_head %}
+
+{% endblock %}
+
+{% block content %}
+<!-- Page Titile Area -->
+  <section class="page-title-section section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="page-tagline">Who we are</h2>
+          <h1 class="page-title">About Us 2</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Page Titile Area End -->
+
+  <!-- Welcome Section Start -->
+  <section class="welcome-section section-padding section-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-7 col-xs-12">
+          <div class="matrl-tab">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#business" role="tab"><i class="mdi mdi-account-multiple-outline"></i> <br> Business</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#startup" role="tab"><i class="mdi mdi-flash-outline"></i> <br> Startup</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#agency" role="tab"><i class="mdi mdi-all-inclusive"></i> <br> Agency</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#saas" role="tab"><i class="mdi mdi-cloud-outline"></i> <br> SaaS</a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="business" role="tabpanel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nesciunt dolores quibusdam, officia sed mollitia, illo, quis, vel veniam officiis qui repellendus. Perferendis et, veritatis enim voluptatem libero consequuntur eveniet alias nesciunt fugit doloremque tempora id Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, aut ut totam quam inventore suscipit ullam nostrum quisquam corrupti nesciunt voluptas necessitatibus, ab porro cupiditate optio mollitia, expedita, omnis? Quasi.</p>
+              </div>
+              <div class="tab-pane fade" id="startup" role="tabpanel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nesciunt dolores quibusdam, officia sed mollitia, illo, quis, vel veniam officiis qui repellendus. Perferendis et, veritatis enim voluptatem libero consequuntur eveniet alias nesciunt fugit doloremque tempora id Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, aut ut totam quam inventore suscipit ullam nostrum quisquam corrupti nesciunt voluptas necessitatibus, ab porro cupiditate optio mollitia, expedita, omnis? Quasi.</p>
+              </div>
+              <div class="tab-pane fade" id="agency" role="tabpanel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nesciunt dolores quibusdam, officia sed mollitia, illo, quis, vel veniam officiis qui repellendus. Perferendis et, veritatis enim voluptatem libero consequuntur eveniet alias nesciunt fugit doloremque tempora id Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, aut ut totam quam inventore suscipit ullam nostrum quisquam corrupti nesciunt voluptas necessitatibus, ab porro cupiditate optio mollitia, expedita, omnis? Quasi.</p>
+              </div>
+              <div class="tab-pane fade" id="saas" role="tabpanel">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nesciunt dolores quibusdam, officia sed mollitia, illo, quis, vel veniam officiis qui repellendus. Perferendis et, veritatis enim voluptatem libero consequuntur eveniet alias nesciunt fugit doloremque tempora id Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, aut ut totam quam inventore suscipit ullam nostrum quisquam corrupti nesciunt voluptas necessitatibus, ab porro cupiditate optio mollitia, expedita, omnis? Quasi.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-5 col-xs-12 welcome-column">
+          <div class="video-gallery">
+            <img class="img-fluid" src="{% static 'assets/images/about/video.jpg' %}" alt="">
+            <div class="overlay-gallery">
+              <div class="icon-holder">
+                <div class="icon">
+                  <a href="https://www.youtube.com/watch?v=r44RKWyfcFw" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s"><i class="mdi mdi-play-circle-outline"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Welcome Section End -->
+
+  <!-- About Section -->
+  <section class="matrl-about-section section-padding">
+    <div class="container">
+      <div class="row">
+        <!-- Single About -->
+        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".2s">
+          <div class="about-single">
+            <i class="material-icons mdi mdi-flask-outline"></i>
+            <h2 class="subtitle">Bootstrap 4</h2>
+            <p>Excepteur sint occaecat cupidatat non proidt, sunt in culpa qui.</p>
+          </div>
+        </div>
+        <!-- Single About -->
+        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".3s">
+          <div class="about-single">
+            <i class="material-icons mdi mdi-lightbulb-on-outline"></i>
+            <h2 class="subtitle">Material Design</h2>
+            <p>Excepteur sint occaecat cupidatat non proidt, sunt in culpa qui.</p>
+          </div>
+        </div>
+        <!-- Single About -->
+        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".4s">
+          <div class="about-single">
+            <i class="material-icons mdi mdi-trending-up"></i>
+            <h2 class="subtitle">Fast and Clean</h2>
+            <p>Excepteur sint occaecat cupidatat non proidt, sunt in culpa qui.</p>
+          </div>
+        </div>
+        <!-- Single About -->
+        <div class="col-md-6 col-lg-3 col-xl-3 wow animated fadeInUp" data-wow-delay=".5s">
+          <div class="about-single">
+            <i class="material-icons mdi mdi-cellphone-link"></i>
+            <h2 class="subtitle">Fully Responsive</h2>
+            <p>Excepteur sint occaecat cupidatat non proidt, sunt in culpa qui.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section End -->
+
+  <!-- Team Carousel -->
+  <section class="team section-padding section-dark">
+    <div class="container">
+      <div class="row">
+        <!-- Section Titile -->
+        <div class="col-md-12 animated wow fadeInLeft" data-wow-delay=".2s">
+          <h1 class="section-title">Our Team</h1>
+        </div>
+      </div>
+      <div class="row wow animated fadeInUp" data-wow-delay=".4s">
+        <div id="team-carousel" class="owl-carousel owl-theme">
+          <div class="item active">
+            <!-- Single Team Widget -->
+            <div class="">
+              <div class="single-team-widget">
+                <img src="{% static 'assets/images/team/team1.jpg' %}" class="img-fluid" alt="">
+                <div class="team-member-info">
+                  <div class="know-more">
+                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                  </div>
+                  <h2 class="subtitle">Rob Percy</h2>
+                  <p>Co-Founder</p>
+                  <div class="social-profiles">
+                    <a href="#"><i class="mdi mdi-twitter"></i></a>
+                    <a href="#"><i class="mdi mdi-facebook"></i></a>
+                    <a href="#"><i class="mdi mdi-dribbble"></i></a>
+                    <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item item">
+            <!-- Single Team Widget -->
+            <div class="">
+              <div class="single-team-widget">
+                <img src="{% static 'assets/images/team/team2.jpg' %}" class="img-fluid" alt="">
+                <div class="team-member-info">
+                  <div class="know-more">
+                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                  </div>
+                  <h2 class="subtitle">Jennifer L.</h2>
+                  <p>Graphic Designer</p>
+                  <div class="social-profiles">
+                    <a href="#"><i class="mdi mdi-twitter"></i></a>
+                    <a href="#"><i class="mdi mdi-facebook"></i></a>
+                    <a href="#"><i class="mdi mdi-dribbble"></i></a>
+                    <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <!-- Single Team Widget -->
+            <div class="">
+              <div class="single-team-widget">
+                <img src="{% static 'assets/images/team/team3.jpg' %}" class="img-fluid" alt="">
+                <div class="team-member-info">
+                  <div class="know-more">
+                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                  </div>
+                  <h2 class="subtitle">Tom Hanks.</h2>
+                  <p>SEO Speacialist</p>
+                  <div class="social-profiles">
+                    <a href="#"><i class="mdi mdi-twitter"></i></a>
+                    <a href="#"><i class="mdi mdi-facebook"></i></a>
+                    <a href="#"><i class="mdi mdi-dribbble"></i></a>
+                    <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <!-- Single Team Widget -->
+            <div class="">
+              <div class="single-team-widget">
+                <img src="{% static 'assets/images/team/team4.jpg' %}" class="img-fluid" alt="">
+                <div class="team-member-info">
+                  <div class="know-more">
+                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                  </div>
+                  <h2 class="subtitle">Emma Watson</h2>
+                  <p>Head Of Ideas</p>
+                  <div class="social-profiles">
+                    <a href="#"><i class="mdi mdi-twitter"></i></a>
+                    <a href="#"><i class="mdi mdi-facebook"></i></a>
+                    <a href="#"><i class="mdi mdi-dribbble"></i></a>
+                    <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <!-- Single Team Widget -->
+            <div class="">
+              <div class="single-team-widget">
+                <img src="{% static 'assets/images/team/team1.jpg' %}" class="img-fluid" alt="">
+                <div class="team-member-info">
+                  <div class="know-more">
+                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                  </div>
+                  <h2 class="subtitle">Rob Percy</h2>
+                  <p>Co-Founder</p>
+                  <div class="social-profiles">
+                    <a href="#"><i class="mdi mdi-twitter"></i></a>
+                    <a href="#"><i class="mdi mdi-facebook"></i></a>
+                    <a href="#"><i class="mdi mdi-dribbble"></i></a>
+                    <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item item">
+            <!-- Single Team Widget -->
+            <div class="">
+              <div class="single-team-widget">
+                <img src="{% static 'assets/images/team/team2.jpg' %}" class="img-fluid" alt="">
+                <div class="team-member-info">
+                  <div class="know-more">
+                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                  </div>
+                  <h2 class="subtitle">Jennifer L.</h2>
+                  <p>Graphic Designer</p>
+                  <div class="social-profiles">
+                    <a href="#"><i class="mdi mdi-twitter"></i></a>
+                    <a href="#"><i class="mdi mdi-facebook"></i></a>
+                    <a href="#"><i class="mdi mdi-dribbble"></i></a>
+                    <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <!-- Single Team Widget -->
+            <div class="">
+              <div class="single-team-widget">
+                <img src="{% static 'assets/images/team/team3.jpg' %}" class="img-fluid" alt="">
+                <div class="team-member-info">
+                  <div class="know-more">
+                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                  </div>
+                  <h2 class="subtitle">Tom Hanks.</h2>
+                  <p>SEO Speacialist</p>
+                  <div class="social-profiles">
+                    <a href="#"><i class="mdi mdi-twitter"></i></a>
+                    <a href="#"><i class="mdi mdi-facebook"></i></a>
+                    <a href="#"><i class="mdi mdi-dribbble"></i></a>
+                    <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <!-- Single Team Widget -->
+            <div class="">
+              <div class="single-team-widget">
+                <img src="{% static 'assets/images/team/team4.jpg' %}" class="img-fluid" alt="">
+                <div class="team-member-info">
+                  <div class="know-more">
+                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                  </div>
+                  <h2 class="subtitle">Emma Watson</h2>
+                  <p>Head Of Ideas</p>
+                  <div class="social-profiles">
+                    <a href="#"><i class="mdi mdi-twitter"></i></a>
+                    <a href="#"><i class="mdi mdi-facebook"></i></a>
+                    <a href="#"><i class="mdi mdi-dribbble"></i></a>
+                    <a href="#"><i class="mdi mdi-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Team Carousel End -->
+
+  <!-- Call to action Section -->
+  <section class="call-to-action-section">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-md-8 col-lg-8 col-xs-12 text-left wow animated fadeInLeft" data-wow-delay=".2s">
+          <h1>Call Us @02-9114147</h1>
+          <h3>Enjoy our 24/7 support</h3>
+        </div>
+        <div class="col-md-4 col-lg-4 col-xs-12 mt-4 text-right wow animated fadeInRight" data-wow-delay=".3s">
+          <a href="javascript:void(0)" class="animated4 btn btn-common"><i class="material-icons mdi mdi-phone"></i> Contact us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Call to action Section End -->
+
+
+
+  <!-- Back To Top -->
+  <a href="#" class="back-to-top">
+    <div class="ripple-container"></div>
+    <i class="mdi mdi-arrow-up">
+      </i>
+  </a>
+{% endblock %}

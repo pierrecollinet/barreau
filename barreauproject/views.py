@@ -14,3 +14,18 @@ from datetime import datetime, timedelta
 
 def welcome(request):
     return render(request, 'welcome.html')
+
+def a_propos(request):
+    return render(request, 'a-propos.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def faq(request):
+    return render(request, 'faq.html')
+
+def formations(request):
+    return render(request, 'formations.html')
+
+def partenaires(request):
+    return render(request, 'partenaires.html')
