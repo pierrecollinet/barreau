@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block title %}
 Bienvenue
@@ -28,13 +29,13 @@ Bienvenue
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="contact-title text-center wow animated fadeInDown" data-wow-delay=".2s">We’re always here to hear form you</h1>
+          <h1 class="contact-title text-center wow animated fadeInDown" data-wow-delay=".2s">Vous souhaitez plus d'informations?</h1>
         </div>
       </div>
       <div class="row mt-5">
         <!-- Section Titile -->
         <div class="col-md-6 contact-widget-section2 wow fadeInUp animated" data-wow-delay=".5s">
-          <h2 class="subtitle">Find Us</h2>
+          <p>N'hésitez pas à nous contacter directement pour obtenir plus d'informations et pour vous renseigner sur l'affiliation de votre Barreau</p>
           <div class="find-widget">
             <a href="#"><i class="material-icons mdi mdi-home"></i> 4435 Berkshire Circle Knoxville</a>
           </div>
@@ -51,39 +52,10 @@ Bienvenue
 
         <!-- contact form -->
         <div class="col-md-6 wow fadeInUp animated" data-wow-delay=".5s">
-          <h2 class="subtitle">Contact Form</h2>
-          <form class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
-            <!-- Name -->
-            <div class="form-group label-floating">
-              <label class="control-label" for="name">Name</label>
-              <input class="form-control" id="name" type="text" name="name" required data-error="Please enter your name">
-              <div class="help-block with-errors"></div>
-            </div>
-            <!-- email -->
-            <div class="form-group label-floating">
-              <label class="control-label" for="email">Email</label>
-              <input class="form-control" id="email" type="email" name="email" required data-error="Please enter your Email">
-              <div class="help-block with-errors"></div>
-            </div>
-            <!-- Subject -->
-            <div class="form-group label-floating">
-              <label class="control-label" for="msgSubject">Subject</label>
-              <input class="form-control" id="msg_subject" type="text" name="subject" required data-error="Please enter your message subject">
-              <div class="help-block with-errors"></div>
-            </div>
-            <!-- Message -->
-            <div class="form-group label-floating">
-              <label for="message" class="control-label">Message</label>
-              <textarea class="form-control" rows="3" id="message" name="message" required data-error="Write your message"></textarea>
-              <div class="help-block with-errors"></div>
-            </div>
-            <!-- Form Submit -->
-            <div class="form-submit mt-4">
-              <button class="btn btn-common" type="submit" id="form-submit"><i class="material-icons mdi mdi-message-outline"></i> Send Message</button>
-              <div id="msgSubmit" class="h3 text-center hidden"></div>
-              <div class="clearfix"></div>
-            </div>
-          </form>
+             <form class="." id="signup_form" method="post" action="">
+              {% csrf_token %}
+              {% crispy form %}
+            </form>
         </div>
       </div>
     </div>

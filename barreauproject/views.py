@@ -25,7 +25,9 @@ def a_propos(request):
     return render(request, 'a-propos.html')
 
 def contact(request):
-    form = NewsletterForm(request.POST or None)
+    form = ContactForm(request.POST or None)
+    if form.is_valid():
+      print('Send email')
     c = {'form': form}
     return render(request, 'contact.html', c)
 
