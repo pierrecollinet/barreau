@@ -9,5 +9,7 @@ from django.template import Context
 
 from .models import Formateur, Event
 
+# Modeles liés aux formations
+
 admin.site.register(Formateur)
 admin.site.register(Event)
