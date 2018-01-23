@@ -17,6 +17,15 @@ import os
 PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 BASE_DIR     = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = "app-root/repo/wsgi/static"
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -33,13 +42,43 @@ ALLOWED_HOSTS = ['barreau-project.herokuapp.com', '.yourdomain.com']
 # Application definition
 
 INSTALLED_APPS = (
+    # django CMS
+    'djangocms_admin_style',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
+
+    # django CMS
+    'django.contrib.sites',
+    'cms',
+    'menus',
+    'treebeard',
+    'sekizai',
+
+
+    'filer',
+    'easy_thumbnails',
+    'mptt',
+    'djangocms_text_ckeditor',
+    'djangocms_link',
+    'djangocms_file',
+    'djangocms_picture',
+    'djangocms_video',
+    'djangocms_googlemap',
+    'djangocms_snippet',
+    'djangocms_style',
+    'djangocms_column',
+
+    'crispy_forms',
 )
+
+SITE_ID = 1
+CRISPY_TEMPLATE_PACK = "bootstrap3"
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -50,6 +89,25 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
+    'cms.middleware.utils.ApphookReloadMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+)
+
+CMS_TEMPLATES = [
+    ('welcome.html', 'Welcome page template'),
+]
+
+THUMBNAIL_HIGH_RESOLUTION = True
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters'
 )
 
 ROOT_URLCONF = 'barreauproject.urls'
@@ -65,6 +123,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'sekizai.context_processors.sekizai',
+                'cms.context_processors.cms_settings'
             ],
         },
     },
@@ -92,7 +152,12 @@ DATABASES['default']['CONN_MAX_AGE'] = 500
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = [
+    ('fr-fr', 'French'),
+]
+
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
@@ -107,7 +172,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 # SSL/TLS settings
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 CORS_REPLACE_HTTPS_REFERER      = True
 HOST_SCHEME                     = "https://"
@@ -118,3 +183,8 @@ CSRF_COOKIE_SECURE              = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS  = True
 SECURE_HSTS_SECONDS             = 1000000
 SECURE_FRAME_DENY               = True
+
+
+
+from barreauproject.aws.conf import *
+

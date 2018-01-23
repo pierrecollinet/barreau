@@ -16,11 +16,17 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+
+STATIC_ROOT = os.path.join(os.getcwd(), "staticfiles")
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '0i637#we#_eymthcia$l*kj19rr7%3f9yrse*2%!bfp)h-2=s-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +43,32 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
+
+    # django CMS
+    'django.contrib.sites',
+    'cms',
+    'menus',
+    'treebeard',
+    'sekizai',
+    'filer',
+    'easy_thumbnails',
+    'mptt',
+    'djangocms_text_ckeditor',
+    'djangocms_link',
+    'djangocms_file',
+    'djangocms_picture',
+    'djangocms_video',
+    'djangocms_googlemap',
+    'djangocms_snippet',
+    'djangocms_style',
+    'djangocms_column',
+
+    'crispy_forms',
 )
+
+SITE_ID = 1
+CRISPY_TEMPLATE_PACK = "bootstrap3"
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -48,6 +79,25 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'cms.middleware.user.CurrentUserMiddleware',
+    'cms.middleware.page.CurrentPageMiddleware',
+    'cms.middleware.toolbar.ToolbarMiddleware',
+    'cms.middleware.language.LanguageCookieMiddleware',
+    'cms.middleware.utils.ApphookReloadMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+)
+
+CMS_TEMPLATES = [
+    ('welcome.html', 'Welcome page template'),
+]
+
+THUMBNAIL_HIGH_RESOLUTION = True
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters'
 )
 
 ROOT_URLCONF = 'barreauproject.urls'
@@ -63,6 +113,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'sekizai.context_processors.sekizai',
+                'cms.context_processors.cms_settings',
             ],
         },
     },
@@ -85,7 +137,12 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = [
+    ('fr-fr', 'French'),
+]
+
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
@@ -110,3 +167,5 @@ CSRF_COOKIE_SECURE              = False
 SECURE_HSTS_SECONDS             = None
 SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
 SECURE_FRAME_DENY               = False
+
+
