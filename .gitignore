@@ -62,14 +62,12 @@ coverage.xml
 
 # Django stuff:
 *.log
-<<<<<<< HEAD
 .media/
 local_settings.py
 local.py
 */local.py
 .static_storage/
-=======
->>>>>>> ed46a8e9e3f9d7da3c97527b99cbe7a141c48ab2
+
 .media/
 local_settings.py
 local.py
