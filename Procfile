@@ -1,1 +1,1 @@
-web: gunicorn barreauproject.wsgi
+web: gunicorn barreauproject.wsgi --log-file -
