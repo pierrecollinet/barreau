@@ -1,9 +1,12 @@
 import datetime
 import os
+from django.conf import settings
 
 
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+
 AWS_FILE_EXPIRE = 200
 AWS_PRELOAD_METADATA = True
 AWS_QUERYSTRING_AUTH = True
