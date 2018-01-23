@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Bienvenue
+{% endblock %}
+
+{% block base_head %}
+
+{% endblock %}
+
+{% block content %}
+
+  <!-- Page Titile Area -->
+  <section class="page-title-section section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="page-tagline">FAQ</h2>
+          <h1 class="page-title">Foire aux questions</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Page Titile Area End -->
+
+  <!-- Matrl Blog Post section -->
+  <section class="matrl-blog-post-page section-padding">
+    <div class="container">
+      <div class="row">
+        <!-- Blog Post -->
+        <div class="col-md-12 col-lg-12 col-xs-12 blog-post-column">
+          <div class="row">
+            <!-- Split Left -->
+            <div class="col-md-6 no-padding">
+              <!-- Single Blog Post -->
+              {% for faq in faqs%}
+              {% if forloop.counter <= n_demi %}
+              <div class="col-md-12 wow animated fadeInUp" data-wow-delay=".2s">
+                <article class="single-blog-post post-without-image">
+                  <!-- Featured Image -->
+                  <div class="featured-image blue-bg">
+                  </div>
+                  <!-- Post Meta -->
+                  <div class="post-meta">
+                    <div class="post-date">
+                      <span><b>Jan 25 2018</b></span>
+                    </div>
+                    <!-- Title -->
+                    <a href="#">
+                      <h2 class="subtitle">{{ faq.question }}</h2>
+                    </a>
+                    <p>{{ faq.reponse }}</p>
+                  </div>
+                </article>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+
+            <!-- Split Right -->
+            <div class="col-md-6 no-padding">
+            {% for faq in faqs %}
+            {% if forloop.counter > n_demi %}
+              <!-- Single Blog Post -->
+              <div class="col-md-12 wow animated fadeInUp" data-wow-delay=".5s">
+                <article class="single-blog-post post-without-image">
+                  <!-- Featured Image -->
+                  <div class="featured-image aqua-bg">
+
+                  </div>
+                  <!-- Post Meta -->
+                  <div class="post-meta">
+                    <div class="post-date">
+                      <span><b>Oct 25 2018</b></span>
+                    </div>
+                    <!-- Title -->
+                    <a href="#">
+                      <h2 class="subtitle">Kelly Grover</h2>
+                    </a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perferendis assumenda ipsum maiores dolorum similique obcaecati perspiciatis.</p>
+                  </div>
+                </article>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+
+
+          </div>
+        </div>
+        <!--Blog Post ENd -->
+
+      </div>
+    </div>
+  </section>
+  <!-- Matrl Blog Post section End -->
+
+
+  <!-- Back To Top -->
+  <a href="#" class="back-to-top">
+    <div class="ripple-container"></div>
+    <i class="mdi mdi-arrow-up"></i>
+  </a>
+{% endblock %}
