@@ -15,6 +15,7 @@ from datetime import datetime, timedelta
 from .forms import ContactForm, NewsletterForm
 
 def welcome(request):
+    print('first modif')
     form = ContactForm(request.POST or None)
     c = {'form': form}
     if form.is_valid():
