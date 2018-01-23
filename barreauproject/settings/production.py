@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 print('JE SUIS EN PRODUCTION !')
+print('petite modif')
 import os
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
