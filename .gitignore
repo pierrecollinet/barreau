@@ -3,6 +3,9 @@ bin/
 include/
 pip-selfcheck.json
 barreauproject/settings/local.py
+settings/local.py
+local.py
+src/barreauproject/settings/local.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
