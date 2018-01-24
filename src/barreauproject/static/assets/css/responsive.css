@@ -4,15 +4,16 @@
     top: 22%;
   }
   .hero-heading {
-    font-size: 26px;
-    line-height: 40px;
+    font-size: 40px;
+    line-height: 50px;
   }
   .subtitle {
     font-size: 16px;
   }
   .welcome-section h1 {
-    line-height: 38px;
-    font-size: 24px;
+    line-height: 40px;
+    font-size: 30px;
+    letter-spacing:3px;
   }
   .matrl-tab ul.nav.nav-tabs .nav-item .nav-link {
     font-size: 16px;
@@ -52,8 +53,8 @@
     top: 22%;
   }
   .hero-heading {
-    font-size: 26px;
-    line-height: 40px;
+    font-size: 40px;
+    line-height: 50px;
   }
   .hero-sub-heading {
     font-size: 16px;
@@ -65,8 +66,8 @@
     font-size: 18px;
   }
   .welcome-section h1 {
-    line-height: 25px;
-    font-size: 16px;
+    line-height: 35px;
+    font-size: 30px;
   }
   .matrl-tab {
     margin-bottom: 30px;
@@ -131,8 +132,8 @@
     display: none;
   }
   .hero-heading {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 25px;
+    line-height: 30px;
   }
   .hero-sub-heading {
     font-size: 16px;
@@ -158,8 +159,8 @@
     display: none;
   }
   .welcome-section h1 {
-    line-height: 30px;
-    font-size: 18px;
+    line-height: 40px;
+    font-size: 27px;
   }
   .matrl-tab ul.nav.nav-tabs {
     padding: 0px 0px;
@@ -280,6 +281,7 @@
   #main-slide .carousel-control {
     display: block;
   }
+
 }
 
 /* mobile or only mobile */
@@ -288,8 +290,8 @@
     top: 17%;
   }
   .hero-heading {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 20px;
+    line-height: 21px;
   }
   .hero-sub-heading {
     font-size: 11px;

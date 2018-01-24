@@ -27,55 +27,23 @@ Bienvenue
   <section class="welcome-section section-padding section-dark">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 col-lg-7 col-xs-12">
-          <div class="matrl-tab">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#business" role="tab"><i class="mdi mdi-account-multiple-outline"></i> <br> Business</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#startup" role="tab"><i class="mdi mdi-flash-outline"></i> <br> Startup</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#agency" role="tab"><i class="mdi mdi-all-inclusive"></i> <br> Agency</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#saas" role="tab"><i class="mdi mdi-cloud-outline"></i> <br> SaaS</a>
-              </li>
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-              <div class="tab-pane fade show active" id="business" role="tabpanel">
-                <p>Dans un premier temps, l'I.D.E.B s'adresse à tous les barreaux des pays membres de l'Union européenne et du Conseil de l'Europe de langue française.</p>
-                <p>Il répond à une attente qui est moins rencontrée dans cette langue, ce qui n'exclut pas à terme une ouverture vers d'autres barreaux appartenant à l'Espace Economique Européen, la Suisse ou le bassin méditerranéen. L'ouverture à d'autres langues est d'ores et déjà envisagée.</p>
-              </div>
-              <div class="tab-pane fade" id="startup" role="tabpanel">
-                <p>Dans un premier temps, l'I.D.E.B s'adresse à tous les barreaux des pays membres de l'Union européenne et du Conseil de l'Europe de langue française.</p>
-                <p>Il répond à une attente qui est moins rencontrée dans cette langue, ce qui n'exclut pas à terme une ouverture vers d'autres barreaux appartenant à l'Espace Economique Européen, la Suisse ou le bassin méditerranéen. L'ouverture à d'autres langues est d'ores et déjà envisagée.</p>
-              </div>
-              <div class="tab-pane fade" id="agency" role="tabpanel">
-                <p>Dans un premier temps, l'I.D.E.B s'adresse à tous les barreaux des pays membres de l'Union européenne et du Conseil de l'Europe de langue française.</p>
-                <p>Il répond à une attente qui est moins rencontrée dans cette langue, ce qui n'exclut pas à terme une ouverture vers d'autres barreaux appartenant à l'Espace Economique Européen, la Suisse ou le bassin méditerranéen. L'ouverture à d'autres langues est d'ores et déjà envisagée.</p>
-              </div>
-              <div class="tab-pane fade" id="saas" role="tabpanel">
-                <p>Dans un premier temps, l'I.D.E.B s'adresse à tous les barreaux des pays membres de l'Union européenne et du Conseil de l'Europe de langue française.</p>
-                <p>Il répond à une attente qui est moins rencontrée dans cette langue, ce qui n'exclut pas à terme une ouverture vers d'autres barreaux appartenant à l'Espace Economique Européen, la Suisse ou le bassin méditerranéen. L'ouverture à d'autres langues est d'ores et déjà envisagée.</p>
-              </div>
-            <a href="javascript:void(0)" class="animated4 btn btn-common" data-ripple-color="#000"><i class="material-icons mdi mdi-lightbulb-outline"></i> Découvrez-en plus dans notre FAQ<div class="ripple-container"></div></a>
+        <div class="col-md-6 col-lg-6 col-xs-12">
+          <div class="welcome-content">
+            <div class="text">
+              <h1>A qui s'adresse l'I.D.E.B. ?</h1>
+              <p>Dans un premier temps, l'I.D.E.B. s'adresse à tous les barreaux des pays membres de l'Union européenne et du Conseil de l'Europe de langue française.<br>Il répond à une attente qui est moins rencontrée dans cette langue, ce qui n'exclut pas à terme une ouverture vers d'autres barreaux appartenant à l'Espace Economique Européen, la Suisse ou le bassin méditerranéen. L'ouverture à d'autres langues est d'ores et déjà envisagée.</p>
+            </div>
+            <div class="button btn-welcome">
+              <a href="{% url 'a-propos' %}" class="btn btn-common btn-IDEB">
+                  Découvrez-en plus dans notre FAQ
+                  <div class="ripple-container"></div>
+                </a>
             </div>
           </div>
         </div>
-        <div class="col-md-12 col-lg-5 col-xs-12 welcome-column">
-          <div class="video-gallery">
-            <img class="img-fluid" src="{% static 'assets/images/about/video.jpg' %}" alt="">
-            <div class="overlay-gallery">
-              <div class="icon-holder">
-                <div class="icon">
-                  <a href="https://www.youtube.com/watch?v=r44RKWyfcFw" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s"><i class="mdi mdi-play-circle-outline"></i></a>
-                </div>
-              </div>
-            </div>
+        <div class="col-md-6 col-lg-6 col-xs-12 welcome-column">
+          <div class="img-welcome">
+            <img class="img-fluid" src="{% static 'assets/images/about/800x600.png' %}" alt="">
           </div>
         </div>
       </div>
@@ -83,17 +51,25 @@ Bienvenue
   </section>
   <!-- Welcome Section End -->
 
-
-
   <!-- About Section -->
-  <section class="matrl-about-section section-padding">
+  <section class="welcome-section section-padding">
     <div class="container">
       <div class="row">
-        <!-- Section Titile -->
-        <div class="col-md-12 animated wow fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Comment fonctionne l'I.D.E.B</h1>
+        <div class="col-md-12 col-lg-12 col-xs-12">
+          <div class="welcome-content">
+            <div class="text">
+              <h1>Comment fonctionne l'I.D.E.B. ?</h1>
+              <p>Qu'ils soient fondateurs ou adhérents, les barreaux membres de l'I.D.E.B. désignent trois de leurs avocats ayant déjà une certaine expérience du droit européen pour suivre une formation spécifique à Bruxelles, Luxembourg et Strasbourg. Ces barreaux acceptent de prendre en charge les frais de séjour de ces trois avocats dans les trois capitales européenes.</p>
+              <p>Le cycle de formation comprend trois modules d'une journée débutant dans l'une de ces villes et se poursuivant dans les deux autres suivant le sujet proposé. Le délai entre chaque module est en principe d'un mois.</p>
+            </div>
+          </div>
         </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo aspernatur fugit quam. Dolorem, possimus laboriosam at cum deleniti. Modi, dicta, asperiores. A hic rerum, illum aut eaque tempora quia ab modi quasi est nam quos atque minima ratione voluptatibus suscipit in ad expedita veritatis recusandae quisquam voluptatem libero. Debitis perferendis, quos inventore ducimus omnis a adipisci harum ipsam hic in, repellendus velit dolorem necessitatibus deleniti ea, fugit veniam recusandae, mollitia quo est quas quaerat! Assumenda voluptatum perferendis, suscipit obcaecati nam accusantium, vero pariatur quibusdam possimus laborum. Perferendis dolorum, facilis nemo adipisci deserunt aperiam voluptas porro quos, earum ad eius accusamus.</p>
+      </div>
+    </div>
+  </section>
+  <section class="work-counter-section section-padding section-dark">
+    <div class="container">
+      <div class="row">
         <!-- Single Counter -->
         <div class="col-md-3 col-sm-6 work-counter-widget text-center wow animated fadeInUp" data-wow-delay=".2s">
           <div class="counter">
@@ -127,9 +103,24 @@ Bienvenue
           </div>
         </div>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est adipisci deleniti doloremque nihil illo ex cumque reprehenderit, itaque amet nostrum nisi in necessitatibus quo veniam, iure ducimus, possimus rerum ipsa pariatur officiis? Modi voluptatem assumenda vitae sequi voluptas dolor, eos culpa pariatur quaerat quos ex nihil quidem, nobis unde deserunt maiores consequuntur. Voluptate quos sunt expedita illum accusantium, esse in voluptatum eaque animi doloremque sint delectus facilis ad similique perferendis sed iure error deleniti velit. Non impedit ex pariatur, aliquid quos voluptatum consequuntur voluptatibus magni ratione unde. Quo voluptates inventore culpa aut exercitationem eum, blanditiis quas neque quae. Mollitia, veniam.</p>
     </div>
   </section>
+  <section class="welcome-section section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-12 col-xs-12">
+        <div class="welcome-content">
+          <div class="text">
+            <p>Le premier module vise l'apprentissage de la matière en partenariat avec une ou plusieurs universités.</p>
+            <p>Le deuxième mmodule permet d'aborder la pratique par la rencontre de magistrats ou de référendaires de la Cour de justice de l'Union européenne ou de la Cour européenne des droits de l'Homme.</p>
+            <p>Le troisième module aborde la restitution de la matière et son évaluation en partenariat avec les universités ou l'Ecole Régionale des Avocats du Grand Est.</p>
+            <p>Une fois le cycle terminé, les avocats ayant suivi la formation restitueront la matière au sein de leur barreau respectif au cours de séances de formation organisées par leur Ordre. Celles-ci seront facilement accessibles et accompagnées d'une modeste participation financière afin de permettre aux Ordres d'être remboursés des frais qu'ils ont engagés pour leurs formateurs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   <!-- About Section End -->
 
   <!-- Portfolio Section -->
@@ -235,7 +226,7 @@ Bienvenue
                     <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
                   </div>
                   <h2 class="subtitle">Barreau francophone de Bruxelles</h2>
-                  <p>Belgique</p>
+                  <p class=" single-member-widget">Belgique</p>
                   <div class="social-profiles">
                     <a href=""><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Site Web</a>
                   </div>
@@ -253,7 +244,7 @@ Bienvenue
                     <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
                   </div>
                   <h2 class="subtitle">Barreau de Strasbourg</h2>
-                  <p>France</p>
+                  <p class=" single-member-widget">France</p>
                   <div class="social-profiles">
                     <a href=""><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Site Web</a>
                   </div>
@@ -271,7 +262,7 @@ Bienvenue
                     <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
                   </div>
                   <h2 class="subtitle">Barreau du Luxembourg</h2>
-                  <p>Grand-Duché du Luxembourg</p>
+                  <p class=" single-member-widget">Grand-Duché du Luxembourg</p>
                   <div class="social-profiles">
                     <a href=""><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Site Web</a>
                   </div>
