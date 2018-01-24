@@ -31,11 +31,12 @@ Bienvenue
         <!-- Blog Post -->
         <div class="col-md-12 col-lg-12 col-xs-12 blog-post-column">
           <div class="row">
+          {% if faqs %}
+            {% for faq in faqs%}
+            {% if forloop.counter <= n_demi %}
             <!-- Split Left -->
             <div class="col-md-6 no-padding">
               <!-- Single Blog Post -->
-              {% for faq in faqs%}
-              {% if forloop.counter <= n_demi %}
               <div class="col-md-12 wow animated fadeInUp" data-wow-delay=".2s">
                 <article class="single-blog-post post-without-image">
                   <!-- Featured Image -->
@@ -54,14 +55,14 @@ Bienvenue
                   </div>
                 </article>
               </div>
-              {% endif %}
-              {% endfor %}
             </div>
+            {% endif %}
+            {% endfor %}
 
             <!-- Split Right -->
-            <div class="col-md-6 no-padding">
             {% for faq in faqs %}
             {% if forloop.counter > n_demi %}
+            <div class="col-md-6 no-padding">
               <!-- Single Blog Post -->
               <div class="col-md-12 wow animated fadeInUp" data-wow-delay=".5s">
                 <article class="single-blog-post post-without-image">
@@ -76,17 +77,19 @@ Bienvenue
                     </div>
                     <!-- Title -->
                     <a href="#">
-                      <h2 class="subtitle">Kelly Grover</h2>
+                      <h2 class="subtitle">{{ faq.question }}</h2>
                     </a>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perferendis assumenda ipsum maiores dolorum similique obcaecati perspiciatis.</p>
+                    <p>{{ faq.reponse }}</p>
                   </div>
                 </article>
               </div>
-              {% endif %}
-              {% endfor %}
             </div>
+            {% endif %}
+            {% endfor %}
 
-
+          {% else %}
+            Aucun résultat ne correspond à votre recherche. Essayer autre chose?
+          {% endif %}
           </div>
         </div>
         <!--Blog Post ENd -->

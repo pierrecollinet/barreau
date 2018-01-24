@@ -1,0 +1,9 @@
+Nouveau formulaire de contact
+
+Nom : {{ nom }}
+
+Email : {{ email }}
+
+Sujet : {{ sujet }}
+
+Message : {{ message }}
