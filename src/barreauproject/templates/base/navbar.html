@@ -1,7 +1,7 @@
   {% load static %}
   <!-- Header Start -->
   <header id="header">
-    <nav class="navbar navbar-expand-lg scrolling-navbar nav-bg">
+    <nav class="navbar navbar-expand-md scrolling-navbar nav-bg">
       <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -11,7 +11,7 @@
             <span class="mdi mdi-menu"></span>
             <span class="mdi mdi-menu"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
+          <a class="navbar-brand" href="welcome.html"><img src="{% static 'assets/images/logo.png' %}" alt=""></a>
         </div>
 
         <div class="collapse navbar-collapse" id="main-navbar">
@@ -70,121 +70,34 @@
       <!-- Mobile Menu Start -->
       <ul class="wpb-mobile-menu">
         <li>
-          <a class="active" href="#">
-          Home
+          <a href=href="{% url 'welcome' %}">
+          Acceuil
           </a>
-          <ul class="dropdown">
-            <li>
-              <a class="active" href="index.html">Home v1</a>
-            </li>
-            <li>
-              <a href="index-2.html">Home v2</a>
-            </li>
-          </ul>
         </li>
         <li>
-          <a href="#">
-          Pages
+          <a href="{% url 'list-events' %}">
+          Formations
           </a>
-          <ul class="dropdown">
-            <li>
-              <a href="about-us.html">About Us 1</a>
-            </li>
-            <li>
-              <a href="about-us2.html">About Us 2</a>
-            </li>
-            <li>
-              <a href="team.html">Team Members</a>
-            </li>
-            <li>
-              <a href="services.html">Services</a>
-            </li>
-            <li>
-              <a href="contact-us.html">Contact Us 1</a>
-            </li>
-            <li>
-              <a href="contact-us2.html">Contact Us 2</a>
-            </li>
-            <li>
-              <a href="404.html">404</a>
-            </li>
-          </ul>
         </li>
         <li>
-          <a href="#">
-          Elements
+          <a href="{% url 'a-propos' %}">
+          A propos
           </a>
-          <ul class="dropdown">
-            <li>
-              <a href="tab.html">Tabs</a>
-            </li>
-            <li>
-              <a href="alert.html">Alert</a>
-            </li>
-            <li>
-              <a href="accordion.html">Accordions</a>
-            </li>
-            <li>
-              <a href="pricing.html">Pricing Tables</a>
-            </li>
-            <li>
-              <a href="buttons.html">Buttons</a>
-            </li>
-            <li>
-              <a href="icons.html">Icons</a>
-            </li>
-            <li>
-              <a href="carousel.html">Carousel</a>
-            </li>
-            <li>
-              <a href="counter.html">Counter</a>
-            </li>
-            <li>
-              <a href="map.html">Google Map</a>
-            </li>
-          </ul>
         </li>
         <li>
-          <a href="#">
-          Portfolio
+          <a href="{% url 'partenaires' %}">
+          Partenaires
           </a>
-          <ul class="dropdown">
-            <li>
-              <a href="portfolio-2.html">Portfolio 2 columns</a>
-            </li>
-            <li>
-              <a href="portfolio.html">Portfolio 3 columns</a>
-            </li>
-            <li>
-              <a href="portfolio-single.html">Portfolio Single</a>
-            </li>
-          </ul>
         </li>
         <li>
-          <a href="about.html">
-          Blog
+          <a href="{% url 'faq' %}">
+          FAQ
           </a>
-          <ul class="dropdown">
-            <li>
-              <a href="blog.html">Blog Page</a>
-            </li>
-            <li>
-              <a href="blog-single.html">Blog Single Page</a>
-            </li>
-          </ul>
         </li>
         <li>
-          <a href="#">
-          Contact Us
+          <a href="{% url 'contact' %}">
+          Contact
           </a>
-          <ul class="dropdown">
-            <li>
-              <a href="contact-us.html">Contact Us 1</a>
-            </li>
-            <li>
-              <a href="contact-us2.html">Contact Us 2</a>
-            </li>
-          </ul>
         </li>
       </ul>
       <!-- Mobile Menu End -->
