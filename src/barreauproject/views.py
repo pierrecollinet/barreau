@@ -17,11 +17,15 @@ from datetime import datetime, timedelta
 
 from .forms import ContactForm, NewsletterForm
 from .models import Membre, PhotoGallerie, Categorie, Faq, Partenaire
+from evenements.models import Event
 
 from evenements.models import Event
 def welcome(request):
     form = ContactForm(request.POST or None)
-    c = {'form': form}
+    formations = Event.objects.all()[:3]
+    print("formations :::::")
+    print(formations)
+    c = {'form': form, 'formations':formations}
     if form.is_valid():
       # Get de datas
       nom     = form.cleaned_data['nom']
