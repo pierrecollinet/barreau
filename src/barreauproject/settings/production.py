@@ -14,6 +14,17 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 print('JE SUIS EN PRODUCTION !')
 import os
 
+EMAIL_HOST = 'smtp.sendgrid.com'
+EMAIL_PORT = 587
+EMAIL_USER_TLS = True
+# Replace par their emails !!!!!!!
+EMAILS = ["pierre.collinet@passelapremiere.be", "info@blocusassistance.be", "pierre.boonen@passelapremiere.be"]
+
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # username sur sendgrid.com
+EMAIL_MAIN = os.environ.get('EMAIL_MAIN')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') # code sur sendgrid.com
+
+
 PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 BASE_DIR     = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
