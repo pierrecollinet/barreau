@@ -2,6 +2,82 @@
   width:100% !important ;
 }
 
-h1 {
-  color:blue;
+p.text-intro {
+text-align:center;
 }
+
+div.text-intro {
+  padding-bottom :15px;
+  margin-bottom :15px;
+}
+
+.section-padding-welcome{
+  padding:70px 0;
+}
+
+
+.img-welcome
+{
+  float:right;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .img-welcome{
+    float:none;
+    text-align:center;
+  }
+    .section-padding-welcome{
+    padding:40px 0;
+  }
+
+  div.text-intro {
+  padding-bottom :0px;
+  margin-bottom :15px;
+}
+
+div.btn-welcome {
+  text-align:center;
+}
+}
+
+a.btn-IDEB {
+  font-size:18px;
+  text-transform: none;
+}
+
+a.btn-carousel {
+  font-size:18px;
+  text-transform: none;
+}
+
+div.btn-welcome {
+  margin-bottom:10px;
+}
+
+p.single-member-widget {
+  text-transform: none;
+  font-weight: 300;
+  font-size: 19px;
+}
+
+@media (max-width: 767px) {
+    a.btn-carousel {
+    padding:9px 16px;
+    font-size:13px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  a.btn-carousel {
+    padding:11px 18px;
+    font-size:14px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  a.btn-carousel {
+    padding:13px 21px;
+    font-size:16px;
+  }
+}
+
