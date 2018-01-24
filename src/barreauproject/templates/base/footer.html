@@ -1,4 +1,11 @@
   {% load static %}
+
+  {% load cms_tags staticfiles sekizai_tags %}
+  {% load cms_tags menu_tags sekizai_tags %}
+  {% load cms_tags %}
+
+
+
   <!--Footer-->
   <footer class="page-footer center-on-small-only  pt-0 footer-widget-container">
     <!--Footer Links-->
@@ -7,7 +14,7 @@
         <!--First column-->
         <div class="col-md-4 col-lg-34 col-xl-4 footer-contact-widget">
           <h3 class="footer-title">A propos</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates eos minus expedita ipsum soluta voluptatem sed architecto.</p>
+          <p>{% static_placeholder "footer_base" %}</p>
           <ul>
             <li>
               <a href="#"><i class="mdi mdi-facebook"></i></a>
@@ -34,7 +41,6 @@
         </div>
         <!--/.Third column-->
 
-
       </div>
     </div>
     <!--/.Footer Links-->
@@ -53,3 +59,4 @@
 
   </footer>
   <!--/.Footer-->
+

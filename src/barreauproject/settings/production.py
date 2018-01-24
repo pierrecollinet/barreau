@@ -45,7 +45,7 @@ STATICFILES_DIRS = (
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['barreau-recent.herokuapp.com', '.yourdomain.com']
 
@@ -116,6 +116,7 @@ MIDDLEWARE_CLASSES = (
 
 CMS_TEMPLATES = [
     ('welcome.html', 'Welcome page template'),
+    ('contact.html', 'Contact page template'),
 ]
 
 THUMBNAIL_HIGH_RESOLUTION = True

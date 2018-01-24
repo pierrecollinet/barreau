@@ -65,15 +65,14 @@ Bienvenue
           <div class="col-md-1">
           </div>
           <div class="text-intro col-md-10 col-xs-12">
-            {% placeholder "content_first" %}
-            <p class="text-intro">Les barreaux des trois capitales de l'Union européenne, Luxembourg, Strasbourg et Bruxelles, ont décidé d'unir leurs forces en créant l'<b>Institut de Droit Européen des Barreaux</b> (I.D.E.B). Les trois bâtonniers en ont signé les statuts le 8 juin 2017, sous la forme d'une A.I.S.B.L. (association internationale sans but lucratif) de droit belge dont le siège est situé à Bruxelles.</p>
+            <p class="text-intro">{% static_placeholder "text-intro-welcome" %}</p>
           </div>
 
         <div class="col-md-6 col-lg-6 col-xs-12">
           <div class="welcome-content">
             <div class="text">
               <h1>Des partenariats essentiels</h1>
-              <p>En partenariat avec la Cour de Justice de l'Union européenne, l'Université libre de Bruxelles, les Facultés Saint Louis de Bruxelles et l'Ecole Régionale des Avocats du Grand Est, son objectif est de <b>soutenir la connaissance du droit européen</b> et de la jurisprudence de la Cour européenne des droits de l'Homme dans les différents barreaux européens de langue française afin que les avocats <b>favorisent le réflexe européen</b> dans leur pratique quotidienne</p>
+              <p>{% static_placeholder "partenariats_essentiels" %}</p>
             </div>
             <div class="button btn-welcome">
               <a href="{% url 'a-propos' %}" class="btn btn-common btn-IDEB">
