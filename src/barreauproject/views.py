@@ -13,9 +13,10 @@ import json
 from datetime import datetime, timedelta
 
 from .forms import ContactForm, NewsletterForm
+from .models import Membre, PhotoGallerie, Categorie, Faq
 
+from evenements.models import Event
 def welcome(request):
-    print('first modif')
     form = ContactForm(request.POST or None)
     c = {'form': form}
     if form.is_valid():
@@ -23,7 +24,11 @@ def welcome(request):
     return render(request, 'welcome.html', c)
 
 def a_propos(request):
-    return render(request, 'a-propos.html')
+  categories = Categorie.objects.all()
+  membres = Membre.objects.all()
+  photos = PhotoGallerie.objects.all()
+  c = {'membres':membres, 'categories':categories, 'photos':photos}
+  return render(request, 'a-propos.html', c)
 
 def contact(request):
     form = ContactForm(request.POST or None)
@@ -33,14 +38,11 @@ def contact(request):
     return render(request, 'contact.html', c)
 
 def faq(request):
-    return render(request, 'faq.html')
-
-def formations(request):
-    form = NewsletterForm(request.POST or None)
-    if form.is_valid():
-      print('form valide..register this guy')
-    c = {'form': form}
-    return render(request, 'formations.html', c)
+  faqs = Faq.objects.all()
+  nbre_faqs = len(faqs)
+  n_demi = int(nbre_faqs/2)
+  c = {'faqs':faqs, 'n_demi':n_demi}
+  return render(request, 'faq.html', c)
 
 def partenaires(request):
     return render(request, 'partenaires.html')

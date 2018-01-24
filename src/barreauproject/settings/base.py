@@ -65,6 +65,11 @@ INSTALLED_APPS = (
     'djangocms_column',
 
     'crispy_forms',
+
+    # intern app
+    'barreauproject',
+    'fondateur',
+    'evenements',
 )
 
 SITE_ID = 1

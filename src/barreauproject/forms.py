@@ -12,6 +12,7 @@ from django.forms.extras.widgets import SelectDateWidget
 from django.utils.translation import gettext as _
 import datetime
 
+from barreauproject.models import NewsletterEmail
 class ContactForm(forms.Form):
     nom = forms.CharField(max_length=100)
     email = forms.EmailField()
@@ -50,3 +51,9 @@ class NewsletterForm(forms.Form):
         # self.helper.add_input(ButtonHolder(
         #                           Submit('submit', 'Envoyer', css_class='input-group-btn'))
         #                                 )
+    def clean(self):
+        cleaned_data=super(NewsletterForm, self).clean()
+        email = cleaned_data.get('email')
+
+        if len(NewsletterEmail.objects.filter(email=email)) != 0 :
+          raise forms.ValidationError("Il semblerait que vous soyiez déjà inscrit à notre Newsletter")
