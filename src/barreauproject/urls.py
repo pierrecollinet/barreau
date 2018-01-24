@@ -5,7 +5,7 @@ from barreauproject.views import welcome, a_propos, contact , faq, partenaires
 
 urlpatterns = [
     url('^$', welcome),
-    url('^welcome$', welcome, name="welcome"),
+    url('^accueil$', welcome, name="welcome"),
     url('^a-propos$', a_propos, name="a-propos"),
     url('^contact$', contact, name="contact"),
     url('^faq$', faq, name="faq"),
