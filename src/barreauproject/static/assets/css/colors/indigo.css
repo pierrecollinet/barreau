@@ -42,7 +42,6 @@ a.back-to-top i {
 }
 
 .slicknav_btn{
-  background: #3F51B5;
   border-color: #3F51B5;
 }
 .slicknav_menu .slicknav_btn:hover .slicknav_icon-bar{
@@ -51,6 +50,7 @@ a.back-to-top i {
 .slicknav_nav li > ul > li > a:hover, .slicknav_nav li > ul > li > a .active{
   border-left-color: #3F51B5;
 }
+
 .slicknav_nav .slicknav_item .active{
   color: #3F51B5;
 }
@@ -180,7 +180,7 @@ ul.footer-contact li span{
 }
 .form-group.is-focused .form-control {
     outline: 0;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#3F51B5), to(#3F51B5)), 
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#3F51B5), to(#3F51B5)),
     -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
     background-image: -webkit-linear-gradient(#3F51B5, #3F51B5), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
     background-image: -o-linear-gradient(#3F51B5, #3F51B5), -o-linear-gradient(#D2D2D2, #D2D2D2);

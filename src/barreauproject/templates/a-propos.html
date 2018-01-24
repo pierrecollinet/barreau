@@ -97,7 +97,7 @@ Bienvenue
         <!-- Single Counter -->
         <div class="col-md-3 col-sm-6 work-counter-widget text-center wow animated fadeInUp" data-wow-delay=".5s">
           <div class="counter">
-            <div class="icon"><i class="material-icons mdi mdi-cisco-webex"></i></div>
+            <div class="icon"><i class="material-icons mdi mdi-account-multiple"></i></div>
             <div class="timer">12350</div>
             <p>Avocats inscrits</p>
           </div>
@@ -178,64 +178,34 @@ Bienvenue
       </div>
       <div class="row wow animated fadeInUp" data-wow-delay=".4s">
         <div id="team-carousel" class="owl-carousel owl-theme">
-          <div class="item active">
-            <!-- Single Team Widget -->
-            <div class="">
-              <div class="single-team-widget">
-                <img src="{% static 'assets/images/team/team1.jpg' %}" class="img-fluid" alt="">
-                <div class="team-member-info">
-                  <div class="know-more">
-                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+
+
+
+                  {% for membre in membres %}
+                  <div class="item {% if forloop.first %}active{% endif %}">
+                    <!-- Single Team Widget -->
+                    <div class="">
+                      <div class="single-team-widget">
+                        <div style="background-image: url('{{ membre.image.url }}'); width:100%;height: 200px; background-position:center; background-size:cover;">
+                        </div>
+                        <div class="team-member-info">
+                          <div class="know-more">
+                            <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                          </div>
+                          <h2 class="subtitle">{{ membre.nom }}</h2>
+                          <p>{{ membre.pays }}</p>
+                          <div class="social-profiles">
+                            <a target="_blank" href="{{ membre.url_site_web }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Site Web</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <h2 class="subtitle">Barreau francophone de Bruxelles</h2>
-                  <p class=" single-member-widget">Belgique</p>
-                  <div class="social-profiles">
-                    <a href=""><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Site Web</a>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
             </div>
-          </div>
-          <div class="item item">
-            <!-- Single Team Widget -->
-            <div class="">
-              <div class="single-team-widget">
-                <img src="{% static 'assets/images/team/team2.jpg' %}" class="img-fluid" alt="">
-                <div class="team-member-info">
-                  <div class="know-more">
-                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-                  </div>
-                  <h2 class="subtitle">Barreau de Strasbourg</h2>
-                  <p class=" single-member-widget">France</p>
-                  <div class="social-profiles">
-                    <a href=""><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Site Web</a>
-                  </div>
-          {% for membre in membres %}
-          <div class="item {% if forloop.first %}active{% endif %}">
-            <!-- Single Team Widget -->
-            <div class="">
-              <div class="single-team-widget">
-                <div style="background-image: url('{{ membre.image.url }}'); width:100%;height: 200px; background-position:center; background-size:cover;">
-                </div>
-                <div class="team-member-info">
-                  <div class="know-more">
-                    <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-                  </div>
-                  <h2 class="subtitle">Barreau du Luxembourg</h2>
-                  <p class=" single-member-widget">Grand-Duché du Luxembourg</p>
-                  <h2 class="subtitle">{{ membre.nom }}</h2>
-                  <p>{{ membre.pays }}</p>
-                  <div class="social-profiles">
-                    <a target="_blank" href="{{ membre.url_site_web }}"><i class="fa fa-long-arrow-right" aria-hidden="true"></i> Site Web</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
+
   </section>
   <!-- Team Carousel End -->
 

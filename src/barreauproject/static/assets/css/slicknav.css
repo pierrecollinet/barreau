@@ -39,6 +39,7 @@
     -moz-transition: all 0.2s linear;
     -o-transition: all 0.2s linear;
     transition: all 0.2s linear;
+    background-color:#3F51B5;
   }
   .slicknav_menu:before {
     content: " ";
@@ -53,7 +54,7 @@
   .slicknav_nav ul {
     display: block; }
   .slicknav_nav li {
-    display: block; 
+    display: block;
     line-height: 30px;
   }
   .slicknav_nav li:not(:first-child){
