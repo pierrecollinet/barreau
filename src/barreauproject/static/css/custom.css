@@ -99,6 +99,14 @@ p.single-member-widget {
   h1.text-date {
     font-size: 27px;
   }
+
+  .navbar-brand img {
+  margin-top:-11px;
+  }
+}
+
+.img_event_logo {
+  height:73px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
