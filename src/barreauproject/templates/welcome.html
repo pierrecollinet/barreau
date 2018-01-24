@@ -29,21 +29,21 @@ Bienvenue
         <img class="d-block w-100" src="{% static 'assets/images/slider/slider-bg1.jpg' %}" alt="First slide">
         <div class="carousel-caption d-md-block">
           <h1 class="animated wow fadeInDown hero-heading" data-wow-delay=".4s">{% placeholder "title" %}Institut de Droit Européen des Barreaux</h1>
-          <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">Découvrez nos formations<div class="ripple-container"></div></a>
+          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">Découvrez nos formations<div class="ripple-container"></div></a>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="{% static 'assets/images/slider/slider-bg2.jpg' %}" alt="Second slide">
         <div class="carousel-caption d-md-block">
           <h1 class="animated wow fadeInLeft hero-heading" data-wow-delay=".7s">Institut de Droit Européen des Barreaux</h1>
-          <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-common btn-carousel data-wow-delay=".8s">Découvrez nos formations<div class="ripple-container"></div></a>
+          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel data-wow-delay=".8s">Découvrez nos formations<div class="ripple-container"></div></a>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="{% static 'assets/images/slider/slider-bg3.jpg' %}" alt="Third slide">
         <div class="carousel-caption d-md-block">
           <h1 class="animated wow fadeInDown hero-heading" data-wow-delay=".6s">Institut de Droit Européen des Barreaux</h1>
-          <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">Découvrez nos formations</a>
+          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">Découvrez nos formations</a>
         </div>
       </div>
     </div>
@@ -168,7 +168,7 @@ Bienvenue
             <!-- Post Meta -->
             <div class="post-meta">
               <!-- Title -->
-              <a href="blog-single.html">
+              <a href="{% url 'detail-event' pk=formation.pk %}">
                 <h2 class="subtitle">{{ formation.titre }}</h2>
               </a>
               <p>{{ formation.short_description }}</p>
@@ -176,7 +176,7 @@ Bienvenue
             <div class="meta-tags">
               <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i></a></span>
               <!-- Read More -->
-              <a class="btn btn-round btn-fab" href="blog-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+              <a class="btn btn-round btn-fab" href="{% url 'detail-event' pk=formation.pk %}"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
             </div>
           </article>
         </div>
@@ -187,7 +187,7 @@ Bienvenue
       <div class="row mt-5 wow animated fadeInUp" data-wow-delay=".2s">
         <!-- Button -->
         <div class="col-md-12 text-center">
-          <a href="blog.html" class="animated4 btn btn-common btn-IDEB" data-ripple-color="#000">Toutes nos formations<div class="ripple-container"></div></a>
+          <a href="{% url 'list-events' %}" class="animated4 btn btn-common btn-IDEB" data-ripple-color="#000">Toutes nos formations<div class="ripple-container"></div></a>
         </div>
       </div>
     </div>
