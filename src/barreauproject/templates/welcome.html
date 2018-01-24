@@ -29,24 +29,21 @@ Bienvenue
         <img class="d-block w-100" src="{% static 'assets/images/slider/slider-bg1.jpg' %}" alt="First slide">
         <div class="carousel-caption d-md-block">
           <h1 class="animated wow fadeInDown hero-heading" data-wow-delay=".4s">{% placeholder "title" %}Institut de Droit Européen des Barreaux</h1>
-          <h5 class="animated fadeInUp wow hero-sub-heading" data-wow-delay=".6s">Material Design Meets With The Power of Bootstrap 4</h5>
-          <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-common" data-wow-delay=".8s"><i class="material-icons mdi mdi-lightbulb-outline"></i>Découvrez nos formations<div class="ripple-container"></div></a>
+          <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">Découvrez nos formations<div class="ripple-container"></div></a>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="{% static 'assets/images/slider/slider-bg2.jpg' %}" alt="Second slide">
         <div class="carousel-caption d-md-block">
           <h1 class="animated wow fadeInLeft hero-heading" data-wow-delay=".7s">Institut de Droit Européen des Barreaux</h1>
-          <h5 class="animated wow fadeInRight hero-sub-heading" data-wow-delay=".9s">Extensively Customizable Tons of UI Elements</h5>
-          <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-border" data-wow-delay=".8s"><i class="material-icons mdi mdi-lightbulb-outline"></i>Découvrez nos formations<div class="ripple-container"></div></a>
+          <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-common btn-carousel data-wow-delay=".8s">Découvrez nos formations<div class="ripple-container"></div></a>
         </div>
       </div>
       <div class="carousel-item">
         <img class="d-block w-100" src="{% static 'assets/images/slider/slider-bg3.jpg' %}" alt="Third slide">
         <div class="carousel-caption d-md-block">
           <h1 class="animated wow fadeInDown hero-heading" data-wow-delay=".6s">Institut de Droit Européen des Barreaux</h1>
-          <h5 class="animated fadeInUp wow hero-sub-heading" data-wow-delay=".8s">Ready to Use for Business, Agency, Startup, Portfolio Sites and More...</h5>
-          <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-common" data-wow-delay=".8s"><i class="material-icons mdi mdi-arrow-collapse-down"></i>Découvrez nos formations</a>
+          <a href="javascript:void(0)" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">Découvrez nos formations</a>
         </div>
       </div>
     </div>
@@ -62,37 +59,33 @@ Bienvenue
   <!-- Main Carousel Section End -->
 
   <!-- Welcome Section Start -->
-  <section class="welcome-section section-padding">
+  <section class="welcome-section section-padding-welcome">
     <div class="container">
       <div class="row">
-        <div class="text-intro col-xs-10 col-xs-offset-1">
-          {% placeholder "content_first" %}
-          <p>Les barreaux des trois capitales de l'Union européenne, Luxembourg, Strasbourg et Bruxelles, ont décidé d'unir leurs forces en créant l'<b>Institut de Droit Européen des Barreaux</b> (I.D.E.B). Les trois bâtonniers en ont signé les statuts le 8 juin 2017, sous la forme d'une A.I.S.B.L. (association internationale sans but lucratif) de droit belge dont le siège est situé à Bruxelles.</p>
-        </div>
-        <div class="col-md-7 col-lg-7 col-xs-12">
+          <div class="col-md-1">
+          </div>
+          <div class="text-intro col-md-10 col-xs-12">
+            {% placeholder "content_first" %}
+            <p class="text-intro">Les barreaux des trois capitales de l'Union européenne, Luxembourg, Strasbourg et Bruxelles, ont décidé d'unir leurs forces en créant l'<b>Institut de Droit Européen des Barreaux</b> (I.D.E.B). Les trois bâtonniers en ont signé les statuts le 8 juin 2017, sous la forme d'une A.I.S.B.L. (association internationale sans but lucratif) de droit belge dont le siège est situé à Bruxelles.</p>
+          </div>
+
+        <div class="col-md-6 col-lg-6 col-xs-12">
           <div class="welcome-content">
             <div class="text">
-              <h1>Des partenaires essentiels</h1>
+              <h1>Des partenariats essentiels</h1>
               <p>En partenariat avec la Cour de Justice de l'Union européenne, l'Université libre de Bruxelles, les Facultés Saint Louis de Bruxelles et l'Ecole Régionale des Avocats du Grand Est, son objectif est de <b>soutenir la connaissance du droit européen</b> et de la jurisprudence de la Cour européenne des droits de l'Homme dans les différents barreaux européens de langue française afin que les avocats <b>favorisent le réflexe européen</b> dans leur pratique quotidienne</p>
             </div>
-            <div class="button">
-              <a href="{% url 'a-propos' %}" class="btn btn-common">
+            <div class="button btn-welcome">
+              <a href="{% url 'a-propos' %}" class="btn btn-common btn-IDEB">
                   En savoir plus sur l'IDEB
                   <div class="ripple-container"></div>
                 </a>
             </div>
           </div>
         </div>
-        <div class="col-md-5 col-lg-5 col-xs-12 welcome-column">
-          <div class="video-gallery">
-            <img class="img-fluid" src="{% static 'assets/images/about/video.jpg' %}" alt="">
-            <div class="overlay-gallery">
-              <div class="icon-holder">
-                <div class="icon">
-                  <a href="https://www.youtube.com/watch?v=r44RKWyfcFw" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s"><i class="mdi mdi-play-circle-outline"></i></a>
-                </div>
-              </div>
-            </div>
+        <div class="col-md-6 col-lg-6 col-xs-12 welcome-column">
+          <div class="img-welcome">
+            <img class="img-fluid" src="{% static 'assets/images/about/800x600.png' %}" alt="">
           </div>
         </div>
       </div>
@@ -238,7 +231,7 @@ Bienvenue
       <div class="row mt-5 wow animated fadeInUp" data-wow-delay=".6s">
         <!-- Button -->
         <div class="col-md-12 text-center">
-          <a href="blog.html" class="animated4 btn btn-common" data-ripple-color="#000"><i class="material-icons mdi mdi-lightbulb-outline"></i> Toutes nos formations<div class="ripple-container"></div></a>
+          <a href="blog.html" class="animated4 btn btn-common btn-IDEB" data-ripple-color="#000">Toutes nos formations<div class="ripple-container"></div></a>
         </div>
       </div>
     </div>
@@ -252,10 +245,6 @@ Bienvenue
         <!-- Section Titile -->
         <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
           <h1 class="section-title">Vous souhaitez plus d'informations ?</h1>
-             <form class="." id="signup_form" method="post" action="">
-              {% csrf_token %}
-              {% crispy form %}
-            </form>
         </div>
       </div>
       <div class="row">

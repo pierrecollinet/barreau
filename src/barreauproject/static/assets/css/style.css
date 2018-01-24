@@ -41,26 +41,27 @@ Domain Path:      /languages/
 /* ____Testimonial */
 /* Google Fonts */
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,600");
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic, 400italic,600italic,700italic,300,400,600,700);
 
 body {
   background: #fff;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-font-smoothing: subpixel-antialiased;
-  color: #333;
+  color: #2b2b2b;
   line-height: 25px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   overflow-x: hidden;
+  letter-spacing: 1px;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -80,10 +81,9 @@ a a:focus {
 
 .hero-heading {
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 600;
   color: #fff;
-  text-transform: capitalize;
-  line-height: 70px;
+  line-height: 60px;
   letter-spacing: 1px;
 }
 
@@ -122,14 +122,13 @@ a a:focus {
 
 .section-title {
   color: #333;
-  font-family: 'Montserrat';
-  font-size: 38px;
-  font-weight: 900;
-  letter-spacing: 2px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 45px;
+  font-weight: 400;
+  letter-spacing: 3px;
   text-align: left;
   position: relative;
   margin-bottom: 45px;
-  text-transform: uppercase;
 }
 
 .section-title:before {
@@ -142,11 +141,12 @@ a a:focus {
 }
 
 .subtitle {
-  font-size: 20px;
+  font-size: 18px;
   letter-spacing: 0.5px;
   margin-top: 20px;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 10px;
+  line-height: 20px;
 }
 
 .inner-title {
@@ -157,14 +157,14 @@ a a:focus {
 
 .page-tagline {
   font-size: 24px;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  font-family: Open Sans, sans-serif;
+  color: #fff;
+  font-weight:600;
 }
 
 .page-title {
-  font-size: 62px;
-  font-weight: 900;
+  font-size: 60px;
+  font-weight: 400;
   color: #fff;
 }
 
@@ -176,12 +176,15 @@ a a:focus {
 
 /* Button Styles */
 .btn-common {
-  padding: 10px 20px;
+  padding: 15px 25px;
   letter-spacing: 1px;
-  font-weight: 600;
+  font-weight: 300;
   color: #fff !important;
-  border-radius: 2px;
+  border-radius: 5px;
   box-shadow: 0 2px 2.7px 0.1px rgba(0, 0, 0, 0.24) !important;
+  font-size:18px;
+  text-transform: none;
+
 }
 
 .btn-common:hover, .btn-common:focus, .btn-common:active {
@@ -462,7 +465,7 @@ a.back-to-top:hover, a.back-to-top:focus {
   padding: 15px 0 18px 0;
   font-size: 14px;
   color: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   text-transform: capitalize;
   margin-left: 30px;
@@ -961,9 +964,9 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 .welcome-section h1 {
-  line-height: 45px;
+  line-height: 60px;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* Services Section */
@@ -1731,10 +1734,9 @@ figure:hover figcaption {
 .page-footer .footer-title {
   position: relative;
   color: #fff;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 2px;
   margin-bottom: 40px;
 }
 
@@ -1775,8 +1777,9 @@ figure:hover figcaption {
 .page-footer .link-widget ul li {
   list-style: none;
   float: left;
-  padding-bottom: 22px;
-  width: 50%;
+  padding-bottom: 10px;
+  width: 100%;
+  font-size:16px;
 }
 
 .page-footer .link-widget ul li a {
@@ -1811,6 +1814,7 @@ figure:hover figcaption {
   color: #fff;
   line-height: 24px;
   padding: 5px 0;
+  font-size:16px;
 }
 
 .footer-contact-widget p span {
@@ -1962,7 +1966,7 @@ ul.recent-post li .post-text span {
 
 .work-counter-widget .counter .timer {
   color: #333;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 38px;
   margin-top: 15px;
   font-weight: 700;
@@ -1997,7 +2001,7 @@ ul.recent-post li .post-text span {
 
 .page-title-section {
   position: relative;
-  background: url(../images/page-title-bg.jpg) no-repeat scroll center center;
+  background: url(../images/page-title-bg.png) no-repeat scroll center center;
   background-size: cover;
 }
 
@@ -2017,7 +2021,7 @@ ul.recent-post li .post-text span {
 .matrl-tab ul.nav.nav-tabs .nav-item .nav-link {
   background-color: transparent;
   font-size: 14px;
-  font-family: Montserrat, sans-serif;
+  font-family: Open Sans, sans-serif;
   line-height: 20px;
   padding: 15px 30px 8px 30px;
   border-radius: 0;
