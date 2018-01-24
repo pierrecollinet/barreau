@@ -43,7 +43,7 @@ Bienvenue
                   <!-- Featured Image -->
                   {% if event.image %}
                   <div class="featured-image" style="background-image: url('{{ event.image.url }}'); width:100%;height: 200px; background-position:center; background-size:cover;">
-                    <a href="#">
+                    <a href="{% url 'detail-event' pk=event.pk %}">
 
                     </a>
                   </div>
@@ -112,7 +112,7 @@ Bienvenue
             </div>
             <!-- pagination -->
             <div class="col-md-12 text-center mt-3 blog-pagination wow animated fadeInUp" data-wow-delay=".4s">
-              <a href="javascript:void(0)" class="btn btn-common"><i class="material-icons mdi mdi mdi-autorenew"></i> Chargez plus de formations<div class="ripple-container"></div></a>
+              <a href="{% url 'list-events' %}" class="btn btn-common"><i class="material-icons mdi mdi mdi-autorenew"></i> Chargez plus de formations<div class="ripple-container"></div></a>
             </div>
             <!-- pagination End -->
           </div>
@@ -198,3 +198,12 @@ Bienvenue
   </a>
 
 {% endblock %}
+
+{% block javascript %}
+<script>
+$( document ).ready(function() {
+  $('#mon-bouton').html('<i class="fa fa-paper-plane-o" aria-hidden="true"></i>')
+});
+</script>
+{% endblock %}
+

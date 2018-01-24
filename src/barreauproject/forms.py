@@ -44,7 +44,7 @@ class NewsletterForm(forms.Form):
         self.helper.layout = Layout(
                                 FieldWithButtons(
                                   Field('email', placeholder='Adresse Email', css_class="col-xs-6 width100pp"),
-                                  StrictButton("GO", type="submit", css_class="btn btn-round col-xs-6"),
+                                  StrictButton("GO", type="submit", css_class="btn btn-round col-xs-6", id="mon-bouton"),
                                   css_class="col-xs-12"
                                   ),
                                 )
