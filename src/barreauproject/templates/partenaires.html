@@ -57,42 +57,18 @@ Bienvenue
       <div class="row">
         <!-- Testimonial section  -->
         <div class="testimonials-carousel owl-carousel">
+          {% for partenaire in partenaires %}
           <div class="item">
             <div class="testimonial-item">
-              <div class="img">
-                <a href="#"><img class="img-fluid" src="assets/images/testimonial/author1.jpg"  alt=""></a>
-              </div>
+                <div class="img" style="background-image: url('{{ partenaire.logo.url }}'); background-position:center; width:200px; height:100px;background-size:cover;">
+                </div>
               <div class="datils">
-                <h5>Adam Schwartz</h5>
-                <span>Software Articulate, Google</span>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <br> standard dummy text ever since the 1500s Lorem Ipsum.</p>
+                <h5>{{ partenaire.nom }}</h5>
+                <span>{{ partenaire.ville }} - {{ partenaire.pays }}</span>
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="testimonial-item">
-              <div class="img">
-                <a href="#"><img class="img-fluid"  src="assets/images/testimonial/author2.jpg"  alt=""></a>
-              </div>
-              <div class="datils">
-                <h5>Clark Brown</h5>
-                <span>Brand Managerr</span>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <br> standard dummy text ever since the 1500s Lorem Ipsum.</p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="testimonial-item">
-              <div class="img">
-                <a href="#"><img class="img-fluid"  src="assets/images/testimonial/author3.jpg"  alt=""></a>
-              </div>
-              <div class="datils">
-                <h5>Ana Blunt</h5>
-                <span>Creative Director</span>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <br> standard dummy text ever since the 1500s Lorem Ipsum.</p>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
