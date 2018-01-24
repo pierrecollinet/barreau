@@ -90,6 +90,23 @@ p.single-member-widget {
   font-size: 19px;
 }
 
+img.icon {
+  width:50px;
+}
+
+img.icon-footer {
+  width:50px;
+  color:#fff;
+}
+
+.img_event_logo {
+  height:73px;
+}
+
+i.icon-hidden{
+  visibility: hidden;
+}
+
 @media (max-width: 767px) {
     a.btn-carousel {
     padding:9px 16px;
@@ -103,11 +120,17 @@ p.single-member-widget {
   .navbar-brand img {
   margin-top:-11px;
   }
+
+  img.icon {
+  width:100px;
+  }
+
+  img.icon-footer {
+  width:70px;
 }
 
-.img_event_logo {
-  height:73px;
 }
+
 
 @media (min-width: 768px) and (max-width: 991px) {
   a.btn-carousel {
