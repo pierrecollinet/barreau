@@ -155,22 +155,23 @@ Bienvenue
       </div>
 
       <div class="row">
+        {% for formation in formations %}
         <!-- Single Article -->
         <div class="col-md-6 col-lg-4 col-xl-4 wow animated fadeInUp" data-wow-delay=".3s">
           <article class="single-blog-post">
             <!-- Featured Image -->
-            <div class="featured-image">
+            <div class="featured-image" style="background-image: url('{{ formation.image.url }}'); width:100%;height: 232px; background-position:center; background-size:cover;">
               <a href="#">
-                <img src="{% static 'assets/images/blog/featured1.jpg' %}" alt="">
+
               </a>
             </div>
             <!-- Post Meta -->
             <div class="post-meta">
               <!-- Title -->
               <a href="blog-single.html">
-                <h2 class="subtitle">Eviter d'aller en prison en 3 étapes</h2>
+                <h2 class="subtitle">{{ formation.titre }}</h2>
               </a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perferendis assumenda ipsum maiores dolorum similique obcaecati perspiciatis.</p>
+              <p>{{ formation.short_description }}</p>
             </div>
             <div class="meta-tags">
               <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i></a></span>
@@ -179,54 +180,9 @@ Bienvenue
             </div>
           </article>
         </div>
-        <!-- Single Article -->
-        <div class="col-md-6 col-lg-4 col-xl-4 wow animated fadeInUp" data-wow-delay=".2s">
-          <article class="single-blog-post">
-            <!-- Featured Image -->
-            <div class="featured-image">
-              <a href="#">
-                <img src="{% static 'assets/images/blog/featured2.jpg' %}" alt="">
-              </a>
-            </div>
-            <!-- Post Meta -->
-            <div class="post-meta">
-              <!-- Title -->
-              <a href="blog-single.html">
-                <h2 class="subtitle">Rouler bourré en toute impunité</h2>
-              </a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perferendis assumenda ipsum maiores dolorum similique obcaecati perspiciatis.</p>
-            </div>
-            <div class="meta-tags">
-              <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i></a></span>
-              <!-- Read More -->
-              <a class="btn btn-round btn-fab" href="blog-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-            </div>
-          </article>
-        </div>
-        <!-- Single Article -->
-        <div class="col-md-6 col-lg-4 col-xl-4 wow animated fadeInUp" data-wow-delay=".2s">
-          <article class="single-blog-post">
-            <!-- Featured Image -->
-            <div class="featured-image">
-              <a href="#">
-                <img src="{% static 'assets/images/blog/featured3.jpg' %}" alt="">
-              </a>
-            </div>
-            <!-- Post Meta -->
-            <div class="post-meta">
-              <!-- Title -->
-              <a href="blog-single.html">
-                <h2 class="subtitle">Apprenez à facturer sans compter</h2>
-              </a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio perferendis assumenda ipsum maiores dolorum similique obcaecati perspiciatis.</p>
-            </div>
-            <div class="meta-tags">
-              <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i></a></span>
-              <!-- Read More -->
-              <a class="btn btn-round btn-fab" href="blog-single.html"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-            </div>
-          </article>
-        </div>
+        <!-- End SingleArticle-->
+        {% endfor %}
+
       </div>
       <div class="row mt-5 wow animated fadeInUp" data-wow-delay=".2s">
         <!-- Button -->
