@@ -1504,6 +1504,11 @@ figure:hover figcaption {
   background: #5e35b1;
 }
 
+.single-blog-post .pink-bg {
+  height: 50px;
+  background: #5e35b1;
+}
+
 .matrl-blog-post-page .blog-post-column .post-without-image .blue-bg {
   background: #1e88e5;
 }

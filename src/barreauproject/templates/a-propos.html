@@ -136,14 +136,14 @@ Bienvenue
           <ul class="nav nav-pills">
             <li><a class="filter active" data-filter="all">Tout</a></li>
             {% for categorie in categories %}
-            <li><a class="filter" data-filter=".categorie-{{ categorie.id }}">{{ categorie.categorie }}</a></li>
+            <li><a class="filter" data-filter=".categorie{{ categorie.id }}">{{ categorie.categorie }}</a></li>
             {% endfor %}
           </ul>
         </div>
         <div class="portfolio-item-wrapper clearfix wow animated fadeInUp" data-wow-delay=".5s" id="matrl-portfolio">
           <!-- Single Portfolio Image -->
           {% for photo in photos %}
-          <div class="col-md-6 col-lg-4 col-xl-4 pb-4 mix categorie-{{ photo.categorie.id }}">
+          <div class="col-md-6 col-lg-4 col-xl-4 pb-4 mix categorie{{ photo.categorie.id }}">
             <figure class="single-portfolio">
               <img src="{{ photo.images.url }}" alt="">
               <figcaption class="hover-content">

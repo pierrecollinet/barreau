@@ -160,11 +160,16 @@ Bienvenue
         <div class="col-md-6 col-lg-4 col-xl-4 wow animated fadeInUp" data-wow-delay=".3s">
           <article class="single-blog-post">
             <!-- Featured Image -->
+            {% if formation.image %}
             <div class="featured-image" style="background-image: url('{{ formation.image.url }}'); width:100%;height: 232px; background-position:center; background-size:cover;">
               <a href="#">
 
               </a>
             </div>
+            {% else %}
+            <div class="featured-image pink-bg">
+            </div>
+            {% endif %}
             <!-- Post Meta -->
             <div class="post-meta">
               <!-- Title -->
