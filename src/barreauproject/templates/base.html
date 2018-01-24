@@ -43,20 +43,21 @@
       {% endif %}
       {% block content %}{% endblock %}
 
-      {% include 'base/footer.html' with brand_name='eCommerce' %}
+      {% include 'base/footer.html' with brand_name='IDEB' %}
 
       <!-- Preloader -->
       <div id="preloader">
         <div class="loader" id="loader-1"></div>
       </div>
       <!-- End Preloader -->
+
       {% include 'base/js.html' %}
       {% render_block "js" %}
 
       {% block scripts %}
       {% endblock %}
-        {% block javascript %}
 
-        {% endblock %}
+      {% block javascript %}
+      {% endblock %}
     </body>
   </html>
