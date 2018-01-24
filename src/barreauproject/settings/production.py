@@ -14,8 +14,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 print('JE SUIS EN PRODUCTION !')
 import os
 
-BASE_DIR     = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
+BASE_DIR     = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['barreau-project.herokuapp.com', '.yourdomain.com']
+ALLOWED_HOSTS = ['barreau-recent.herokuapp.com', '.yourdomain.com']
 
 
 # Application definition
@@ -51,7 +51,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages',
 
     # django CMS
     'django.contrib.sites',
@@ -80,6 +79,8 @@ INSTALLED_APPS = (
     'barreauproject',
     'fondateur',
     'evenements',
+
+    'storages',
 )
 
 SITE_ID = 1
@@ -154,6 +155,7 @@ db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 DATABASES['default']['CONN_MAX_AGE'] = 500
 
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -190,6 +192,6 @@ SECURE_HSTS_SECONDS             = 1000000
 SECURE_FRAME_DENY               = True
 
 
-
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 from barreauproject.aws.conf import *
 
