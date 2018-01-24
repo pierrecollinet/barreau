@@ -135,7 +135,7 @@ a a:focus {
   position: absolute;
   content: '';
   bottom: -14px;
-  width: 40px;
+  width: 50px;
   height: 2px;
   background-color: #2196F3;
 }
