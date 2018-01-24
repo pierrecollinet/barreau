@@ -153,6 +153,8 @@ Bienvenue
         </div>
       </div>
 
+
+
       <div class="row">
         {% for formation in formations %}
         <!-- Single Article -->
@@ -173,9 +175,9 @@ Bienvenue
             <div class="post-meta">
               <!-- Title -->
               <a href="{% url 'detail-event' pk=formation.pk %}">
-                <h2 class="subtitle">{{ formation.titre }}</h2>
+                <h2 class="subtitle">{% render_model formation "titre" "titre"  %}</h2>
               </a>
-              <p>{{ formation.short_description }}</p>
+              <p>{% render_model formation "short_description" "short_description"  %}</p>
             </div>
             <div class="meta-tags">
               <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i></a></span>

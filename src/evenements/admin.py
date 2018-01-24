@@ -9,7 +9,12 @@ from django.template import Context
 
 from .models import Formateur, Event
 
+from cms.admin.placeholderadmin import FrontendEditableAdminMixin
+
 # Modeles liés aux formations
 
+class EventAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
+    frontend_editable_fields = ("titre", "short_description", "long_description")
+
 admin.site.register(Formateur)
-admin.site.register(Event)
+admin.site.register(Event,EventAdmin)
