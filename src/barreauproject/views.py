@@ -16,7 +16,7 @@ import json
 from datetime import datetime, timedelta
 
 from .forms import ContactForm, NewsletterForm
-from .models import Membre, PhotoGallerie, Categorie, Faq, Partenaire
+from .models import Membre, PhotoGallerie, Categorie, Faq, Partenaire, DateIDEB
 from evenements.models import Event
 
 from evenements.models import Event
@@ -92,7 +92,8 @@ def faq(request):
 def partenaires(request):
   form = ContactForm(request.POST or None)
   partenaires = Partenaire.objects.all()
-  c = {'partenaires':partenaires, 'form':form}
+  dates = DateIDEB.objects.all()
+  c = {'partenaires':partenaires, 'dates':dates,'form':form}
   return render(request, 'partenaires.html',c )
 
 

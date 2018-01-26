@@ -9,8 +9,8 @@ urlpatterns = [
     url('^a-propos$', a_propos, name="a-propos"),
     url('^contact$', contact, name="contact"),
     url('^faq$', faq, name="faq"),
+#    url('^partenaires$', partenaires, name="partenaires"),
     url('^partenaires$', partenaires, name="partenaires"),
-    url('^partenaires_cms$', partenaires, name="partenaires"),
     url('^chercher$', faq, name="chercher"),
 
     # CMS

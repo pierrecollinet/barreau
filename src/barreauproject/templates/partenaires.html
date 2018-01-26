@@ -21,7 +21,7 @@ Partenaires
       <div class="row">
         <div class="col-md-12">
           <h2 class="page-tagline">Découvrez</h2>
-          <h1 class="page-title">{% placeholder "content"  %}Nos partenaires</h1>
+          <h1 class="page-title">Nos partenaires</h1>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@ Partenaires
           </div>
           <div class="text-partenaire col-md-10 col-xs-12">
             <h1 class="text-partenaire">Essentiels pour une actualisation permanente</h1>
-            <p>{% static_placeholder "intro_partenaires" %}</p>
+            <p>{% placeholder "intro_partenaires" or %}Text d'intro par défaut. A modifier via la "structure" en haut à droite{% endplaceholder%}</p>
           </div>
         </div>
       </div>
@@ -63,6 +63,7 @@ Partenaires
         <!-- Testimonial section  -->
         <div class="testimonials-carousel owl-carousel">
           {% for partenaire in partenaires %}
+          {% render_model_block partenaire %}
           <div class="item">
             <div class="testimonial-item">
                 <div class="img" style="background-image: url('{{ partenaire.logo.url }}'); background-position:center; width:200px; height:100px;background-size:cover;">
@@ -73,6 +74,7 @@ Partenaires
               </div>
             </div>
           </div>
+          {% endrender_model_block %}
           {% endfor %}
         </div>
       </div>
@@ -88,54 +90,16 @@ Partenaires
           <h1 class="section-title">Les dates de l'IDEB</h1>
         </div>
       </div>
+        {% for d in dates %}
+        {% render_model_block d %}
         <div class="row">
           <div class="text-partenaire col-md-10 col-xs-12">
-            <h1 class="text-partenaire text-date">Le 16 janvier 2014</h1>
-            <p>A l'occasion de la rentrée solennelle du Barreau de Bruxelles, l'idée d'organiser des formations en droit européen entre Luxembour, Strasbourg et Bruxelles est lancée par le futur bâtonnier de Bruxelles qui réunit à cette occasion les bâtonniers des deux autres capitales.</p>
+            <h1 class="text-partenaire text-date">{{ d.date }}</h1>
+            <p>{{ d.description }}</p>
           </div>
         </div>
-        <div class="row">
-          <div class="text-partenaire col-md-10 col-xs-12">
-            <h1 class="text-partenaire text-date">Le 10 mai 2016</h1>
-            <p>A l'occasion de la rentrée solennelle du Barreau de Bruxelles, l'idée d'organiser des formations en droit européen entre Luxembour, Strasbourg et Bruxelles est lancée par le futur bâtonnier de Bruxelles qui réunit à cette occasion les bâtonniers des deux autres capitales.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="text-partenaire col-md-10 col-xs-12">
-            <h1 class="text-partenaire text-date">Le 8 juin 2017</h1>
-            <p>A l'occasion de la rentrée solennelle du Barreau de Bruxelles, l'idée d'organiser des formations en droit européen entre Luxembour, Strasbourg et Bruxelles est lancée par le futur bâtonnier de Bruxelles qui réunit à cette occasion les bâtonniers des deux autres capitales.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="text-partenaire col-md-10 col-xs-12">
-            <h1 class="text-partenaire text-date">Le 26 et 27 juin 2017</h1>
-            <p>A l'occasion de la rentrée solennelle du Barreau de Bruxelles, l'idée d'organiser des formations en droit européen entre Luxembour, Strasbourg et Bruxelles est lancée par le futur bâtonnier de Bruxelles qui réunit à cette occasion les bâtonniers des deux autres capitales.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="text-partenaire col-md-10 col-xs-12">
-            <h1 class="text-partenaire text-date">Le 31 juillet 2017</h1>
-            <p>A l'occasion de la rentrée solennelle du Barreau de Bruxelles, l'idée d'organiser des formations en droit européen entre Luxembour, Strasbourg et Bruxelles est lancée par le futur bâtonnier de Bruxelles qui réunit à cette occasion les bâtonniers des deux autres capitales.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="text-partenaire col-md-10 col-xs-12">
-            <h1 class="text-partenaire text-date">Le 30 novembre 2017</h1>
-            <p>A l'occasion de la rentrée solennelle du Barreau de Bruxelles, l'idée d'organiser des formations en droit européen entre Luxembour, Strasbourg et Bruxelles est lancée par le futur bâtonnier de Bruxelles qui réunit à cette occasion les bâtonniers des deux autres capitales.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="text-partenaire col-md-10 col-xs-12">
-            <h1 class="text-partenaire text-date">Le 20 décembre 2017</h1>
-            <p>A l'occasion de la rentrée solennelle du Barreau de Bruxelles, l'idée d'organiser des formations en droit européen entre Luxembour, Strasbourg et Bruxelles est lancée par le futur bâtonnier de Bruxelles qui réunit à cette occasion les bâtonniers des deux autres capitales.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="text-partenaire col-md-10 col-xs-12">
-            <h1 class="text-partenaire text-date">Le 23 mars et le 24 avril 2018</h1>
-            <p>A l'occasion de la rentrée solennelle du Barreau de Bruxelles, l'idée d'organiser des formations en droit européen entre Luxembour, Strasbourg et Bruxelles est lancée par le futur bâtonnier de Bruxelles qui réunit à cette occasion les bâtonniers des deux autres capitales.</p>
-          </div>
-        </div>
+        {% endrender_model_block %}
+        {% endfor %}
       </div>
     </section>
     <!-- End of Les dates-->

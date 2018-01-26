@@ -2,9 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% load cms_tags staticfiles sekizai_tags %}
-{% load cms_tags menu_tags sekizai_tags %}
-{% load cms_tags %}
+{% load staticfiles cms_tags menu_tags sekizai_tags %}
 
 {% block title %}
 Bienvenue
@@ -29,7 +27,8 @@ Bienvenue
     </div>
   </section>
   <!-- Page Titile Area End -->
-{% placeholder "test" %}
+
+
   <!-- Matrl Blog Post section -->
   <section class="matrl-blog-post-page section-padding">
     <div class="container">
@@ -102,9 +101,9 @@ Bienvenue
                     </div>
                     <!-- Title -->
                     <a href="{% url 'detail-event' pk=event.pk %}">
-                      <h2 class="subtitle">{% render_model event "titre" "titre,short_description,formateur"  %}</h2>
+                      <h2 class="subtitle">{% render_model event "titre" "type,titre,image,short_description,long_description,date,formateur,active" %}</h2>
                     </a>
-                    <p>{% autoescape off %}{{ event.short_description }}{% endautoescape %}</p>
+                    <p>{% autoescape off %}{% render_model event "short_desciption" "type,titre,image,short_description,long_description,date,formateur,active" %}{% endautoescape %}</p>
                   </div>
                   <div class="meta-tags">
                     <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i> 24 Comments</a></span>
@@ -117,9 +116,9 @@ Bienvenue
               {% endfor %}
             </div>
             <!-- pagination -->
-            <div class="col-md-12 text-center mt-3 blog-pagination wow animated fadeInUp" data-wow-delay=".4s">
+  <!--           <div class="col-md-12 text-center mt-3 blog-pagination wow animated fadeInUp" data-wow-delay=".4s">
               <a href="{% url 'list-events' %}" class="btn btn-common"><i class="material-icons mdi mdi mdi-autorenew"></i> Chargez plus de formations<div class="ripple-container"></div></a>
-            </div>
+            </div> -->
             <!-- pagination End -->
           </div>
         </div>
