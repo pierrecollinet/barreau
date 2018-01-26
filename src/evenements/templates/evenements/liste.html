@@ -20,8 +20,8 @@ Bienvenue
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="page-tagline">Découvrez</h2>
-          <h1 class="page-title">Toutes nos formations</h1>
+          <h2 class="page-tagline">{% static_placeholder "Petit titre formation" or %}Découvrez{% endstatic_placeholder %}</h2>
+          <h1 class="page-title">{% static_placeholder "Gros titre formation" or %}Toutes nos formations{% endstatic_placeholder %}</h1>
         </div>
       </div>
     </div>
@@ -68,7 +68,7 @@ Bienvenue
                     <p>{% autoescape off %}{{ event.short_description }}{% endautoescape %}</p>
                   </div>
                   <div class="meta-tags">
-                    <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i> 24 Comments</a></span>
+                    <span class="comments"><a class="comment" href="#"><i class="mdi mdi-comment-outline"></i> 24 Comments</a></span>
                     <!-- Read More -->
                     <a class="btn btn-round btn-fab" href="{% url 'detail-event' pk=event.pk %}"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
                   </div>
@@ -106,7 +106,7 @@ Bienvenue
                     <p>{% autoescape off %}{% render_model event "short_description" "type,titre,image,short_description,long_description,date,formateur,active" %}{% endautoescape %}</p>
                   </div>
                   <div class="meta-tags">
-                    <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i> 24 Comments</a></span>
+                    <span class="comments"><a class="comment" href="#"><i class="mdi mdi-comment-outline"></i> 24 Comments</a></span>
                     <!-- Read More -->
                     <a class="btn btn-round btn-fab" href="{% url 'detail-event' pk=event.pk %}"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
                   </div>
@@ -133,7 +133,7 @@ Bienvenue
             </div>
             <div class="author-info">
               <div class="author-bio">
-                <p>{% static_placeholder "text_brefore_newsletter_form" %}</p>
+                <p>{% static_placeholder "Petit texte a propos" or %}Durant sa première année d’existence l’I.D.E.B. réserve les trois modules de formation à huit barreaux partenaires qui désigneront trois de leurs avocats pour participer aux trois modules de formation. Cette limitation temporaire est uniquement destinée à faciliter l’organisation et l’évaluation des premières formations. Dès 2019, les autres barreaux de langue française seront invités à rejoindre l’Institut de Droit Européen des Barreaux.{% endstatic_placeholder %}</p>
               </div>
             </div>
           </aside>
@@ -144,7 +144,7 @@ Bienvenue
               <h2>Restez informé</h2>
             </div>
             <div class="subscribe-box">
-              <p>{% static_placeholder "accroche-newsletter" or %}Restez informés de toutes nos formations, conférences et workshop en vous inscrivant à notre newsletter ! {% endstatic_placeholder %}</p>
+              <p>{% static_placeholder "Text Newsletter" or %}Restez informés des formations en vous inscrivant à notre newsletter !{% endstatic_placeholder %}</p>
               <div class="input-group">
                 <form class="." id="signup_form" method="post" action="">
                   {% csrf_token %}

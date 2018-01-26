@@ -20,8 +20,8 @@ Partenaires
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="page-tagline">Découvrez</h2>
-          <h1 class="page-title">Nos partenaires</h1>
+          <h2 class="page-tagline">{% static_placeholder "Petit titre Partenaires" or %}Découvrez{% endstatic_placeholder %}</h2>
+          <h1 class="page-title">{% static_placeholder "Gros titre Partenaire" or %}Nos partenaires{% endstatic_placeholder %}</h1>
         </div>
       </div>
     </div>
@@ -49,7 +49,7 @@ Partenaires
           {% render_model_block partenaire %}
           <div class="item">
             <div class="testimonial-item">
-                <div class="img" style="background-image: url('{{ partenaire.logo.url }}'); background-position:center; width:200px; height:100px;background-size:cover;">
+                <div class="img" style="background-image: url('{{ partenaire.logo.url }}'); background-position:center; width:200px; height:200px;background-size:cover;">
                 </div>
               <div class="datils">
                 <h5>{{ partenaire.nom }}</h5>
@@ -70,7 +70,7 @@ Partenaires
     <div class="container">
       <div class="row">
        <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Les dates de l'IDEB</h1>
+          <h1 class="section-title">{% static_placeholder "Titre les dates" or %}Les dates de l'IDEB{% endstatic_placeholder %}</h1>
         </div>
       </div>
         {% for d in dates %}

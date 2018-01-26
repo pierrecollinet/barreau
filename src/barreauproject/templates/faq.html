@@ -17,8 +17,8 @@ Bienvenue
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="page-tagline">FAQ</h2>
-          <h1 class="page-title">Foire aux questions</h1>
+          <h2 class="page-tagline">{% static_placeholder "Petit titre FAQ" or %}FAQ{% endstatic_placeholder %}</h2>
+          <h1 class="page-title">{% static_placeholder "Gros titre FAQ" or %}Foire aux questions{% endstatic_placeholder %}</h1>
         </div>
       </div>
     </div>
@@ -67,8 +67,8 @@ Bienvenue
     <div class="container">
       <div class="row justify-content-between">
         <div class="col-md-8 col-lg-8 col-xs-12 text-left wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1>Vous avez d'autres questions ?</h1>
-          <h3>Contactez-nous directement</h3>
+          <h1>{% static_placeholder "Gros titre autre questions" or %}Vous avez d'autres questions ?{% endstatic_placeholder %}</h1>
+          <h3>{% static_placeholder "Petit titre autre questions" or %}Contactez-nous directement{% endstatic_placeholder %}</h3>
         </div>
         <div class="col-md-4 col-lg-4 col-xs-12 mt-4 text-right wow animated fadeInRight" data-wow-delay=".3s">
           <a href="{% url 'contact' %}" class="animated4 btn btn-common"><i class="material-icons mdi mdi-phone"></i> Contactez-nous</a>

@@ -16,8 +16,8 @@ Bienvenue
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="page-tagline">A propos</h2>
-          <h1 class="page-title">de l'IDEB</h1>
+          <h2 class="page-tagline">{% static_placeholder "Petit titre A propos" or %}A propos{% endstatic_placeholder %}</h2>
+          <h1 class="page-title">{% static_placeholder "Gros titre A propos" or %}de l'IDEB{% endstatic_placeholder %}</h1>
         </div>
       </div>
     </div>
@@ -31,12 +31,12 @@ Bienvenue
         <div class="col-md-6 col-lg-6 col-xs-12">
           <div class="welcome-content">
             <div class="text">
-              <h1>A qui s'adresse l'I.D.E.B. ?</h1>
-              <p>{% static_placeholder "text-intro-a-propos" or %}Dans un premier temps, l'I.D.E.B. s'adresse à tous les barreaux des pays membres de l'Union européenne et du Conseil de l'Europe de langue française.<br>Il répond à une attente qui est moins rencontrée dans cette langue, ce qui n'exclut pas à terme une ouverture vers d'autres barreaux appartenant à l'Espace Economique Européen, la Suisse ou le bassin méditerranéen. L'ouverture à d'autres langues est d'ores et déjà envisagée.{% endstatic_placeholder %}</p>
+              <h1>{% static_placeholder "Titre introducion A propos" or %}A qui s'adresse l'I.D.E.B. ?{% endstatic_placeholder %}</h1>
+              <p>{% static_placeholder "Texte introduction A propos" or %}Dans un premier temps, l'I.D.E.B. s'adresse à tous les barreaux des pays membres de l'Union européenne et du Conseil de l'Europe de langue française.<br>Il répond à une attente qui est moins rencontrée dans cette langue, ce qui n'exclut pas à terme une ouverture vers d'autres barreaux appartenant à l'Espace Economique Européen, la Suisse ou le bassin méditerranéen. L'ouverture à d'autres langues est d'ores et déjà envisagée.{% endstatic_placeholder %}</p>
             </div>
             <div class="button btn-welcome">
               <a href="{% url 'faq' %}" class="btn btn-common btn-IDEB">
-                  Découvrez-en plus dans notre FAQ
+                  {% static_placeholder "Bouton vers FAQ" or %}Découvrez-en plus dans notre FAQ{% endstatic_placeholder %}
                   <div class="ripple-container"></div>
                 </a>
             </div>
@@ -59,8 +59,8 @@ Bienvenue
         <div class="col-md-12 col-lg-12 col-xs-12">
           <div class="welcome-content">
             <div class="text">
-              <h1>Comment fonctionne l'I.D.E.B. ?</h1>
-              <p>{% static_placeholder "comment-fonctionne-ideb" or %}Qu'ils soient fondateurs ou adhérents, les barreaux membres de l'I.D.E.B. désignent trois de leurs avocats ayant déjà une certaine expérience du droit européen pour suivre une formation spécifique à Bruxelles, Luxembourg et Strasbourg. Ces barreaux acceptent de prendre en charge les frais de séjour de ces trois avocats dans les trois capitales européenes.</p>
+              <h1>{% static_placeholder "Titre fonctionnement" or %}Comment fonctionne l'I.D.E.B. ?{% endstatic_placeholder %}</h1>
+              <p>{% static_placeholder "Texte fonctionnement" or %}Qu'ils soient fondateurs ou adhérents, les barreaux membres de l'I.D.E.B. désignent trois de leurs avocats ayant déjà une certaine expérience du droit européen pour suivre une formation spécifique à Bruxelles, Luxembourg et Strasbourg. Ces barreaux acceptent de prendre en charge les frais de séjour de ces trois avocats dans les trois capitales européenes.</p>
               <p>Le cycle de formation comprend trois modules d'une journée débutant dans l'une de ces villes et se poursuivant dans les deux autres suivant le sujet proposé. Le délai entre chaque module est en principe d'un mois.{% endstatic_placeholder %}</p>
             </div>
           </div>
@@ -77,8 +77,8 @@ Bienvenue
             <div class="icon">
               <img class="icon" src="{% static 'assets/images/icon/business-affiliate-network.svg' %}" alt="">
             </div>
-            <div class="timer">7</div>
-            <p>Membres actifs</p>
+            <div class="timer">8</div>
+            <p>{% static_placeholder "Membre actifs" or %}Membres actifs{% endstatic_placeholder %}</p>
           </div>
         </div>
         <!-- Single Counter -->
@@ -87,8 +87,8 @@ Bienvenue
             <div class="icon">
               <img class="icon" src="{% static 'assets/images/icon/time.svg' %}" alt="">
             </div>
-            <div class="timer">345</div>
-            <p>Heures de formation</p>
+            <div class="timer">16</div>
+            <p>{% static_placeholder "Heures de formations" or %}Heures de formation{% endstatic_placeholder %}</p>
           </div>
         </div>
         <!-- Single Counter -->
@@ -97,8 +97,8 @@ Bienvenue
             <div class="icon">
               <img class="icon" src="{% static 'assets/images/icon/handshake.svg' %}" alt="">
             </div>
-            <div class="timer">8</div>
-            <p>Partenaires clés</p>
+            <div class="timer">6</div>
+            <p>{% static_placeholder "Partenaires cle" or %}Partenaires clés{% endstatic_placeholder %}</p>
           </div>
         </div>
         <!-- Single Counter -->
@@ -107,8 +107,8 @@ Bienvenue
             <div class="icon">
               <img class="icon" src="{% static 'assets/images/icon/group-of-people-in-a-formation.svg' %}" alt="">
             </div>
-            <div class="timer">12350</div>
-            <p>Avocats inscrits</p>
+            <div class="timer">74480</div>
+            <p>{% static_placeholder "Avocats concernes" or %}Avocats concernés{% endstatic_placeholder %}</p>
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ Bienvenue
       <div class="col-md-12 col-lg-12 col-xs-12">
         <div class="welcome-content">
           <div class="text">
-            <p>{% static_placeholder "explication-cycle" or %}Le premier module vise l'apprentissage de la matière en partenariat avec une ou plusieurs universités.</p>
+            <p>{% static_placeholder "Explication du cycle de formation" or %}Le premier module vise l'apprentissage de la matière en partenariat avec une ou plusieurs universités.</p>
             <p>Le deuxième mmodule permet d'aborder la pratique par la rencontre de magistrats ou de référendaires de la Cour de justice de l'Union européenne ou de la Cour européenne des droits de l'Homme.</p>
             <p>Le troisième module aborde la restitution de la matière et son évaluation en partenariat avec les universités ou l'Ecole Régionale des Avocats du Grand Est.</p>
             <p>Une fois le cycle terminé, les avocats ayant suivi la formation restitueront la matière au sein de leur barreau respectif au cours de séances de formation organisées par leur Ordre. Celles-ci seront facilement accessibles et accompagnées d'une modeste participation financière afin de permettre aux Ordres d'être remboursés des frais qu'ils ont engagés pour leurs formateurs{% endstatic_placeholder %}</p>
@@ -138,7 +138,7 @@ Bienvenue
       <div class="row">
         <!-- Section Titile -->
         <div class="col-md-4 col-lg-4 col-xl-6  matrl-title-section wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Gallerie photos</h1>
+          <h1 class="section-title">{% static_placeholder "Titre galerie photos" or %}Galerie photos{% endstatic_placeholder %}</h1>
         </div>
         <!-- Section Quote -->
         <div class="col-md-8 col-lg-8 col-xl-6  portfolio-nav mt-3 mb-3 wow animated fadeInRight" data-wow-delay=".2s">
@@ -157,11 +157,11 @@ Bienvenue
             <figure class="single-portfolio">
               <img src="{{ photo.images.url }}" class="pop" id="myImg{{forloop.counter}}" alt="">
               <figcaption class="hover-content">
-                <a class="btn btn-round btn-fab btn-xs" href=""><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                <a class="btn-picture btn btn-round btn-fab btn-xs" href=""><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
                 <a href="portfolio-single.html">
-                  <h2 class="subtitle">{{ photo.short_description }}Coucou</h2>
+                  <h2 class="subtitle">{{ photo.short_description }}</h2>
                 </a>
-                <p>Petite description</p>
+                <p>{{ photo.categorie }}</p>
               </figcaption>
             </figure>
           </div>
@@ -184,7 +184,7 @@ Bienvenue
       <div class="row">
         <!-- Section Titile -->
         <div class="col-md-12 animated wow fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Nos membres</h1>
+          <h1 class="section-title">{% static_placeholder "Titre nos membres" or %}Nos membres{% endstatic_placeholder %}</h1>
         </div>
       </div>
       <div class="row wow animated fadeInUp" data-wow-delay=".4s">
@@ -202,7 +202,7 @@ Bienvenue
                         </div>
                         <div class="team-member-info">
                           <div class="know-more">
-                            <a class="btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
+                            <a class="btn-member-link btn btn-round btn-fab btn-xs" href="javascript:void(0)"><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
                           </div>
                           <h2 class="subtitle">{{ membre.nom }}</h2>
                           <p>{{ membre.pays }}</p>
