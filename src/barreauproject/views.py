@@ -90,9 +90,12 @@ def faq(request):
   return render(request, 'faq.html', c)
 
 def partenaires(request):
+  form = ContactForm(request.POST or None)
   partenaires = Partenaire.objects.all()
-  c = {'partenaires':partenaires}
+  c = {'partenaires':partenaires, 'form':form}
   return render(request, 'partenaires.html',c )
+
+
 
 
 

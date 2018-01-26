@@ -2,9 +2,8 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% load cms_tags staticfiles sekizai_tags %}
+{% load staticfiles %}
 {% load cms_tags menu_tags sekizai_tags %}
-{% load cms_tags %}
 
 
 {% block title %}
@@ -12,7 +11,6 @@ Bienvenue
 {% endblock %}
 
 {% block base_head %}
-
 {% endblock %}
 
 {% block content %}
@@ -28,7 +26,7 @@ Bienvenue
       <div class="carousel-item active">
         <img class="d-block w-100" src="{% static 'assets/images/slider/slider-bg1.jpg' %}" alt="First slide">
         <div class="carousel-caption d-md-block">
-          <h1 class="animated wow fadeInDown hero-heading" data-wow-delay=".4s">{% placeholder "title" %}Institut de Droit Européen des Barreaux</h1>
+          <h1 class="animated wow fadeInDown hero-heading" data-wow-delay=".4s">{% placeholder "titreee" %}Institut de Droit Européen des Barreaux</h1>
           <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">Découvrez nos formations<div class="ripple-container"></div></a>
         </div>
       </div>
@@ -57,6 +55,7 @@ Bienvenue
     </a>
   </div>
   <!-- Main Carousel Section End -->
+
 
   <!-- Welcome Section Start -->
   <section class="welcome-section section-padding-welcome">
@@ -214,16 +213,36 @@ Bienvenue
         <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
           <p>N'hésitez pas à nous contacter directement pour obtenir plus d'informations et pour vous renseigner sur l'affiliation de votre Barreau.</p>
           <div class="find-widget">
-            <a href="#"><i class="material-icons mdi mdi-map-marker"></i>4435 Berkshire Circle Knoxville</a>
+            <a href="#">
+              <div class="row">
+                <div class="col-md-2"><i class="material-icons mdi mdi-map-marker"></i></div>
+                <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "adress_contact" %}</div>
+              </div>
+            </a>
           </div>
           <div class="find-widget">
-            <a href="#"><i class="material-icons mdi mdi-phone"></i> + 879-890-9767</a>
+            <a href="#">
+              <div class="row">
+                <div class="col-md-2"><i class="material-icons mdi mdi-phone"></i></div>
+                <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "phone_contact" %}</div>
+              </div>
+            </a>
           </div>
           <div class="find-widget">
-            <a href="#"><i class="material-icons mdi mdi-email-open mr-3"></i> support@matrl.com</a>
+            <a href="#">
+              <div class="row">
+                <div class="col-md-2"><i class="material-icons mdi mdi-email-open mr-3"></i></div>
+                <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "email_contact" %}</div>
+              </div>
+            </a>
           </div>
           <div class="find-widget">
-            <a href="#"><i class="material-icons mdi mdi-clock"></i> Mon to Sat: 09:30 AM - 10.30 PM</a>
+            <a href="#">
+              <div class="row">
+                <div class="col-md-2"><i class="material-icons mdi mdi-clock"></i></div>
+                <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "hours_open" %}</div>
+              </div>
+            </a>
           </div>
         </div>
         <!-- contact form -->
