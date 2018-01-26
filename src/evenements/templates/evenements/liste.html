@@ -2,6 +2,10 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
+{% load cms_tags staticfiles sekizai_tags %}
+{% load cms_tags menu_tags sekizai_tags %}
+{% load cms_tags %}
+
 {% block title %}
 Bienvenue
 {% endblock %}
@@ -25,7 +29,7 @@ Bienvenue
     </div>
   </section>
   <!-- Page Titile Area End -->
-
+{% placeholder "test" %}
   <!-- Matrl Blog Post section -->
   <section class="matrl-blog-post-page section-padding">
     <div class="container">
@@ -37,6 +41,7 @@ Bienvenue
             <div class="col-md-6 no-padding">
               <!-- Single Blog Post -->
               {% for event in evenements %}
+              {% render_model_block event %}
               {% if forloop.counter <= n_demi %}
               <div class="col-md-12 wow animated fadeInUp" data-wow-delay=".2s">
                 <article class="single-blog-post {% if event.image %} {% else %}post-without-image {% endif %}">
@@ -71,6 +76,7 @@ Bienvenue
                 </article>
               </div>
               {% endif %}
+              {% endrender_model_block %}
               {% endfor %}
             </div>
             <!-- Split Right -->
@@ -96,7 +102,7 @@ Bienvenue
                     </div>
                     <!-- Title -->
                     <a href="{% url 'detail-event' pk=event.pk %}">
-                      <h2 class="subtitle">{{ event.titre }}</h2>
+                      <h2 class="subtitle">{% render_model event "titre" "titre,short_description,formateur"  %}</h2>
                     </a>
                     <p>{% autoescape off %}{{ event.short_description }}{% endautoescape %}</p>
                   </div>
@@ -128,7 +134,7 @@ Bienvenue
             </div>
             <div class="author-info">
               <div class="author-bio">
-                <p>While you are planning for a trip then you always search for a best place to visit because that time you have looked for many of places in your mind. Same time, when the thought of Shimla comes in your mind, you stop the thoughts about other places because the gorgeousness of natural beauty of Shimla.</p>
+                <p>{% placeholder "text_brefore_newsletter_form" %}</p>
               </div>
             </div>
           </aside>

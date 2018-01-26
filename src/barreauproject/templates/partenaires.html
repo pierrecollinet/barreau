@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% load cms_tags menu_tags sekizai_tags %}
+
+{% load cms_tags %}
 
 {% block title %}
-Bienvenue
+Partenaires
 {% endblock %}
 
 {% block base_head %}
-
 {% endblock %}
 
 {% block content %}
@@ -17,7 +21,7 @@ Bienvenue
       <div class="row">
         <div class="col-md-12">
           <h2 class="page-tagline">Découvrez</h2>
-          <h1 class="page-title">Nos partenaires</h1>
+          <h1 class="page-title">{% placeholder "content"  %}Nos partenaires</h1>
         </div>
       </div>
     </div>
@@ -32,12 +36,13 @@ Bienvenue
           </div>
           <div class="text-partenaire col-md-10 col-xs-12">
             <h1 class="text-partenaire">Essentiels pour une actualisation permanente</h1>
-            <p>Les barreaux des trois capitales de l'Union européenne, Luxembourg, Strasbourg et Bruxelles, ont décidé d'unir leurs forces en créant l'<b>Institut de Droit Européen des Barreaux</b> (I.D.E.B). Les trois bâtonniers en ont signé les statuts le 8 juin 2017, sous la forme d'une A.I.S.B.L. (association internationale sans but lucratif) de droit belge dont le siège est situé à Bruxelles.</p>
+            <p>{% static_placeholder "intro_partenaires" %}</p>
           </div>
         </div>
       </div>
     </section>
     <!-- End of Intro-->
+
 
     <!-- Titre Partenaire -->
     <section class="matrl-service-section section-padding-partenaire">
