@@ -103,7 +103,7 @@ Bienvenue
                     <a href="{% url 'detail-event' pk=event.pk %}">
                       <h2 class="subtitle">{% render_model event "titre" "type,titre,image,short_description,long_description,date,formateur,active" %}</h2>
                     </a>
-                    <p>{% autoescape off %}{% render_model event "short_desciption" "type,titre,image,short_description,long_description,date,formateur,active" %}{% endautoescape %}</p>
+                    <p>{% autoescape off %}{% render_model event "short_description" "type,titre,image,short_description,long_description,date,formateur,active" %}{% endautoescape %}</p>
                   </div>
                   <div class="meta-tags">
                     <span class="comments"><a href="#"><i class="mdi mdi-comment-outline"></i> 24 Comments</a></span>

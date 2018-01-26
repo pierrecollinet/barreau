@@ -63,14 +63,14 @@ Bienvenue
           <div class="col-md-1">
           </div>
           <div class="text-intro col-md-10 col-xs-12">
-            <p class="text-intro">{% static_placeholder "text-intro-welcome" %}</p>
+            <p class="text-intro">{% static_placeholder "Texte 1 introduction" %}</p>
           </div>
 
         <div class="col-md-6 col-lg-6 col-xs-12">
           <div class="welcome-content">
             <div class="text">
-              <h1>Des partenariats essentiels</h1>
-              <p>{% static_placeholder "partenariats_essentiels" %}</p>
+              <h1>{% static_placeholder "Sous-titre introduction" or %}Des partenariats essentiels{% endstatic_placeholder %}</h1>
+              <p>{% static_placeholder "Texte 2 introduction" %}</p>
             </div>
             <div class="button btn-welcome">
               <a href="{% url 'a-propos' %}" class="btn btn-common btn-IDEB">
@@ -147,7 +147,7 @@ Bienvenue
       <div class="row">
         <!-- Section Titile -->
         <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Découvrez nos formations</h1>
+          <h1 class="section-title">{% static_placeholder "Titre Formations" or %}Découvrez notre système de formation{% endstatic_placeholder %}</h1>
         </div>
       </div>
 
@@ -191,7 +191,7 @@ Bienvenue
       <div class="row mt-5 wow animated fadeInUp" data-wow-delay=".2s">
         <!-- Button -->
         <div class="col-md-12 text-center">
-          <a href="{% url 'list-events' %}" class="animated4 btn btn-common btn-IDEB" data-ripple-color="#000">Toutes nos formations<div class="ripple-container"></div></a>
+          <a href="{% url 'list-events' %}" class="animated4 btn btn-common btn-IDEB" data-ripple-color="#000">{% static_placeholder "Bouton vers toutes nos formations" or %}Toutes nos formations{% endstatic_placeholder %}<div class="ripple-container"></div></a>
         </div>
       </div>
     </div>
@@ -204,13 +204,13 @@ Bienvenue
       <div class="row">
         <!-- Section Titile -->
         <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Vous souhaitez plus d'informations ?</h1>
+          <h1 class="section-title">{% static_placeholder "Titre Contact" or %}Vous souhaitez plus d'informations ?{% endstatic_placeholder %}</h1>
         </div>
       </div>
       <div class="row">
         <!-- Section Titile -->
         <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
-          <p>N'hésitez pas à nous contacter directement pour obtenir plus d'informations et pour vous renseigner sur l'affiliation de votre Barreau.</p>
+          <p>{% static_placeholder "Test contact" or %}N'hésitez pas à nous contacter directement pour obtenir plus d'informations et pour vous renseigner sur l'affiliation de votre Barreau.{% endstatic_placeholder %}</p>
           <div class="find-widget">
             <a href="#">
               <div class="row">
@@ -222,24 +222,8 @@ Bienvenue
           <div class="find-widget">
             <a href="#">
               <div class="row">
-                <div class="col-md-2"><i class="material-icons mdi mdi-phone"></i></div>
-                <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "phone_contact" %}</div>
-              </div>
-            </a>
-          </div>
-          <div class="find-widget">
-            <a href="#">
-              <div class="row">
                 <div class="col-md-2"><i class="material-icons mdi mdi-email-open mr-3"></i></div>
                 <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "email_contact" %}</div>
-              </div>
-            </a>
-          </div>
-          <div class="find-widget">
-            <a href="#">
-              <div class="row">
-                <div class="col-md-2"><i class="material-icons mdi mdi-clock"></i></div>
-                <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "hours_open" %}</div>
               </div>
             </a>
           </div>
