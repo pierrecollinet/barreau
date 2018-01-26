@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load staticfiles cms_tags menu_tags sekizai_tags %}
 
 {% block title %}
 Bienvenue
@@ -31,7 +32,7 @@ Bienvenue
           <div class="welcome-content">
             <div class="text">
               <h1>A qui s'adresse l'I.D.E.B. ?</h1>
-              <p>Dans un premier temps, l'I.D.E.B. s'adresse à tous les barreaux des pays membres de l'Union européenne et du Conseil de l'Europe de langue française.<br>Il répond à une attente qui est moins rencontrée dans cette langue, ce qui n'exclut pas à terme une ouverture vers d'autres barreaux appartenant à l'Espace Economique Européen, la Suisse ou le bassin méditerranéen. L'ouverture à d'autres langues est d'ores et déjà envisagée.</p>
+              <p>{% static_placeholder "text-intro-a-propos" or %}Dans un premier temps, l'I.D.E.B. s'adresse à tous les barreaux des pays membres de l'Union européenne et du Conseil de l'Europe de langue française.<br>Il répond à une attente qui est moins rencontrée dans cette langue, ce qui n'exclut pas à terme une ouverture vers d'autres barreaux appartenant à l'Espace Economique Européen, la Suisse ou le bassin méditerranéen. L'ouverture à d'autres langues est d'ores et déjà envisagée.{% endstatic_placeholder %}</p>
             </div>
             <div class="button btn-welcome">
               <a href="{% url 'faq' %}" class="btn btn-common btn-IDEB">
@@ -59,8 +60,8 @@ Bienvenue
           <div class="welcome-content">
             <div class="text">
               <h1>Comment fonctionne l'I.D.E.B. ?</h1>
-              <p>Qu'ils soient fondateurs ou adhérents, les barreaux membres de l'I.D.E.B. désignent trois de leurs avocats ayant déjà une certaine expérience du droit européen pour suivre une formation spécifique à Bruxelles, Luxembourg et Strasbourg. Ces barreaux acceptent de prendre en charge les frais de séjour de ces trois avocats dans les trois capitales européenes.</p>
-              <p>Le cycle de formation comprend trois modules d'une journée débutant dans l'une de ces villes et se poursuivant dans les deux autres suivant le sujet proposé. Le délai entre chaque module est en principe d'un mois.</p>
+              <p>{% static_placeholder "comment-fonctionne-ideb" or %}Qu'ils soient fondateurs ou adhérents, les barreaux membres de l'I.D.E.B. désignent trois de leurs avocats ayant déjà une certaine expérience du droit européen pour suivre une formation spécifique à Bruxelles, Luxembourg et Strasbourg. Ces barreaux acceptent de prendre en charge les frais de séjour de ces trois avocats dans les trois capitales européenes.</p>
+              <p>Le cycle de formation comprend trois modules d'une journée débutant dans l'une de ces villes et se poursuivant dans les deux autres suivant le sujet proposé. Le délai entre chaque module est en principe d'un mois.{% endstatic_placeholder %}</p>
             </div>
           </div>
         </div>
@@ -119,10 +120,10 @@ Bienvenue
       <div class="col-md-12 col-lg-12 col-xs-12">
         <div class="welcome-content">
           <div class="text">
-            <p>Le premier module vise l'apprentissage de la matière en partenariat avec une ou plusieurs universités.</p>
+            <p>{% static_placeholder "explication-cycle" or %}Le premier module vise l'apprentissage de la matière en partenariat avec une ou plusieurs universités.</p>
             <p>Le deuxième mmodule permet d'aborder la pratique par la rencontre de magistrats ou de référendaires de la Cour de justice de l'Union européenne ou de la Cour européenne des droits de l'Homme.</p>
             <p>Le troisième module aborde la restitution de la matière et son évaluation en partenariat avec les universités ou l'Ecole Régionale des Avocats du Grand Est.</p>
-            <p>Une fois le cycle terminé, les avocats ayant suivi la formation restitueront la matière au sein de leur barreau respectif au cours de séances de formation organisées par leur Ordre. Celles-ci seront facilement accessibles et accompagnées d'une modeste participation financière afin de permettre aux Ordres d'être remboursés des frais qu'ils ont engagés pour leurs formateurs</p>
+            <p>Une fois le cycle terminé, les avocats ayant suivi la formation restitueront la matière au sein de leur barreau respectif au cours de séances de formation organisées par leur Ordre. Celles-ci seront facilement accessibles et accompagnées d'une modeste participation financière afin de permettre aux Ordres d'être remboursés des frais qu'ils ont engagés pour leurs formateurs{% endstatic_placeholder %}</p>
           </div>
         </div>
       </div>
@@ -151,6 +152,7 @@ Bienvenue
         <div class="portfolio-item-wrapper clearfix wow animated fadeInUp" data-wow-delay=".5s" id="matrl-portfolio">
           <!-- Single Portfolio Image -->
           {% for photo in photos %}
+          {% render_model_block photo %}
           <div class="col-md-6 col-lg-4 col-xl-4 pb-4 mix categorie{{ photo.categorie.id }}">
             <figure class="single-portfolio">
               <img src="{{ photo.images.url }}" alt="">
@@ -163,6 +165,7 @@ Bienvenue
               </figcaption>
             </figure>
           </div>
+          {% endrender_model_block %}
           {% endfor %}
         </div>
       </div>
@@ -190,6 +193,7 @@ Bienvenue
 
 
                   {% for membre in membres %}
+                  {% render_model_block membre %}
                   <div class="item {% if forloop.first %}active{% endif %}">
                     <!-- Single Team Widget -->
                     <div class="">
@@ -209,6 +213,7 @@ Bienvenue
                       </div>
                     </div>
                   </div>
+                  {% endrender_model_block %}
                   {% endfor %}
                 </div>
               </div>

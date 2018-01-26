@@ -14,8 +14,11 @@ from cms.admin.placeholderadmin import FrontendEditableAdminMixin
 # Modeles liés aux formations
 
 class EventAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
-    frontend_editable_fields = ("titre", "short_description", "long_description", "formateur")
+    frontend_editable_fields = ("titre", "short_description", "long_description", "formateur", "type", "image", "date", "active")
     filter_horizontal = ("formateur",)
 
-admin.site.register(Formateur)
-admin.site.register(Event,EventAdmin)
+class FormateurAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
+    frontend_editable_fields = ("full_name", "short_description", "photo")
+
+admin.site.register(Formateur, FormateurAdmin)
+admin.site.register(Event,     EventAdmin)
