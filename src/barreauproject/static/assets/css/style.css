@@ -88,9 +88,10 @@ a a:focus {
 }
 
 .hero-sub-heading {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-size: 20px;
   font-weight: 400;
-  color: #e6e6e6;
+  color: #fff;
   line-height: 45px;
 }
 
