@@ -30,7 +30,7 @@ class ContactForm(forms.Form):
                                 Field('sujet', placeholder='SUJET'),
                                 Field('message', placeholder='MESSAGE'),
                                 )
-        self.helper.add_input(Submit('submit', 'Envoyer', css_class='btn btn-common disabled'))
+        self.helper.add_input(Submit('submit', 'Envoyer', css_class='btn btn-common'))
 
 
 class NewsletterForm(forms.Form):

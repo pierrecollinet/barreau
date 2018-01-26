@@ -18,7 +18,7 @@ EMAIL_HOST = 'smtp.sendgrid.com'
 EMAIL_PORT = 587
 EMAIL_USER_TLS = True
 # Replace par their emails !!!!!!!
-EMAILS = ["pierre.collinet@passelapremiere.be", "info@blocusassistance.be", "pierre.boonen@passelapremiere.be"]
+EMAILS = ["pierre.collinet@passelapremiere.be", "info@ideb.eu", "pierre.boonen@passelapremiere.be"]
 
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')  # username sur sendgrid.com
 EMAIL_MAIN = os.environ.get('EMAIL_MAIN')

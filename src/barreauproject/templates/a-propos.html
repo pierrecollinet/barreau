@@ -155,7 +155,7 @@ Bienvenue
           {% render_model_block photo %}
           <div class="col-md-6 col-lg-4 col-xl-4 pb-4 mix categorie{{ photo.categorie.id }}">
             <figure class="single-portfolio">
-              <img src="{{ photo.images.url }}" alt="">
+              <img src="{{ photo.images.url }}" class="pop" id="myImg{{forloop.counter}}" alt="">
               <figcaption class="hover-content">
                 <a class="btn btn-round btn-fab btn-xs" href=""><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
                 <a href="portfolio-single.html">
@@ -223,6 +223,12 @@ Bienvenue
   <!-- Team Carousel End -->
 
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="imagepreview">
+  <div id="caption"></div>
+</div>
 
   <!-- Back To Top -->
   <a href="#" class="back-to-top">
@@ -230,4 +236,17 @@ Bienvenue
     <i class="mdi mdi-arrow-up">
       </i>
   </a>
+{% endblock %}
+
+{% block javascript %}
+<script>
+$(document).on("click",".pop", function () {
+   $('#imagepreview').attr('src', $(this).attr('src')); // here asign the image to the modal when the user click the enlarge link
+   $('#myModal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+});
+
+$("html").click(function(){
+    $('#myModal').modal('hide');
+});
+</script>
 {% endblock %}

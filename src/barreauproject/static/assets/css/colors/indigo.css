@@ -123,6 +123,10 @@ a.back-to-top i {
   background-color: #3F51B5;
 }
 
+.matrl-default-accordion .panel-default .panel-heading a {
+  background-color: #3F51B5;
+}
+
 .icon-round, .icon-box {
   background: #3F51B5;
 }

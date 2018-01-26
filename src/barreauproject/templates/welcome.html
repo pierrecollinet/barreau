@@ -95,46 +95,15 @@ Bienvenue
     <div class="container">
       <div class="row">
         <div id="client-logo" class="owl-carousel">
+          {% for partenaire in partenaires %}
           <div class="client-logo item">
             <a href="#">
-              <img class="img-fluid" src="{% static 'assets/images/clients/client1.png' %}" alt="" />
+              <div>
+                <img class="img-fluid resize-image" src="{{ partenaire.logo.url }}" alt="" />
+              </div>
             </a>
           </div>
-          <div class="client-logo item">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'assets/images/clients/client2.png' %}" alt="" />
-            </a>
-          </div>
-          <div class="client-logo item">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'assets/images/clients/client3.png' %}" alt="" />
-            </a>
-          </div>
-          <div class="client-logo item">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'assets/images/clients/client4.png' %}" alt="" />
-            </a>
-          </div>
-          <div class="client-logo item">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'assets/images/clients/client1.png' %}" alt="" />
-            </a>
-          </div>
-          <div class="client-logo item">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'assets/images/clients/client2.png' %}" alt="" />
-            </a>
-          </div>
-          <div class="client-logo item">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'assets/images/clients/client3.png' %}" alt="" />
-            </a>
-          </div>
-          <div class="client-logo item">
-            <a href="#">
-              <img class="img-fluid" src="{% static 'assets/images/clients/client4.png' %}" alt="" />
-            </a>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -155,6 +124,7 @@ Bienvenue
 
       <div class="row">
         {% for formation in formations %}
+        {% render_model_block formation  %}
         <!-- Single Article -->
         <div class="col-md-6 col-lg-4 col-xl-4 wow animated fadeInUp" data-wow-delay=".3s">
           <article class="single-blog-post">
@@ -173,9 +143,9 @@ Bienvenue
             <div class="post-meta">
               <!-- Title -->
               <a href="{% url 'detail-event' pk=formation.pk %}">
-                <h2 class="subtitle">{% render_model formation "titre" "titre"  %}</h2>
+                <h2 class="subtitle">{{ formation.titre }}</h2>
               </a>
-              <p>{% render_model formation "short_description" "short_description,formateur"  %}</p>
+              <p>{{ formation.short_description }}</p>
             </div>
             <div class="meta-tags">
               <span class="comments"><a href="#"><i class="icon-hidden mdi mdi-comment-outline"></i></a></span>
@@ -185,6 +155,7 @@ Bienvenue
           </article>
         </div>
         <!-- End SingleArticle-->
+        {% endrender_model_block %}
         {% endfor %}
 
       </div>

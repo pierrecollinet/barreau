@@ -9,9 +9,14 @@ from django.template import Context
 
 from .models import PhotoGallerie, Faq, Membre, Partenaire, NewsletterEmail, Categorie, DateIDEB
 
+from cms.admin.placeholderadmin import FrontendEditableAdminMixin
+
+
+class FaqAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
+    frontend_editable_fields = ("question", "reponse")
 
 admin.site.register(PhotoGallerie)
-admin.site.register(Faq)
+admin.site.register(Faq, FaqAdmin)
 admin.site.register(Membre)
 admin.site.register(Partenaire)
 admin.site.register(NewsletterEmail)

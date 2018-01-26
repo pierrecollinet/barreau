@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load staticfiles cms_tags menu_tags sekizai_tags %}
 
 {% block title %}
 Bienvenue
@@ -24,80 +25,42 @@ Bienvenue
   </section>
   <!-- Page Titile Area End -->
 
-  <!-- Matrl Blog Post section -->
-  <section class="matrl-blog-post-page section-padding">
+  <!-- Accirdion Section -->
+  <section class="matrl-accordion-section section-padding">
     <div class="container">
       <div class="row">
-        <!-- Blog Post -->
-        <div class="col-md-12 col-lg-12 col-xs-12 blog-post-column">
-          <div class="row">
-          {% if faqs %}
-            {% for faq in faqs%}
-            {% if forloop.counter <= n_demi %}
-            <!-- Split Left -->
-            <div class="col-md-6 no-padding">
-              <!-- Single Blog Post -->
-              <div class="col-md-12 wow animated fadeInUp" data-wow-delay=".2s">
-                <article class="single-blog-post post-without-image">
-                  <!-- Featured Image -->
-                  <div class="featured-image blue-bg">
-                  </div>
-                  <!-- Post Meta -->
-                  <div class="post-meta">
-                    <div class="post-date">
-                      <span><b>Jan 25 2018</b></span>
-                    </div>
-                    <!-- Title -->
-                    <a href="#">
-                      <h2 class="subtitle">{{ faq.question }}</h2>
-                    </a>
-                    <p>{{ faq.reponse }}</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-            {% endif %}
-            {% endfor %}
-
-            <!-- Split Right -->
+        <div class="col-md-12 wow animated fadeInUp" data-wow-delay=".2s">
+          <div class="panel-group matrl-default-accordion" id="matrl-accordion" role="tablist" aria-multiselectable="true">
+            <div class="row">
             {% for faq in faqs %}
-            {% if forloop.counter > n_demi %}
-            <div class="col-md-6 no-padding">
-              <!-- Single Blog Post -->
-              <div class="col-md-12 wow animated fadeInUp" data-wow-delay=".5s">
-                <article class="single-blog-post post-without-image">
-                  <!-- Featured Image -->
-                  <div class="featured-image aqua-bg">
-
+            {% render_model_block faq %}
+              <div class="col-md-6">
+                <div class="panel panel-default mb-3">
+                  <div class="panel-heading" role="tab" id="heading{{forloop.counter}}">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#matrl-accordion" href="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
+                        {{ faq.question }}
+                      </a>
+                    </h4>
                   </div>
-                  <!-- Post Meta -->
-                  <div class="post-meta">
-                    <div class="post-date">
-                      <span><b>Oct 25 2018</b></span>
+                  <div id="collapse{{forloop.counter}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading{{forloop.counter}}">
+                    <div class="panel-body">
+                      {% autoescape off %}{{ faq.reponse }}{% endautoescape %}
                     </div>
-                    <!-- Title -->
-                    <a href="#">
-                      <h2 class="subtitle">{{ faq.question }}</h2>
-                    </a>
-                    <p>{{ faq.reponse }}</p>
                   </div>
-                </article>
+                </div>
               </div>
-            </div>
-            {% endif %}
+            {% endrender_model_block %}
             {% endfor %}
-
-          {% else %}
-            Aucun résultat ne correspond à votre recherche. Essayer autre chose?
-          {% endif %}
+            </div>
           </div>
         </div>
-        <!--Blog Post ENd -->
 
       </div>
     </div>
   </section>
-  <!-- Matrl Blog Post section End -->
+  <!-- Accirdion Section End -->
+
 
     <!-- Call to action Section -->
   <section class="call-to-action-section">
@@ -108,7 +71,7 @@ Bienvenue
           <h3>Contactez-nous directement</h3>
         </div>
         <div class="col-md-4 col-lg-4 col-xs-12 mt-4 text-right wow animated fadeInRight" data-wow-delay=".3s">
-          <a href="javascript:void(0)" class="animated4 btn btn-common"><i class="material-icons mdi mdi-phone"></i> Contact us</a>
+          <a href="{% url 'contact' %}" class="animated4 btn btn-common"><i class="material-icons mdi mdi-phone"></i> Contactez-nous</a>
         </div>
       </div>
     </div>
@@ -121,4 +84,15 @@ Bienvenue
     <div class="ripple-container"></div>
     <i class="mdi mdi-arrow-up"></i>
   </a>
+{% endblock %}
+
+
+{% block javascript %}
+<script>
+$(document).ready(function(){
+    $('.collapse').on('show.bs.collapse', function (e) {
+        $('.collapse').collapse("hide")
+    })
+})
+</script>
 {% endblock %}

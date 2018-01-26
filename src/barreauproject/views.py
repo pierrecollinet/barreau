@@ -23,9 +23,8 @@ from evenements.models import Event
 def welcome(request):
     form = ContactForm(request.POST or None)
     formations = Event.objects.all()[:3]
-    print("formations :::::")
-    print(formations)
-    c = {'form': form, 'formations':formations}
+    partenaires = Partenaire.objects.all()
+    c = {'form': form, 'formations':formations, 'partenaires':partenaires}
     if form.is_valid():
       # Get de datas
       nom     = form.cleaned_data['nom']
