@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load crispy_forms_tags %}
+{% load staticfiles cms_tags menu_tags sekizai_tags %}
 
 {% block title %}
 Bienvenue
@@ -16,46 +17,51 @@ Bienvenue
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="page-tagline">Coordonnées</h2>
-          <h1 class="page-title">Contactez-nous</h1>
+          <h2 class="page-tagline">{% static_placeholder "Petit titre Contact" or %}Coordonnées{% endstatic_placeholder %}</h2>
+          <h1 class="page-title">{% static_placeholder "Petit titre Contact" or %}Contactez-nous{% endstatic_placeholder %}</h1>
         </div>
       </div>
     </div>
   </section>
   <!-- Page Titile Area End -->
 
-  <!-- Contact Us Section -->
-  <section class="matrl-contact-section section-padding">
+ <!-- Contact Us Section -->
+  <section class="matrl-contact-section section-padding section-dark">
     <div class="container">
       <div class="row">
-       <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
-          <h1 class="section-title">Vous souhaitez plus d'informations?</h1>
+        <!-- Section Titile -->
+        <div class="col-md-12 wow animated fadeInLeft" data-wow-delay=".2s">
+          <h1 class="section-title">{% static_placeholder "Titre Contact" or %}Vous souhaitez plus d'informations ?{% endstatic_placeholder %}</h1>
         </div>
       </div>
-      <div class="row mt-5">
+      <div class="row">
         <!-- Section Titile -->
-        <div class="col-md-6 contact-widget-section2 wow fadeInUp animated" data-wow-delay=".5s">
-          <p>N'hésitez pas à nous contacter directement pour obtenir plus d'informations et pour vous renseigner sur l'affiliation de votre Barreau.</p>
+        <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
+          <p>{% static_placeholder "Test contact" or %}N'hésitez pas à nous contacter directement pour obtenir plus d'informations et pour vous renseigner sur l'affiliation de votre Barreau.{% endstatic_placeholder %}</p>
           <div class="find-widget">
-            <a href="#"><i class="material-icons mdi mdi-home"></i> 4435 Berkshire Circle Knoxville</a>
+              <div class="row">
+                <div class="col-md-2"><i class="material-icons mdi mdi-map-marker"></i></div>
+                <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "adress_contact" %}</div>
+              </div>
           </div>
           <div class="find-widget">
-            <a href="#"><i class="material-icons mdi mdi-email"></i> hello@matrl.com</a>
-          </div>
-          <div class="find-widget">
-            <a href="#"><i class="material-icons mdi mdi-phone mr-3"></i> 879-890-9767</a>
-          </div>
-          <div class="find-widget">
-            <a href="#"><i class="material-icons mdi mdi-earth"></i> http://matrl.org</a>
+              <div class="row">
+                <div class="col-md-2"><i class="material-icons mdi mdi-email-open mr-3"></i></div>
+                <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "email_contact" %}</div>
+              </div>
           </div>
         </div>
-
         <!-- contact form -->
-        <div class="col-md-6 wow fadeInUp animated" data-wow-delay=".5s">
-             <form class="." id="signup_form" method="post" action="">
+        <div class="col-md-6 wow animated fadeInRight" data-wow-delay=".2s">
+          <form action="/welcome" class="shake" role="form" method="post" id="contactForm" name="contact-form" data-toggle="validator">
               {% csrf_token %}
               {% crispy form %}
-            </form>
+            <!-- Form Submit -->
+            <div class="form-submit mt-5">
+              <div id="msgSubmit" class="h3 text-center hidden"></div>
+              <div class="clearfix"></div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
