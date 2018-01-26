@@ -1856,12 +1856,12 @@ figure:hover figcaption {
   height: 40px;
   margin-right: 8px;
   display: block;
-  background: #2A2A2F;
   text-align: center;
   line-height: 40px;
   border-radius: 2px;
   transtion: all 0.3s ease-in-out;
 }
+
 
 .footer-contact-widget ul li a .mdi:hover {
   transition: all 0.3s ease-in-out;
@@ -2001,21 +2001,30 @@ ul.recent-post li .post-text span {
 /* Call To Action */
 .call-to-action-section {
   padding: 60px 0;
-  background: url(../images/cta-bg.jpg) no-repeat scroll center center;
+  background: url(../images/page-title-bg.png) no-repeat scroll center center;
   background-size: cover;
 }
 
 .call-to-action-section h1 {
   color: #18191b;
-  font-size: 56px;
-  font-weight: 700;
+  font-size: 45px;
+  font-weight: 600;
   color: #fff;
 }
 
 .call-to-action-section h3 {
   font-size: 24px;
   color: rgba(255, 255, 255, 0.7);
-  text-transform: uppercase;
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .call-to-action-section h1 {
+  font-size: 39px;
+  }
+  .call-to-action-section h3 {
+  font-size: 22px;
+  }
 }
 
 .page-title-section {
