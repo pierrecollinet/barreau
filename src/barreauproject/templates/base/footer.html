@@ -13,7 +13,7 @@
       <div class="row">
         <!--First column-->
         <div class="col-md-4 col-lg-34 col-xl-4 footer-contact-widget">
-          <h3 class="footer-title">A propos</h3>
+          <h3 class="footer-title">{% static_placeholder "Titre droite" or %}Adresse{% endstatic_placeholder %}</h3>
           <p>{% static_placeholder "footer_base" %}</p>
           <ul>
             <li>
@@ -33,7 +33,7 @@
         </div>
         <!--Third column-->
         <div class="col-md-4 col-lg-4 col-xl-4 link-widget">
-          <h3 class="footer-title">Plan du site</h3>
+          <h3 class="footer-title">{% static_placeholder "Titre gauche" or %}Plan du site{% endstatic_placeholder %}</h3>
           <ul>
             <li><a href="{% url 'welcome' %}">Home</a></li>
             <li><a href="{% url 'list-events' %}">Formations</a></li>
@@ -54,7 +54,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <p>&copy; 2018 Site Assistance, All right reserved. Designed with <i class="mdi mdi-heart"></i> by <a href="#">les Pierre</a></p>
+            <p>&copy; Copyright Institut de Droit Européen des Barreaux 2018</p>
           </div>
         </div>
       </div>

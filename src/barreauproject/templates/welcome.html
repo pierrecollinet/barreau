@@ -28,9 +28,9 @@ Bienvenue
          </div>
 
          <div class="carousel-caption d-md-block">
-          <h1 class="animated wow fadeInDown hero-heading slide1" data-wow-delay=".4s">Institut de Droit Européen des Barreaux</h1>
-          <h5 class="animated fadeInUp wow hero-sub-heading" data-wow-delay=".6s">en partenariat avec la Cour de justice de l'Union européenne</h5>
-          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">Découvrez nos formations<div class="ripple-container"></div></a>
+          <h1 class="animated wow fadeInDown hero-heading slide1" data-wow-delay=".4s">{% static_placeholder "Titre slide" or %}Institut de Droit Européen des Barreaux{% endstatic_placeholder %}</h1>
+          <h5 class="animated fadeInUp wow hero-sub-heading" data-wow-delay=".6s">{% static_placeholder "Sous-titre slide" or %}en partenariat avec la Cour de justice de l'Union européenne{% endstatic_placeholder %}</h5>
+          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">{% static_placeholder "Bouton slide" or %}Découvrez nos formations{% endstatic_placeholder %}<div class="ripple-container"></div></a>
         </div>
       </div>
       <div class="carousel-item custom-caroussel">
@@ -38,9 +38,9 @@ Bienvenue
          <img class="d-block img-responsive" src="{% static 'assets/images/slider/slider2.jpg' %}" alt="Second slide">
          </div>
          <div class="carousel-caption d-md-block">
-          <h1 class="animated wow fadeInLeft hero-heading slide2" data-wow-delay=".7s">Institut de Droit Européen des Barreaux</h1>
-          <h5 class="animated wow fadeInRight hero-sub-heading" data-wow-delay=".9s">en partenariat avec la Cour de justice de l'Union européenne</h5>
-          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel data-wow-delay=".8s">Découvrez nos formations<div class="ripple-container"></div></a>
+          <h1 class="animated wow fadeInLeft hero-heading slide2" data-wow-delay=".7s">{% static_placeholder "Titre slide" or %}Institut de Droit Européen des Barreaux{% endstatic_placeholder %}</h1>
+          <h5 class="animated wow fadeInRight hero-sub-heading" data-wow-delay=".9s">{% static_placeholder "Sous-titre slide" or %}en partenariat avec la Cour de justice de l'Union européenne{% endstatic_placeholder %}</h5>
+          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">{% static_placeholder "Bouton slide" or %}Découvrez nos formations{% endstatic_placeholder %}<div class="ripple-container"></div></a>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@ Bienvenue
             </div>
             <div class="button btn-welcome">
               <a href="{% url 'a-propos' %}" class="btn btn-common btn-IDEB">
-                  En savoir plus sur l'IDEB
+                  {% static_placeholder "Bouton en savoir plus" or %}En savoir plus sur l'IDEB{% endstatic_placeholder %}
                   <div class="ripple-container"></div>
                 </a>
             </div>
@@ -212,20 +212,16 @@ Bienvenue
         <div class="col-md-6 mt-3 contact-widget-section2 wow animated fadeInLeft" data-wow-delay=".2s">
           <p>{% static_placeholder "Test contact" or %}N'hésitez pas à nous contacter directement pour obtenir plus d'informations et pour vous renseigner sur l'affiliation de votre Barreau.{% endstatic_placeholder %}</p>
           <div class="find-widget">
-            <a href="#">
               <div class="row">
                 <div class="col-md-2"><i class="material-icons mdi mdi-map-marker"></i></div>
                 <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "adress_contact" %}</div>
               </div>
-            </a>
           </div>
           <div class="find-widget">
-            <a href="#">
               <div class="row">
                 <div class="col-md-2"><i class="material-icons mdi mdi-email-open mr-3"></i></div>
                 <div class="col-md-10" style="padding-top:6px;">{% static_placeholder "email_contact" %}</div>
               </div>
-            </a>
           </div>
         </div>
         <!-- contact form -->

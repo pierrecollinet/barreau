@@ -48,7 +48,7 @@ h1.text-date {
   padding-top: 10px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .img-welcome{
     float:none;
     text-align:center;
@@ -124,16 +124,24 @@ i.icon-hidden{
 
   img.icon-footer {
   width:70px;
-}
+  }
+
+  .navbar-brand img {
+  width: 200px;
+  }
+
+  .navbar-expand-md .navbar-nav .nav-link {
+  padding: 15px 0 18px 0;
+  }
 
 }
 
 h1.slide1{
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 h1.slide2{
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: 2px 2px 4px #000000;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -143,6 +151,14 @@ h1.slide2{
   }
   h1.text-date {
     font-size: 30px;
+  }
+
+  .navbar-brand img {
+  width: 200px;
+  }
+
+  .navbar-expand-md .navbar-nav .nav-link {
+  padding: 15px 0 18px 0;
   }
 }
 
@@ -155,9 +171,17 @@ h1.slide2{
   h1.text-date {
   font-size: 30px
   }
+
+  .navbar-brand img {
+  width: 250px;
+  }
+
+  .navbar-expand-md .navbar-nav .nav-link {
+  padding: 24px 0 26px 0;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
   .image-welcome-header {
     height: 60vh;
@@ -171,4 +195,20 @@ h1.slide2{
   }
 }
 
+a.comment {
+  visibility:hidden;
+}
 
+a.btn-member-link {
+  visibility:hidden;
+}
+
+a.btn-picture {
+  visibility:hidden;
+}
+
+.container-navbar {
+  max-width:100%;
+  margin-left:30px;
+  margin-right:30px;
+}
