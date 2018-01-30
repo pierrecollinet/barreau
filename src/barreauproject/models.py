@@ -47,9 +47,14 @@ class Partenaire(models.Model):
   logo = models.ImageField(upload_to = 'mes_images/')
   pays = models.CharField(max_length=200)
   ville = models.CharField(max_length=200)
+  url_site_web = models.CharField(max_length=200, default="https://")
+  active = models.BooleanField(default=True)
 
   def __str__(self):
     return self.nom
+
+  class Meta:
+        ordering = ["nom"]
 
 class NewsletterEmail(models.Model):
   email = models.EmailField()
@@ -58,11 +63,13 @@ class NewsletterEmail(models.Model):
     return self.email
 
 class DateIDEB(models.Model):
-  date = models.CharField(max_length=200)
+  date_en_francais = models.CharField(max_length=200)
   description = models.TextField()
+  date = models.DateField(blank=True, null=True)
 
   def __str__(self):
     return self.description
 
-
+  class Meta:
+        ordering = ["date"]
 

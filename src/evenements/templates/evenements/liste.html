@@ -21,7 +21,7 @@ Bienvenue
       <div class="row">
         <div class="col-md-12">
           <h2 class="page-tagline">{% static_placeholder "Petit titre formation" or %}Découvrez{% endstatic_placeholder %}</h2>
-          <h1 class="page-title">{% static_placeholder "Gros titre formation" or %}Toutes nos formations{% endstatic_placeholder %}</h1>
+          <h1 class="page-title">{% static_placeholder "Gros titre formation" or %}Notre système de formation{% endstatic_placeholder %}</h1>
         </div>
       </div>
     </div>
@@ -59,11 +59,17 @@ Bienvenue
                   <!-- Post Meta -->
                   <div class="post-meta">
                     <div class="post-date">
-                      <span><b>{{ event.date }}</b></span>
+                      <span style="font-size: 15px;"><b><a href="{% url 'detail-event' pk=event.pk %}">
+                        {% if event.is_period %}
+                          {{ event.date_debut|date:"j F" }} au {{ event.date_fin }}
+                        {% else %}
+                          {{ event.date }}
+                        {% endif %}
+                      </a></b></span>
                     </div>
                     <!-- Title -->
                     <a href="{% url 'detail-event' pk=event.pk %}">
-                      <h2 class="subtitle"><a href="{% url 'detail-event' pk=event.pk %}">{{ event.titre }}</a></h2>
+                      <h2 class="subtitle">{{ event.titre }}</h2>
                     </a>
                     <p>{% autoescape off %}{{ event.short_description }}{% endautoescape %}</p>
                   </div>
@@ -97,13 +103,19 @@ Bienvenue
                   <!-- Post Meta -->
                   <div class="post-meta">
                     <div class="post-date">
-                      <span><b><a href="{% url 'detail-event' pk=event.pk %}">{{ event.date }}</a></b></span>
+                      <span style="font-size: 15px;"><b><a href="{% url 'detail-event' pk=event.pk %}">
+                        {% if event.is_period %}
+                          {{ event.date_debut|date:"j F" }} au {{ event.date_fin }}
+                        {% else %}
+                          {{ event.date }}
+                        {% endif %}
+                      </a></b></span>
                     </div>
                     <!-- Title -->
                     <a href="{% url 'detail-event' pk=event.pk %}">
-                      <h2 class="subtitle">{% render_model event "titre" "type,titre,image,short_description,long_description,date,formateur,active" %}</h2>
+                      <h2 class="subtitle">{% render_model event "titre" "type,titre,image,short_description,long_description,date,date_debut, date_fin, formateur,active" %}</h2>
                     </a>
-                    <p>{% autoescape off %}{% render_model event "short_description" "type,titre,image,short_description,long_description,date,formateur,active" %}{% endautoescape %}</p>
+                    <p>{% autoescape off %}{% render_model event "short_description" "type,titre,image,short_description,long_description,date,date_debut, date_fin,formateur,active" %}{% endautoescape %}</p>
                   </div>
                   <div class="meta-tags">
                     <span class="comments"><a class="comment" href="#"><i class="mdi mdi-comment-outline"></i> 24 Comments</a></span>
@@ -141,7 +153,7 @@ Bienvenue
           <!-- Single Sidebar -->
           <aside class="col-md-12 single-sidebar-widget subscribe-widget no-padding  wow animated fadeInUp" data-wow-delay=".3s">
             <div class="sidebar-widget-title">
-              <h2>Restez informé</h2>
+              <h2>Restez informés</h2>
             </div>
             <div class="subscribe-box">
               <p>{% static_placeholder "Text Newsletter" or %}Restez informés des formations en vous inscrivant à notre newsletter !{% endstatic_placeholder %}</p>

@@ -23,13 +23,15 @@ urlpatterns = [
     url(r'^evenements/', include('evenements.urls')),
 ]
 
+from barreauproject.views import custom404, custom500
+handler404 = custom404
+handler500 = custom500
+
 
 from django.views.static import serve
 from django.conf import settings
 from django.conf.urls.static import static
-print('-------------------')
-print(settings.MEDIA_ROOT)
-print(settings.MEDIA_URL)
+
 if settings.DEBUG:
     urlpatterns += [
         url(r'^media/(?P<path>.*)$', serve, {

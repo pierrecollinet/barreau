@@ -12,6 +12,11 @@ from django.db import transaction
 from datetime import timedelta
 import datetime
 
+from django.core.exceptions import ValidationError
+
+# import locale
+
+# locale.setlocale(locale.LC_TIME,'fr_FR.UTF-8')
 
 class Formateur(models.Model):
   full_name = models.CharField(max_length=200)
@@ -28,7 +33,9 @@ class Event(models.Model):
   image = models.ImageField(upload_to = 'mes_images/', blank=True, null=True)
   short_description = models.TextField()
   long_description = models.TextField()
-  date = models.DateField()
+  date = models.DateField(blank=True, null=True)
+  date_debut = models.DateField(blank=True, null=True)
+  date_fin = models.DateField(blank=True, null=True)
   formateur = models.ManyToManyField(Formateur)
   active = models.BooleanField(default=True)
 
@@ -37,4 +44,29 @@ class Event(models.Model):
 
   class Meta:
         ordering = ["date"]
+
+  def clean(self):
+      if self.date is not None and self.date_debut is not None :
+        raise ValidationError("Si vous spécifiez une date (=ponctuelle), il ne faut pas de date de début (=période). Et vice versa).")
+      if self.date is not None and self.date_fin is not None :
+        raise ValidationError("Si vous spécifiez une date (=ponctuelle), il ne faut pas de date de fin (=période). Et vice versa).")
+      if (self.date_debut is not None and self.date_fin is None) or (self.date_fin is not None and self.date_debut is None) :
+        raise ValidationError("Si vous spécifiez une date de début, il faut une date de fin (et vice versa)")
+      if (self.date_debut is None and self.date is None  and self.date_fin is None ):
+        raise ValidationError("il faut introduire une date ponctuelle OU une date de début et date de fin pour définir une période")
+
+  def is_period(self):
+    if self.date is not None :
+      return False
+    else :
+      return True
+  # def display_date(self):
+  #   if self.date is not None :
+  #     return self.date.strftime('%d %B %Y')
+  #   elif self.date_debut is not None and self.date_fin is not None :
+  #     return "Du " + self.date_debut.strftime('%d %B %Y') + " au " + self.date_fin.strftime('%d %B %Y')
+
+
+
+
 

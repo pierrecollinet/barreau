@@ -30,7 +30,7 @@ Bienvenue
          <div class="carousel-caption d-md-block">
           <h1 class="animated wow fadeInDown hero-heading slide1" data-wow-delay=".4s">{% static_placeholder "Titre slide" or %}Institut de Droit Européen des Barreaux{% endstatic_placeholder %}</h1>
           <h5 class="animated fadeInUp wow hero-sub-heading" data-wow-delay=".6s">{% static_placeholder "Sous-titre slide" or %}en partenariat avec la Cour de justice de l'Union européenne{% endstatic_placeholder %}</h5>
-          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">{% static_placeholder "Bouton slide" or %}Découvrez nos formations{% endstatic_placeholder %}<div class="ripple-container"></div></a>
+          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">{% static_placeholder "Bouton slide" or %}Notre système de formation{% endstatic_placeholder %}<div class="ripple-container"></div></a>
         </div>
       </div>
       <div class="carousel-item custom-caroussel">
@@ -40,7 +40,7 @@ Bienvenue
          <div class="carousel-caption d-md-block">
           <h1 class="animated wow fadeInLeft hero-heading slide2" data-wow-delay=".7s">{% static_placeholder "Titre slide" or %}Institut de Droit Européen des Barreaux{% endstatic_placeholder %}</h1>
           <h5 class="animated wow fadeInRight hero-sub-heading" data-wow-delay=".9s">{% static_placeholder "Sous-titre slide" or %}en partenariat avec la Cour de justice de l'Union européenne{% endstatic_placeholder %}</h5>
-          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">{% static_placeholder "Bouton slide" or %}Découvrez nos formations{% endstatic_placeholder %}<div class="ripple-container"></div></a>
+          <a href="{% url 'list-events' %}" class="animated fadeInUp wow btn btn-common btn-carousel" data-wow-delay=".8s">{% static_placeholder "Bouton slide" or %}Notre système de formation{% endstatic_placeholder %}<div class="ripple-container"></div></a>
         </div>
       </div>
     </div>
@@ -93,15 +93,15 @@ Bienvenue
   <!-- Start Client Section -->
   <div class="client section-padding section-dark">
     <div class="container">
-      <div class="row">
-        <div id="client-logo" class="owl-carousel">
+      <div class="row text-center">
+        <div id="client-logo" class="owl-carousel text-center">
           {% for partenaire in partenaires %}
           <div class="client-logo item">
-            <a href="#">
-              <div>
-                <img class="img-fluid resize-image" src="{{ partenaire.logo.url }}" alt="" />
-              </div>
-            </a>
+              <a href="{{ partenaire.url_site_web }}">
+                <div>
+                  <img class="img-fluid resize-image" src="{{ partenaire.logo.url }}" alt="" />
+                </div>
+              </a>
           </div>
           {% endfor %}
         </div>
@@ -120,9 +120,16 @@ Bienvenue
         </div>
       </div>
 
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-xs-12 col-md-10 text-center">
+            <p>{% static_placeholder "Intro Formations" or %}Chaque thème est traité par un cycle de 3 modules de formation destinés à 3 avocats envoyés et pris en charge par les barreaux qui désirent rejoindre l’I.D.E.B. Au terme de chaque cycle, ces avocats organisent avec l’aide de leur Ordre, des formations destinées cette fois à tous leurs confrères. {% endstatic_placeholder %}</p>
+        </div>
+      </div>
 
 
       <div class="row">
+
         {% for formation in formations %}
         {% render_model_block formation  %}
         <!-- Single Article -->
@@ -143,7 +150,7 @@ Bienvenue
             <div class="post-meta">
               <!-- Title -->
               <a href="{% url 'detail-event' pk=formation.pk %}">
-                <h2 class="subtitle">{{ formation.titre }}</h2>
+                <h2 class="subtitle">{{ formation.titre }} <span style="font-size:12px;color:#2b2b2b;"> - {{ formation.date }}</span></h2>
               </a>
               <p>{{ formation.short_description }}</p>
             </div>
@@ -162,7 +169,7 @@ Bienvenue
       <div class="row mt-5 wow animated fadeInUp" data-wow-delay=".2s">
         <!-- Button -->
         <div class="col-md-12 text-center">
-          <a href="{% url 'list-events' %}" class="animated4 btn btn-common btn-IDEB" data-ripple-color="#000">{% static_placeholder "Bouton vers toutes nos formations" or %}Toutes nos formations{% endstatic_placeholder %}<div class="ripple-container"></div></a>
+          <a href="{% url 'list-events' %}" class="animated4 btn btn-common btn-IDEB" data-ripple-color="#000">{% static_placeholder "Bouton vers toutes nos formations" or %}Notre système de formation{% endstatic_placeholder %}<div class="ripple-container"></div></a>
         </div>
       </div>
     </div>

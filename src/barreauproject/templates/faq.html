@@ -29,30 +29,57 @@ Bienvenue
   <section class="matrl-accordion-section section-padding">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 wow animated fadeInUp" data-wow-delay=".2s">
-          <div class="panel-group matrl-default-accordion" id="matrl-accordion" role="tablist" aria-multiselectable="true">
+        <div class="col-md-12" data-wow-delay="">
+          <div class="panel-group matrl-default-accordion" id="matrl-accordion">
             <div class="row">
-            {% for faq in faqs %}
-            {% render_model_block faq %}
               <div class="col-md-6">
-                <div class="panel panel-default mb-3">
-                  <div class="panel-heading" role="tab" id="heading{{forloop.counter}}">
-                    <h4 class="panel-title">
-                      <a role="button" data-toggle="collapse" data-parent="#matrl-accordion" href="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
-                        {{ faq.question }}
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapse{{forloop.counter}}" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading{{forloop.counter}}">
-                    <div class="panel-body">
-                      {% autoescape off %}{{ faq.reponse }}{% endautoescape %}
+              {% for faq in faqs %}
+              {% if forloop.counter <= n_demi %}
+                {% render_model_block faq %}
+                  <div class="col-md-12">
+                    <div class="panel panel-default mb-3">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a >
+                            {{ faq.question }}
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse{{forloop.counter}}">
+                        <div class="panel-body">
+                          {% autoescape off %}{{ faq.reponse }}{% endautoescape %}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                {% endrender_model_block %}
+              {% endif %}
+              {% endfor %}
               </div>
-            {% endrender_model_block %}
-            {% endfor %}
-            </div>
+              <div class="col-md-6">
+              {% for faq in faqs %}
+              {% if forloop.counter > n_demi %}
+                {% render_model_block faq %}
+                  <div class="col-md-12">
+                    <div class="panel panel-default mb-3">
+                      <div class="panel-heading">
+                        <h4 class="panel-title">
+                          <a >
+                            {{ faq.question }}
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse{{forloop.counter}}">
+                        <div class="panel-body">
+                          {% autoescape off %}{{ faq.reponse }}{% endautoescape %}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endrender_model_block %}
+              {% endif %}
+              {% endfor %}
+              </div>
           </div>
         </div>
 

@@ -1265,7 +1265,7 @@ figure:hover figcaption {
 .single-team-widget .team-member-info {
   height: 150px;
   background: #fff;
-  padding: 5px 20px;
+  padding: 1px 0px 0px 20px;
 }
 
 .single-team-widget .team-member-info .know-more {
@@ -2152,7 +2152,7 @@ ul.recent-post li .post-text span {
   text-decoration: none;
 }
 
-.matrl-default-accordion .panel-default .panel-heading a:after {
+/*.matrl-default-accordion .panel-default .panel-heading a:after {
   font-family: Material Design Icons;
   content: "\f374";
   position: absolute;
@@ -2162,7 +2162,7 @@ ul.recent-post li .post-text span {
   top: 50%;
   line-height: 1;
   margin-top: -7px;
-}
+}*/
 
 .matrl-default-accordion .panel-default .panel-body {
   padding: 15px;
@@ -2204,6 +2204,9 @@ ul.recent-post li .post-text span {
   margin-top: -7px;
 }
 
+.subtitle{
+  padding:10px;
+}
 /* Alert  */
 .alert {
   box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.24);

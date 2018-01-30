@@ -23,7 +23,7 @@ from evenements.models import Event
 def welcome(request):
     form = ContactForm(request.POST or None)
     formations = Event.objects.all()[:3]
-    partenaires = Partenaire.objects.all()
+    partenaires = Partenaire.objects.filter(active=True)
     c = {'form': form, 'formations':formations, 'partenaires':partenaires}
     if form.is_valid():
       # Get de datas
@@ -46,6 +46,19 @@ def welcome(request):
       messages.success(request, "Merci, nous avons bien reçu votre message. Nous vous recontacterons dans les plus brefs délais")
     return render(request, 'welcome.html', c)
 
+########################################
+##########                    ##########
+##########    ERROR PAGES     ##########
+##########                    ##########
+########################################
+def custom404(request):
+    return render(request, '404.html')
+
+def custom500(request):
+    return render(request, '500.html')
+########################################
+########################################
+########################################
 def a_propos(request):
   categories = Categorie.objects.all()
   membres = Membre.objects.all()
@@ -85,7 +98,7 @@ def faq(request):
     faqs = Faq.objects.all()
   nbre_faqs = len(faqs)
   n_demi = int(nbre_faqs/2) +1
-  c = {'faqs':faqs, 'n_demi':n_demi}
+  c = {'faqs':faqs, 'n_demi':n_demi, 'autres_faqs':faqs}
   return render(request, 'faq.html', c)
 
 def partenaires(request):

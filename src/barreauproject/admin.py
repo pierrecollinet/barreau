@@ -15,10 +15,14 @@ from cms.admin.placeholderadmin import FrontendEditableAdminMixin
 class FaqAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
     frontend_editable_fields = ("question", "reponse")
 
+class PartenaireAdmin(admin.ModelAdmin):
+    list_display = ("nom", "pays", "ville", "active")
+
+
 admin.site.register(PhotoGallerie)
 admin.site.register(Faq, FaqAdmin)
 admin.site.register(Membre)
-admin.site.register(Partenaire)
+admin.site.register(Partenaire, PartenaireAdmin)
 admin.site.register(NewsletterEmail)
 admin.site.register(Categorie)
 admin.site.register(DateIDEB)
