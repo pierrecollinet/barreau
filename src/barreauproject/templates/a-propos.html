@@ -35,7 +35,7 @@ Bienvenue
               <p>{% static_placeholder "Texte introduction A propos" or %}Dans un premier temps, l'I.D.E.B. s'adresse à tous les barreaux des pays membres de l'Union européenne et du Conseil de l'Europe de langue française.<br>Il répond à une attente qui est moins rencontrée dans cette langue, ce qui n'exclut pas à terme une ouverture vers d'autres barreaux appartenant à l'Espace Economique Européen, la Suisse ou le bassin méditerranéen. L'ouverture à d'autres langues est d'ores et déjà envisagée.{% endstatic_placeholder %}</p>
             </div>
             <div class="button btn-welcome">
-              <a href="{% url 'faq' %}" class="btn btn-common btn-IDEB">
+              <a href="{% url 'faq' %}" class="btn btn-common btn-FAQ">
                   {% static_placeholder "Bouton vers FAQ" or %}Découvrez-en plus dans notre FAQ{% endstatic_placeholder %}
                   <div class="ripple-container"></div>
                 </a>
@@ -45,7 +45,7 @@ Bienvenue
         <div class="col-md-6 col-lg-6 col-xs-12 welcome-column">
           <div class="img-welcome">
             <img class="img-fluid" src="{% static 'assets/images/about/equipe.jpg' %}" alt="Les 4 bâtonniers fondateurs de l’I.D.E.B. : Stéphane Boonen, Pierre Sculier, Pascal Créhange et François Prum.">
-            <p>Les 4 bâtonniers fondateurs de l’I.D.E.B. : Stéphane Boonen, Pierre Sculier, Pascal Créhange et François Prum.</p>
+            <p class="legend-picture">{% static_placeholder "Legende photo" or %}Les 4 bâtonniers fondateurs de l’I.D.E.B. : Stéphane Boonen, Pierre Sculier, Pascal Créhange et François Prum.{% endstatic_placeholder %}</p>
           </div>
         </div>
       </div>
@@ -144,9 +144,7 @@ Bienvenue
               <img src="{{ photo.images.url }}" class="pop" id="myImg{{forloop.counter}}" alt="" style="height: 262px;object-fit: cover;">
               <figcaption class="hover-content">
                 <a class="btn-picture btn btn-round btn-fab btn-xs" href=""><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
-                <a href="portfolio-single.html">
-                  <h2 class="subtitle">{{ photo.short_description }}</h2>
-                </a>
+                  <h2 class="subtitle subtitle-picture">{{ photo.short_description }}</h2>
                 <p>{{ photo.categorie }}</p>
               </figcaption>
             </figure>

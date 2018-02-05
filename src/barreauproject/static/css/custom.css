@@ -72,9 +72,21 @@ a.btn-IDEB {
   text-transform: none;
 }
 
+a.btn-FAQ {
+  font-size:15px;
+  text-transform: none;
+}
+
 a.btn-carousel {
   font-size:18px;
   text-transform: none;
+}
+
+p.legend-picture {
+  font-size: 13px;
+  line-height: 18px;
+  text-align: center;
+  padding-top:10px;
 }
 
 div.btn-welcome {
@@ -85,6 +97,10 @@ p.single-member-widget {
   text-transform: none;
   font-weight: 300;
   font-size: 19px;
+}
+
+h2.subtitle-picture {
+  padding:0px;
 }
 
 img.icon {
