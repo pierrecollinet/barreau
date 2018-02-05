@@ -69,7 +69,7 @@ Bienvenue
                     </div>
                     <!-- Title -->
                     <a href="{% url 'detail-event' pk=event.pk %}">
-                      <h2 class="subtitle">{{ event.titre }}</h2>
+                      <h2 class="subtitle"><i>{{ event.titre }}</i></h2>
                     </a>
                     <p>{% autoescape off %}{{ event.short_description }}{% endautoescape %}</p>
                   </div>

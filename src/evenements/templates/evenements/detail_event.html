@@ -35,12 +35,12 @@ Bienvenue
         <!-- Single Blog Post -->
         <div class="single-blog-page col-md-12 col-lg-8 col-xs-12">
           <article class="single-post wow fadeInUp animated" data-wow-delay=".2s">
-            <div class="post-image" {% if event.image.url %}style="background-image: url('{{ event.image.url }}'); width:100%;height: 300px; background-position:center; background-size:cover;"{% endif %}>
+            <div class="post-image" {% if event.image %}style="background-image: url('{{ event.image.url }}'); width:100%;height: 300px; background-position:center; background-size:cover;"{% endif %}>
             </div>
-            <div style="padding:20px;">
+            <div style="padding:20px; font-size:15px;">
               {% render_model_block event %}
               <h2>{{ event.titre }}</h2>
-              <p>{% autoescape off %}{{ event.long_description }}{% endautoescape %}</p>
+              <p>{% autoescape off %}{{ event.contenu }}{% endautoescape %}</p>
               {% endrender_model_block %}
               <div class="single-post-meta">
                 <div class="share-post">
@@ -57,13 +57,25 @@ Bienvenue
         <div class="col-md-12 col-lg-4 col-xs-12 blog-sidebar-column">
           <!-- Single Sidebar -->
           <aside class="col-md-12 single-sidebar-widget author-widget no-padding wow animated fadeInUp" data-wow-delay=".2s">
-            <div class="author-bg" style="background-image: url('{{ formateur.photo.url }}'); width:100%;height: 150px; background-position:center; background-size:cover;">
-            </div>
-            <div class="author-info">
-              <div class="author-name">
+            <div class="author-info" style="font-size: 13px;">
+              <div class="author-name" style="font-size: 15px;">
+                {% if event.infos_pratiques %}
+                  {{ event.infos_pratiques }}
+                {% else %}
+                  Informations à venir
+                {% endif %}
               </div>
               <div class="author-bio">
-                <p>{% render_model formateur "short_description" "full_name,photo,short_description" %}</p>
+                {% if event.formateur.all|length != 0 %}
+                  <h3>Formateurs</h3>
+                  <ul>
+                  {% for formateur in event.formateur.all %}
+                  <li>
+                    {% render_model_block formateur %}{{ formateur.full_name }} ({{ formateur.statut }}){% endrender_model_block %}
+                  </li>
+                  {% endfor %}
+                {% endif %}
+              </ul>
               </div>
             </div>
           </aside>

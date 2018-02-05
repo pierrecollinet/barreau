@@ -115,26 +115,11 @@ Bienvenue
       </div>
     </div>
   </section>
-  <section class="welcome-section section-padding">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12 col-lg-12 col-xs-12">
-        <div class="welcome-content">
-          <div class="text">
-            <p>{% static_placeholder "Explication du cycle de formation" or %}Le premier module vise l'apprentissage de la matière en partenariat avec une ou plusieurs universités.</p>
-            <p>Le deuxième mmodule permet d'aborder la pratique par la rencontre de magistrats ou de référendaires de la Cour de justice de l'Union européenne ou de la Cour européenne des droits de l'Homme.</p>
-            <p>Le troisième module aborde la restitution de la matière et son évaluation en partenariat avec les universités ou l'Ecole Régionale des Avocats du Grand Est.</p>
-            <p>Une fois le cycle terminé, les avocats ayant suivi la formation restitueront la matière au sein de leur barreau respectif au cours de séances de formation organisées par leur Ordre. Celles-ci seront facilement accessibles et accompagnées d'une modeste participation financière afin de permettre aux Ordres d'être remboursés des frais qu'ils ont engagés pour leurs formateurs{% endstatic_placeholder %}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
   <!-- About Section End -->
 
   <!-- Portfolio Section -->
-  <section class="matrl-portfolio-section section-padding section-dark">
+  <section class="matrl-portfolio-section section-padding">
     <div class="container">
       <div class="row">
         <!-- Section Titile -->
@@ -156,7 +141,7 @@ Bienvenue
           {% render_model_block photo %}
           <div class="col-md-6 col-lg-4 col-xl-4 pb-4 mix categorie{{ photo.categorie.id }}">
             <figure class="single-portfolio">
-              <img src="{{ photo.images.url }}" class="pop" id="myImg{{forloop.counter}}" alt="">
+              <img src="{{ photo.images.url }}" class="pop" id="myImg{{forloop.counter}}" alt="" style="height: 262px;object-fit: cover;">
               <figcaption class="hover-content">
                 <a class="btn-picture btn btn-round btn-fab btn-xs" href=""><i class="material-icons mdi mdi-arrow-right"></i><div class="ripple-container"></div></a>
                 <a href="portfolio-single.html">

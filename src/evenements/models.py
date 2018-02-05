@@ -20,8 +20,9 @@ from django.core.exceptions import ValidationError
 
 class Formateur(models.Model):
   full_name = models.CharField(max_length=200)
-  photo     = models.ImageField(upload_to = 'mes_images/')
-  short_description = models.TextField()
+  statut = models.CharField(max_length=200, blank=True, null=True)
+  photo     = models.ImageField(upload_to = 'mes_images/', blank=True, null=True)
+  short_description = models.TextField(blank=True, null=True)
 
   def __str__(self):
     return self.full_name
@@ -32,12 +33,14 @@ class Event(models.Model):
   titre = models.CharField(max_length=200)
   image = models.ImageField(upload_to = 'mes_images/', blank=True, null=True)
   short_description = models.TextField()
-  long_description = models.TextField()
+  contenu = models.TextField()
   date = models.DateField(blank=True, null=True)
   date_debut = models.DateField(blank=True, null=True)
   date_fin = models.DateField(blank=True, null=True)
-  formateur = models.ManyToManyField(Formateur)
+  formateur = models.ManyToManyField(Formateur, blank=True, null=True)
   active = models.BooleanField(default=True)
+  infos_pratiques = models.TextField(blank=True, null=True)
+
 
   def __str__(self):
     return self.titre
