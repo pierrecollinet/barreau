@@ -4,9 +4,11 @@
 
 {% load staticfiles cms_tags menu_tags sekizai_tags %}
 
+{% block meta_description %}Présentation de notre événement : {% render_model event "titre" "type,titre,image,short_description,long_description,date,formateur,active" %}{% endblock %}
+{% block meta_og_description %}{% render_model event "titre" "type,titre,image,short_description,long_description,date,formateur,active" %}{% endblock %}
 
 {% block title %}
-Bienvenue
+{% render_model event "titre" "type,titre,image,short_description,long_description,date,formateur,active" %}
 {% endblock %}
 
 {% block base_head %}

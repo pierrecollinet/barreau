@@ -35,7 +35,7 @@ h1.text-date {
 }
 
 .section-padding-welcome{
-  padding:70px 0;
+  padding:50px 0;
 }
 
 .section-padding-partenaire{
@@ -197,6 +197,10 @@ h1.slide2{
   }
 }
 
+.formation_welcome {
+  padding-bottom: 20px;
+}
+
 @media (max-width: 767px) {
 
   .image-welcome-header {
@@ -209,6 +213,12 @@ h1.slide2{
     height:100%;
     object-fit: cover;
   }
+
+  .formation_welcome {
+  padding-bottom: 0px;
+  padding-top:10px;
+}
+
 }
 
 #myImg {
@@ -223,7 +233,7 @@ h1.slide2{
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 1041; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -325,3 +335,9 @@ a.btn-picture {
 .custom-caroussel-indicator {
   bottom:-50px;
 }
+
+.img_IE {
+  width: 99%;
+}
+
+

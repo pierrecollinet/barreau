@@ -5,6 +5,7 @@
 {% load staticfiles %}
 {% load cms_tags menu_tags sekizai_tags %}
 
+{% block meta_description %}Institut de Droit Européen des Barreaux (IDEB) en partenariat avec la Cour de justice de l'Union européenne. Découvrez notre système de formation.{% endblock %}
 
 {% block title %}
 Bienvenue
@@ -82,7 +83,7 @@ Bienvenue
         </div>
         <div class="col-md-6 col-lg-6 col-xs-12 welcome-column">
           <div class="img-welcome">
-            <img class="img-fluid" src="{% static 'assets/images/intro/half1st.jpg' %}" alt="">
+            <img class="img-fluid img_IE" src="{% static 'assets/images/intro/half1st.jpg' %}" alt="">
           </div>
         </div>
       </div>
@@ -123,7 +124,7 @@ Bienvenue
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-xs-12 col-md-10 text-center">
-            <p>{% static_placeholder "Intro Formations" or %}Chaque thème est traité par un cycle de 3 modules de formation destinés à 3 avocats envoyés et pris en charge par les barreaux qui désirent rejoindre l’I.D.E.B. Au terme de chaque cycle, ces avocats organisent avec l’aide de leur Ordre, des formations destinées cette fois à tous leurs confrères. {% endstatic_placeholder %}</p>
+            <p class="formation_welcome">{% static_placeholder "Intro Formations" or %}Chaque thème est traité par un cycle de 3 modules de formation destinés à 3 avocats envoyés et pris en charge par les barreaux qui désirent rejoindre l’I.D.E.B. Au terme de chaque cycle, ces avocats organisent avec l’aide de leur Ordre, des formations destinées cette fois à tous leurs confrères. {% endstatic_placeholder %}</p>
         </div>
       </div>
 

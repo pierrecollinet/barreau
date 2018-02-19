@@ -2,8 +2,10 @@
 {% load static %}
 {% load staticfiles cms_tags menu_tags sekizai_tags %}
 
+{% block meta_description %}A propos de l'Institut de Droit Européen des Barreaux (IDEB), comment fonctionne l'IDEB et à qui s'adresse-t-il?{% endblock %}
+
 {% block title %}
-Bienvenue
+A propos
 {% endblock %}
 
 {% block base_head %}
@@ -44,7 +46,7 @@ Bienvenue
         </div>
         <div class="col-md-6 col-lg-6 col-xs-12 welcome-column">
           <div class="img-welcome">
-            <img class="img-fluid" src="{% static 'assets/images/about/equipe.jpg' %}" alt="Les 4 bâtonniers fondateurs de l’I.D.E.B. : Stéphane Boonen, Pierre Sculier, Pascal Créhange et François Prum.">
+            <img class="img-fluid img_IE" src="{% static 'assets/images/about/equipe.jpg' %}" alt="Les 4 bâtonniers fondateurs de l’I.D.E.B. : Stéphane Boonen, Pierre Sculier, Pascal Créhange et François Prum.">
             <p class="legend-picture">{% static_placeholder "Legende photo" or %}Les 4 bâtonniers fondateurs de l’I.D.E.B. : Stéphane Boonen, Pierre Sculier, Pascal Créhange et François Prum.{% endstatic_placeholder %}</p>
           </div>
         </div>
