@@ -7,6 +7,15 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="{% block meta_description %}Institut de Droit Européen des Barreaux (IDEB) en partenariat avec la Cour de justice de l'Union européenne{% endblock %}">
+      <meta name="keywords" content="institut de droit européen des barreaux,institut,droit,européen,barreaux,IDEB,belgique,bruxelles,luxembourg,france,strasbourg,avocat,juriste,aisbl,Cour de justice de l'Union européenne,cour,justice,union,européenne,capitale,formation,cours,formateur">
+      <meta name="robots" content="{% block meta_robots %}index{% endblock %}">
+
+      <!-- Facebook meta tags -->
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="{% block meta_og_title %}Insitut de Droit Européen des Barreaux{% endblock %}">
+      <meta property="og:description" content="{% block meta_og_description %}en partenariat avec la Cour de justice de l'Union européenne{% endblock %}">
+      <meta property="og:image" content="{% block meta_og_img %}{% static 'assets/images/slider/slider1.jpg' %}{% endblock %}">
 
       <!-- favicon-->
       <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicon/apple-touch-icon.png' %}">
@@ -16,7 +25,7 @@
       <link rel="mask-icon" href="{% static 'assets/images/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">
       <meta name="theme-color" content="#ffffff">
 
-      <title>Site du Barreau - {% block title %}{% page_attribute "page_title" %}{% endblock %}</title>
+      <title>IDEB - {% block title %}{% page_attribute "page_title" %}{% endblock %}</title>
         {% include 'base/css.html' %}
         {% block base_head %}{% endblock %}
 
