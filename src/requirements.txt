@@ -28,7 +28,7 @@ djangocms-video==2.0.4
 docutils==0.14
 easy-thumbnails==2.4.2
 gunicorn==19.7.1
-html5lib==0.9999999
+html5lib==0.999999999
 jmespath==0.9.3
 olefile==0.44
 Pillow==4.3.0
